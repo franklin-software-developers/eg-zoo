@@ -80,6 +80,32 @@
     transition: opacity 0.5s ease-out;
   }
 
+  .projectsTitle {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    display: grid;
+    place-items: left;
+    align-content: left;
+    padding-left: 100px;
+    padding-top: 100px;
+  }
+  
+  .projects {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    display: grid;
+    place-items: left;
+    align-content: left;
+    padding-left: 100px;
+    padding-bottom: 150px;
+  }
+
+  .contactsClass {
+    background-color: black;
+  }
+
   .contactTitle {
     font-size: 20px;
     font-family: "Montserrat", sans-serif;

@@ -35,6 +35,11 @@
     font-family: "Gallient", sans-serif;
   }
 
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+  
   section {
     background-color: black;
     color: white;
@@ -42,11 +47,6 @@
     display: grid;
     place-items: left;
     align-content: left;
-  }
-
-  .about {
-    font-size: 15px;
-    font-family: "Montserrat", sans-serif;
   }
     
   .hidden {
@@ -68,62 +68,49 @@
     transform: translateX(0);
   }
 
+  .about {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+  }
+
   #about h2 {
     font-family: "Gallient", sans-serif;
     font-size: 50px;
     margin-bottom: 20px;
   }
-
   
-  .fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
+  .projectsContainer {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    padding: 100px;
+    place-items: left;
+    align-content: left;
   }
 
   .projectsTitle {
     font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    display: grid;
-    place-items: left;
-    align-content: left;
-    padding-left: 100px;
-    padding-top: 100px;
   }
   
   .projects {
     font-size: 15px;
+    padding-bottom: 150px;
+  }
+
+  .contactsContainer {
+    background-color: black;
     font-family: "Montserrat", sans-serif;
     color: white;
     display: grid;
     place-items: left;
     align-content: left;
-    padding-left: 100px;
-    padding-bottom: 150px;
-  }
-
-  .contactsClass {
-    background-color: black;
+    padding: 100px;
   }
 
   .contactTitle {
     font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    display: grid;
-    place-items: left;
-    align-content: left;
-    padding-left: 100px;
-    padding-top: 100px;
   }
 
   .contactInfo {
     font-size: 13px;
-    font-family: "Montserrat", sans-serif;
-    color: white;
-    display: grid;
-    place-items: left;
-    align-content: left;
-    padding-left: 100px;
     padding-bottom: 150px;
   }

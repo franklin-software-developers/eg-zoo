@@ -7,17 +7,18 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
   <script defer src="script.js"></script>
   <title>Jaden's Portfolio</title>
-  <script type="text/javascript" src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script type="text/javascript" src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
 </head>
 <body>
-  <section class="vr-container">
-    <div class="vr-overlay-content">
-      <h1>Hi, I am Jaden. This is my portfolio.</h1>
-    </div>
-    <a-scene>
-      <a-box></a-box>
-    </a-scene>
-  </section>
+  <a-scene>
+    <a-assets>
+      <img id="sky" src="/assets/kloofendal_48d_partly_cloudy_puresky_1k.jpg">
+    </a-assets>
+    <a-sky src="#sky"></a-sky>
+    <a-box color="#8EACBB" src="assets/Wood058_1K_Color.jpg" width="4" height="4" depth="4" position="2 1.5 -9">
+      
+    </a-box>
+  </a-scene>
   </body>
   
 </html>

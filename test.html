@@ -7,9 +7,11 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
   <title>Jaden's Portfolio</title>
   <script type="text/javascript" src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.4.0/dist/aframe-cursor-teleport-component.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
-  <a-scene>
+  <a-scene cursor="rayOrigin: mouse">
     <a-assets>
       <a-asset-item id="test-o" src="assets/model_test.obj"></a-asset-item>
       <a-asset-item id="test-m" src="assets/model_test.mtl"></a-asset-item>
@@ -23,12 +25,18 @@
     <!-- <a-entity obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity> -->
     
     
-    <a-entity gltf-model="#new_test" rotation="0 180 0 " position="0 0 100" blending="none" transparent="false" side="double"></a-entity>
+    <a-entity class="clickable" gltf-model="#new_test" rotation="0 180 0" position="0 0 -150" blending="none" transparent="false" side="double"></a-entity>
     
-    <a-entity camera position="5 5 240">
-      <a-camera fov="70">
-      </a-camera>
+    
+    <a-entity class="collision" position="0 0 0" geometry="primitive: box; width: 200; height: .1; depth: 400"></a-entity>
+    
+    <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
+      <a-entity id="head" position="0 2 0" camera look-controls="reverseMouseDrag: true"></a-entity>
+      <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
     </a-entity>
+      </a-entity>
+  </a-entity>
   </a-scene>
   </body>
   

@@ -13,25 +13,28 @@
 <body>
   <a-scene cursor="rayOrigin: mouse">
     <a-assets>
-      <a-asset-item id="test-o" src="assets/model_test.obj"></a-asset-item>
-      <a-asset-item id="test-m" src="assets/model_test.mtl"></a-asset-item>
-      <a-asset-item id="new_test" src="assets/3new_model_test.gltf"></a-asset-item>
+      <a-asset-item id="test-o" src="assets/entrancetest4.obj"></a-asset-item>
+      <a-asset-item id="test-m" src="assets/entrancetest4.mtl"></a-asset-item>
+      <!-- <a-asset-item id="new_test" src="assets/3new_model_test.gltf"></a-asset-item> -->
+      <!-- <a-asset-item id="rhino_test_1" src="assets/eg_zoo_entrance_gltf_test_4.gltf"></a-asset-item> -->
     </a-assets>
     <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
+    <a-entity></a-entity>
     
     <a-box color="#8EACBB" src="assets/Wood058_1K_Color.jpg" width="4" height="4" depth="4" position="2 1.5 -9">
     </a-box>
     
-    <!-- <a-entity obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity> -->
+    <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
     
     
-    <a-entity class="clickable" gltf-model="#new_test" rotation="0 180 0" position="0 0 -150" blending="none" transparent="false" side="double"></a-entity>
+    <!-- <a-entity class="clickable" gltf-model="#new_test" rotation="0 180 0" position="0 0 -150" blending="none" transparent="false" side="double"></a-entity> -->
+    <!-- <a-entity class="clickable" gltf-model="#rhino_test_1" rotation="0 180 0" position="0 0 0" blending="none" transparent="false" side="double"></a-entity> -->
+
     
-    
-    <a-entity class="collision" position="0 0 0" geometry="primitive: box; width: 200; height: .1; depth: 400"></a-entity>
+    <a-entity class="collision" position="0 .2 0" geometry="primitive: box; width: 400; height: .1; depth: 500"></a-entity>
     
     <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-      <a-entity id="head" position="0 2 0" camera look-controls="reverseMouseDrag: true"></a-entity>
+      <a-entity id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
     </a-entity>

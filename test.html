@@ -11,11 +11,18 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <a-scene shadow="autoUpdate: true; enabled: true;" cursor="rayOrigin: mouse">
+  <a-scene antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" cursor="rayOrigin: mouse">
     <a-assets>
-      <a-asset-item id="test-o" src="assets/entrancetest4.obj"></a-asset-item>
+      <!-- <a-asset-item id="test-o" src="assets/entrancetest4.obj"></a-asset-item>
       <a-asset-item id="test-m" src="assets/entrancetest4.mtl"></a-asset-item>
-      <!-- <a-asset-item id="new_test" src="assets/3new_model_test.gltf"></a-asset-item> -->
+      
+      <a-asset-item id="entrancefinal-o" src="assets/entrancefinal.obj"></a-asset-item>
+      <a-asset-item id="entrancefinal-m" src="assets/entrancefinal.mtl"></a-asset-item>
+      
+      <a-asset-item id="pathfinal-o" src="assets/pathfinal.obj"></a-asset-item>
+      <a-asset-item id="pathfinal-m" src="assets/pathfinal.mtl"></a-asset-item> -->
+      
+      <a-asset-item id="new_test" src="assets/entrancedaegltf.gltf"></a-asset-item>
       <!-- <a-asset-item id="rhino_test_1" src="assets/eg_zoo_entrance_gltf_test_4.gltf"></a-asset-item> -->
     </a-assets>
     <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
@@ -23,14 +30,15 @@
     
     <a-box color="#8EACBB" src="assets/Wood058_1K_Color.jpg" width="4" height="4" depth="4" position="2 1.5 -9">
     </a-box>
+  
+    <a-entity light="intensity: 0.25; castShadow: true; type: point; shadowBias: -0.001" position="-283.55661 56.62303 -212.43367" data-aframe-default-light="" aframe-injected="" rotation="-58.00000000000001 0 0"></a-entity>
+    <!-- <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity> -->
     
-    <a-entity light="intensity: 0.6; castShadow: true; type: point" position="87.84782 34 138.753" data-aframe-default-light="" aframe-injected="" rotation="-57.99879872770784 0 0"></a-entity>
+    <!-- <a-entity shadow="cast: true" obj-model="obj: #entrancefinal-o; mtl: #entrancefinal-m" blending="none" transparent="false" side="double"></a-entity> -->
+    <!-- <a-entity class="collision" shadow="cast: false" obj-model="obj: #pathfinal-o; mtl: #pathfinal-m" blending="none" transparent="false" side="double"></a-entity> -->
     
     
-    <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
-    
-    
-    <!-- <a-entity class="clickable" gltf-model="#new_test" rotation="0 180 0" position="0 0 -150" blending="none" transparent="false" side="double"></a-entity> -->
+    <a-entity shadow gltf-model="#new_test" rotation="0 180 0" position="0 0 160" blending="none" transparent="false" side="double"></a-entity>
     <!-- <a-entity class="clickable" gltf-model="#rhino_test_1" rotation="0 180 0" position="0 0 0" blending="none" transparent="false" side="double"></a-entity> -->
 
     

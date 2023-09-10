@@ -11,7 +11,7 @@
   <script src="script.js"></script>
 </head>
 <body>
-  <a-scene cursor="rayOrigin: mouse">
+  <a-scene shadow="autoUpdate: true; enabled: true;" cursor="rayOrigin: mouse">
     <a-assets>
       <a-asset-item id="test-o" src="assets/entrancetest4.obj"></a-asset-item>
       <a-asset-item id="test-m" src="assets/entrancetest4.mtl"></a-asset-item>
@@ -24,6 +24,9 @@
     <a-box color="#8EACBB" src="assets/Wood058_1K_Color.jpg" width="4" height="4" depth="4" position="2 1.5 -9">
     </a-box>
     
+    <a-entity light="intensity: 0.6; castShadow: true; type: point" position="87.84782 34 138.753" data-aframe-default-light="" aframe-injected="" rotation="-57.99879872770784 0 0"></a-entity>
+    
+    
     <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
     
     
@@ -31,10 +34,10 @@
     <!-- <a-entity class="clickable" gltf-model="#rhino_test_1" rotation="0 180 0" position="0 0 0" blending="none" transparent="false" side="double"></a-entity> -->
 
     
-    <a-entity class="collision" position="0 .2 0" geometry="primitive: box; width: 400; height: .1; depth: 500"></a-entity>
+    <a-entity class="collision" position="0 .2 0" material="color: #d37070" shadow geometry="primitive: box; width: 1000; height: .1; depth: 500"></a-entity>
     
     <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-      <a-entity id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true"></a-entity>
+      <a-camera id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true" fov="43.8"></a-entity>
       <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
     </a-entity>

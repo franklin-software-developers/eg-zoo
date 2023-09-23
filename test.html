@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
-  <title>Jaden Chung | AFrame Test</title>
+  <title>EG Zoo AR Experience</title>
   <script type="text/javascript" src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.4.0/dist/aframe-cursor-teleport-component.min.js"></script>
   <script src="aframe-cursor-teleport.js"></script>
@@ -12,24 +12,10 @@
 <body>
   <a-scene antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" cursor="rayOrigin: mouse">
     <a-assets>
-      <!-- <a-asset-item id="test-o" src="assets/entrancetest4.obj"></a-asset-item>
-      <a-asset-item id="test-m" src="assets/entrancetest4.mtl"></a-asset-item>
-      
-      <a-asset-item id="entrancefinal-o" src="assets/entrancefinal.obj"></a-asset-item>
-      <a-asset-item id="entrancefinal-m" src="assets/entrancefinal.mtl"></a-asset-item>
-      
-      <a-asset-item id="pathfinal-o" src="assets/pathfinal.obj"></a-asset-item>
-      <a-asset-item id="pathfinal-m" src="assets/pathfinal.mtl"></a-asset-item> -->
-      
       <a-asset-item id="new_test" src="assets/entrancedaegltf.gltf"></a-asset-item>
-      <!-- <a-asset-item id="rhino_test_1" src="assets/eg_zoo_entrance_gltf_test_4.gltf"></a-asset-item> -->
     </a-assets>
     <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
-    <a-entity></a-entity>
-    
-    <a-box color="#8EACBB" src="assets/Wood058_1K_Color.jpg" width="4" height="4" depth="4" position="2 1.5 -9">
-    </a-box>
-  
+
     <a-entity light="intensity: 0.25; castShadow: true; type: point; shadowBias: -0.001" position="-283.55661 56.62303 -212.43367" data-aframe-default-light="" aframe-injected="" rotation="-58.00000000000001 0 0"></a-entity>
     <!-- start -->
     <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
@@ -37,21 +23,16 @@
     <a-entity shadow="cast: true" obj-model="obj: #entrancefinal-o; mtl: #entrancefinal-m" blending="none" transparent="false" side="double"></a-entity>
     <a-entity class="collision" shadow="cast: false" obj-model="obj: #pathfinal-o; mtl: #pathfinal-m" blending="none" transparent="false" side="double"></a-entity>
     <!-- end -->
-    
-    
-    <a-entity shadow gltf-model="#new_test" rotation="0 180 0" position="0 0 160" blending="none" transparent="false" side="double"></a-entity>
-    <!-- <a-entity class="clickable" gltf-model="#rhino_test_1" rotation="0 180 0" position="0 0 0" blending="none" transparent="false" side="double"></a-entity> -->
 
+    <a-entity shadow gltf-model="#new_test" rotation="0 180 0" position="0 0 160" blending="none" transparent="false" side="double"></a-entity>
     
     <a-entity class="collision" position="0 .2 0" material="color: #d37070" shadow geometry="primitive: box; width: 1000; height: .1; depth: 500"></a-entity>
     
     <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-      <a-camera id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true" fov="43.8"></a-entity>
-      <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-camera id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true" fov="43.8">
     </a-entity>
-      </a-entity>
-  </a-entity>
+    <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+    <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
   </a-scene>
   </body>
   

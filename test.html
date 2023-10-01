@@ -4,38 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
-  <title>EG Zoo AR Experience</title>
-  <script type="text/javascript" src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <title>EG ZOO AR Experience</title>
+  <script src="aframe.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.4.0/dist/aframe-cursor-teleport-component.min.js"></script>
-  <script src="aframe-cursor-teleport.js"></script>
+  <script src="link-controls.js"></script>
+  <script src="camera-position.js"></script>
 </head>
 <body>
-
-  <a-scene style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative;" antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" cursor="rayOrigin: mouse" embedded>
-
-    <a-assets>
-      <a-asset-item id="new_test" src="assets/entrancedaegltf.gltf"></a-asset-item>
-    </a-assets>
-    <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
-
-    <a-entity light="intensity: 0.25; castShadow: true; type: point; shadowBias: -0.001" position="-283.55661 56.62303 -212.43367" data-aframe-default-light="" aframe-injected="" rotation="-58.00000000000001 0 0"></a-entity>
-    <!-- start -->
-    <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
+  <div class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti animi aliquid architecto quibusdam ipsum, debitis dolor mollitia. Quidem, cumque quos porro doloribus iure dolore illum, qui rem asperiores unde laboriosam.Dolorum tempora quam eveniet ea recusandae deserunt, velit similique. Cum sunt rerum beatae officiis qui sed molestiae et ullam quasi, harum maxime vel, aspernatur quidem molestias. Provident quae illo harum?Sunt expedita, repellat saepe vel accusamus odio. Alias, obcaecati harum earum inventore asperiores quaerat, sit autem nostrum. Sunt illo numquam, temporibus pariatur optio nam, expedita necessitatibus aliquid nemo maxime nisi. Praesentium corporis, ea sunt asperiores, recusandae animi, rem doloribus, possimus cum laudantium libero. Maiores a, iusto aspernatur reiciendis ratione sunt nisi, rem, quasi temporibus ullam non. Neque repellat facilis illo.Quibusdam reiciendis sunt tempora fuga deleniti, molestias temporibus doloremque. Nam sed consequatur consectetur ut tempora a nesciunt, perspiciatis dolorem reprehenderit modi enim at veritatis, excepturi voluptate quod, voluptatibus voluptas. Cum.Debitis, nesciunt, repellat voluptatem sapiente incidunt quidem asperiores reprehenderit vero quisquam placeat sunt voluptatibus velit. Consectetur atque voluptates, repellendus facere sequi ea totam quia quis non incidunt. Soluta, aut, provident. Eos sequi itaque dolorem atque ex id maiores dolor eaque libero iste deserunt ea voluptate minima cum laboriosam, qui animi, fuga suscipit necessitatibus vero, autem blanditiis, totam nulla. Quo, et. Quisquam commodi voluptatum dolorem aspernatur, distinctio et ullam laborum laboriosam quo nisi, praesentium quaerat ab excepturi. Illum harum doloremque, accusantium, beatae culpa assumenda laboriosam, quos mollitia aperiam dolorem praesentium minus!</p>
+  </div>
+  
+  <div id="ar">
+    <div id="splash">
+      <div class="loading"></div>
+    </div>
+    <a-scene embedded style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative;"ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" stats antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse">
+      <a-assets>
+        <a-asset-item id="new_test2" src="assets/everythingtesttextured1.gltf"></a-asset-item>
+        <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item>
+        
+        <img id="preview" src="assets/industrial_sunset_puresky_4k_new.jpg">
+      </a-assets>
+      <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
+  
+      <a-entity light="intensity: 0.42; type: ambient"></a-entity>
+      <a-entity light="intensity: 0.5; castShadow: true; type: point; shadowBias: -0.003; decay: -0.3" position="60.879 136.62738 101.03318" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
+      <a-entity light="type:directional; intensity: 0.48" position="-0.5 -4.30949 5.35426"></a-entity>
+      <!-- start -->
+      <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
+      
+      <a-entity shadow="cast: true" obj-model="obj: #entrancefinal-o; mtl: #entrancefinal-m" blending="none" transparent="false" side="double"></a-entity>
+      <a-entity class="collision" shadow="cast: false" obj-model="obj: #pathfinal-o; mtl: #pathfinal-m" blending="none" transparent="false" side="double"></a-entity>
+      <!-- end -->
+  
+      <a-link href="index.html" position="-205.50234 9 33.70251" image="#preview" peekmode="true" title="WORK IN PROGRESS" geometry="primitive: circle; radius: 10; segments: 64" material="shader: portal; pano: http://127.0.0.1:5500/assets/industrial_sunset_puresky_4k_new.jpg; side: double; alphaTest: 0.31; backgroundColor: #1D2951; strokeColor: #ffffff" link="borderColor: #ffffff"><a-entity text="color: white; align: center; font: kelsonsans; value: NEW; width: 50; height: 50" position="0 1.5 0" rotation="0 180 0"></a-entity><a-entity geometry="primitive: sphere; radius: 2; segmentsWidth: 16; segmentsHeight: 32; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
     
-    <a-entity shadow="cast: true" obj-model="obj: #entrancefinal-o; mtl: #entrancefinal-m" blending="none" transparent="false" side="double"></a-entity>
-    <a-entity class="collision" shadow="cast: false" obj-model="obj: #pathfinal-o; mtl: #pathfinal-m" blending="none" transparent="false" side="double"></a-entity>
-    <!-- end -->
-
-    <a-entity shadow gltf-model="#new_test" rotation="0 180 0" position="0 0 160" blending="none" transparent="false" side="double"></a-entity>
+      <a-entity class="collision" shadow gltf-model="#new_test2" rotation="0 180 0" position="300 2 160" blending="none" transparent="false" side="double"></a-entity>
+      <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity>
     
-    <a-entity class="collision" position="0 .2 0" material="color: #d37070" shadow geometry="primitive: box; width: 1000; height: .1; depth: 500"></a-entity>
-    
-    <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-      <a-camera id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true" fov="43.8">
-    </a-entity>
-    <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-    <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-  </a-scene>
+      <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
+        <a-camera id="head" position="0 8 0" camera look-controls="reverseMouseDrag: true" fov="43.8">
+      </a-entity>
+      <a-entity laser-controls="hand: left" raycaster="objects: .clickable; far: 100" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+      <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
+    </a-scene>
+  </div>
+  
+  <div class="content">
+    <p>BOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDERBOBTHEBUILDER ipsum dolor sit amet, consectetur adipisicing elit. Deleniti animi aliquid architecto quibusdam ipsum, debitis dolor mollitia. Quidem, cumque quos porro doloribus iure dolore illum, qui rem asperiores unde laboriosam.Dolorum tempora quam eveniet ea recusandae deserunt, velit similique. Cum sunt rerum beatae officiis qui sed molestiae et ullam quasi, harum maxime vel, aspernatur quidem molestias. Provident quae illo harum?Sunt expedita, repellat saepe vel accusamus odio. Alias, obcaecati harum earum inventore asperiores quaerat, sit autem nostrum. Sunt illo numquam, temporibus pariatur optio nam, expedita necessitatibus aliquid nemo maxime nisi. Praesentium corporis, ea sunt asperiores, recusandae animi, rem doloribus, possimus cum laudantium libero. Maiores a, iusto aspernatur reiciendis ratione sunt nisi, rem, quasi temporibus ullam non. Neque repellat facilis illo.Quibusdam reiciendis sunt tempora fuga deleniti, molestias temporibus doloremque. Nam sed consequatur consectetur ut tempora a nesciunt, perspiciatis dolorem reprehenderit modi enim at veritatis, excepturi voluptate quod, voluptatibus voluptas. Cum.Debitis, nesciunt, repellat voluptatem sapiente incidunt quidem asperiores reprehenderit vero quisquam placeat sunt voluptatibus velit. Consectetur atque voluptates, repellendus facere sequi ea totam quia quis non incidunt. Soluta, aut, provident. Eos sequi itaque dolorem atque ex id maiores dolor eaque libero iste deserunt ea voluptate minima cum laboriosam, qui animi, fuga suscipit necessitatibus vero, autem blanditiis, totam nulla. Quo, et. Quisquam commodi voluptatum dolorem aspernatur, distinctio et ullam laborum laboriosam quo nisi, praesentium quaerat ab excepturi. Illum harum doloremque, accusantium, beatae culpa assumenda laboriosam, quos mollitia aperiam dolorem praesentium minus!</p>
+  </div>
   </body>
   
 </html>

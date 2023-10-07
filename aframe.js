@@ -16373,7 +16373,7 @@ module.exports.Component = registerComponent('link', {
       value: this.data.title || this.data.href,
       width: 20
     });
-    textEl.setAttribute('position', '0 2 0');
+    textEl.setAttribute('position', '0 2 1');
     el.appendChild(textEl);
 
     // Set sphere rendered when camera is close to portal to allow user to peek inside.
@@ -16487,8 +16487,8 @@ module.exports.Component = registerComponent('link', {
           } else {
             textEl.setAttribute('rotation', '0 0 0');
           }
-          textEl.setAttribute('text', 'width', 5);
-          textEl.setAttribute('position', '0 1.5 0');
+          textEl.setAttribute('text', 'width', 20);
+          textEl.setAttribute('position', '0 1.5 1');
           el.getObject3D('mesh').visible = true;
           this.semiSphereEl.setAttribute('visible', false);
           this.peekCameraPortalOrientation = undefined;

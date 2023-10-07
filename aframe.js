@@ -16356,7 +16356,7 @@ module.exports.Component = registerComponent('link', {
     // Set portal.
     el.setAttribute('geometry', {
       primitive: 'circle',
-      radius: 12.0,
+      radius: 10.0,
       segments: 64
     });
     el.setAttribute('material', {
@@ -16371,18 +16371,18 @@ module.exports.Component = registerComponent('link', {
       align: 'center',
       font: 'kelsonsans',
       value: this.data.title || this.data.href,
-      width: 3
+      width: 20
     });
-    textEl.setAttribute('position', '0 10 0');
+    textEl.setAttribute('position', '0 2 0');
     el.appendChild(textEl);
 
     // Set sphere rendered when camera is close to portal to allow user to peek inside.
     semiSphereEl.setAttribute('geometry', {
       primitive: 'sphere',
-      radius: 2.0,
+      radius: 3.0,
       phiStart: 0,
-      segmentsWidth: 16,
-      segmentsHeight: 32,
+      segmentsWidth: 64,
+      segmentsHeight: 64,
       phiLength: 180,
       thetaStart: 0,
       thetaLength: 360
@@ -16393,7 +16393,7 @@ module.exports.Component = registerComponent('link', {
       pano: this.data.image,
       side: 'back'
     });
-
+    semiSphereEl.setAttribute('rotation', '0 180 0');
     semiSphereEl.setAttribute('position', '0 0 0');
     semiSphereEl.setAttribute('visible', false);
     el.appendChild(semiSphereEl);
@@ -16401,7 +16401,7 @@ module.exports.Component = registerComponent('link', {
     // Set sphere rendered when camera is close to portal to allow user to peek inside.
     sphereEl.setAttribute('geometry', {
       primitive: 'sphere',
-      radius: 12,
+      radius: 10,
       segmentsWidth: 64,
       segmentsHeight: 64
     });
@@ -16466,16 +16466,15 @@ module.exports.Component = registerComponent('link', {
           if (this.semiSphereEl.getAttribute('visible') === true) {
             return;
           }
-          textEl.setAttribute('text', 'width', 50);
-          textEl.setAttribute('text', 'height', 50);
+          textEl.setAttribute('text', 'width', 10);
           if (cameraPortalOrientation <= 0.0) {
             textEl.setAttribute('position', '0 0 0.75');
-
-
+            textEl.setAttribute('rotation', '0 180 0');
+            this.semiSphereEl.setAttribute('rotation', '0 0 0');
           } else {
             textEl.setAttribute('position', '0 0 -0.75');
-
-
+            textEl.setAttribute('rotation', '0 0 0');
+            this.semiSphereEl.setAttribute('rotation', '0 180 0');
           }
           el.getObject3D('mesh').visible = false;
           this.semiSphereEl.setAttribute('visible', true);
@@ -16484,12 +16483,11 @@ module.exports.Component = registerComponent('link', {
           // Calculate wich side the camera is approaching the camera (back / front).
           // Adjust text orientation based on camera position.
           if (cameraPortalOrientation <= 0.0) {
-
+            textEl.setAttribute('rotation', '0 180 0');
           } else {
-
+            textEl.setAttribute('rotation', '0 0 0');
           }
-          textEl.setAttribute('text', 'width', 50);
-          textEl.setAttribute('text', 'height', 50);
+          textEl.setAttribute('text', 'width', 5);
           textEl.setAttribute('position', '0 1.5 0');
           el.getObject3D('mesh').visible = true;
           this.semiSphereEl.setAttribute('visible', false);

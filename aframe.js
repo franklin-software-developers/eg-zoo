@@ -16449,6 +16449,8 @@ module.exports.Component = registerComponent('link', {
       elWorldPosition.setFromMatrixPosition(object3D.matrixWorld);
       cameraWorldPosition.setFromMatrixPosition(camera.matrixWorld);
       distance = elWorldPosition.distanceTo(cameraWorldPosition);
+
+
       if (distance > 20) {
         // Store original orientation to be restored when the portal stops facing the camera.
         if (!this.previousQuaternion) {
@@ -16464,9 +16466,9 @@ module.exports.Component = registerComponent('link', {
         if (distance < 0.5) {
           // Configure text size and sphere orientation depending side user approaches portal.
           if (this.semiSphereEl.getAttribute('visible') === true) {
-            return;
+            return; 
           }
-          textEl.setAttribute('text', 'width', 10);
+          // textEl.setAttribute('text', 'width', 10);
           if (cameraPortalOrientation <= 0.0) {
             textEl.setAttribute('position', '0 0 0.75');
             textEl.setAttribute('rotation', '0 180 0');
@@ -16482,21 +16484,21 @@ module.exports.Component = registerComponent('link', {
         } else {
           // Calculate wich side the camera is approaching the camera (back / front).
           // Adjust text orientation based on camera position.
-          if (cameraPortalOrientation <= 0.0) {
-            textEl.setAttribute('rotation', '0 180 0');
-          } else {
-            textEl.setAttribute('rotation', '0 0 0');
-          }
+          // if (cameraPortalOrientation <= 0.0) {
+          //   textEl.setAttribute('rotation', '0 180 0');
+          // } else {
+          //   textEl.setAttribute('rotation', '0 0 0');
+          // }
           textEl.setAttribute('text', 'width', 20);
-          textEl.setAttribute('position', '0 1.5 1');
+          // textEl.setAttribute('position', '0 1.5 1');
           el.getObject3D('mesh').visible = true;
           this.semiSphereEl.setAttribute('visible', false);
           this.peekCameraPortalOrientation = undefined;
         }
-        if (this.previousQuaternion) {
-          object3D.quaternion.copy(this.previousQuaternion);
-          this.previousQuaternion = undefined;
-        }
+        // if (this.previousQuaternion) {
+        //   object3D.quaternion.copy(this.previousQuaternion);
+        //   this.previousQuaternion = undefined;
+        // }
       }
     };
   }(),

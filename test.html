@@ -19,10 +19,12 @@
         <img id="preview" src="assets/industrial_sunset_puresky_4k_new.jpg">
       </a-assets>
       <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
-  
-      <a-entity light="color:#FCF9D9; intensity: 0.42; type: ambient"></a-entity>
-      <a-entity light="color:#FCF9D9; intensity: 0.5; castShadow: true; type: point; shadowBias: -0.003; decay: -0.3" position="60.879 136.62738 101.03318" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
-      <a-entity light="color:#FCF9D9; type:directional; intensity: 0.48" position="-0.5 -4.30949 5.35426"></a-entity>
+      <!-- building -->
+      <a-entity light="color:#FCF6EA; intensity: 0.42; type: ambient"></a-entity>
+      <!-- shadow -->
+      <a-entity light="color:#FCF6EA; intensity: 0.5; castShadow: true; type: point; shadowBias: -0.003; decay: -0.3" position="60.879 136.62738 101.03318" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
+      <!-- sun -->
+      <a-entity light="color:#FCF9D9; type:directional; intensity: 1" position="-0.5 -4.30949 5.35426"></a-entity>
       <!-- start -->
       <a-entity shadow="cast: true" obj-model="obj: #test-o; mtl: #test-m" blending="none" transparent="false" side="double"></a-entity>
       

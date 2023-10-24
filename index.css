@@ -1,0 +1,153 @@
+body {
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+}
+
+p.p1 {
+    color: white;
+    margin-left: 30px;
+    font-size: 25px;
+    width: 1000px;
+    height: 25px;
+    position: absolute;
+    line-height: 0;
+    margin-top: 125px
+}
+p.p2 {
+    margin-top: 175px;
+    margin-left: 30px;
+    background-color: #ADD745;
+    text-align: center;
+    position: absolute;
+    text-decoration: none;
+    height: 125px; /*125px*/
+    width: 500px; 
+    font-size: 70px;
+    white-space: nowrap;
+    line-height: 125px;
+    border-radius: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+p.p3 {
+    color: white;
+    position: absolute;
+    margin-left: 1325px;
+    text-decoration: underline;
+    margin-top: 125px;
+    width: 300px;
+    font-size: 30px;
+}
+p.p4 {
+    color: white;
+    position: absolute;
+    text-decoration: underline;
+    margin-left: 1325px;
+    margin-top: 250px;
+    width: 400px;
+    font-size: 30px;
+}
+p.p5 {
+    color: white;
+    position: absolute;
+    margin-left: 1325px;
+    text-decoration: underline;
+    margin-top: 375px;
+    width: 500px;
+    font-size: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+a.tdlink {
+    color: #333333;
+}
+
+.image { 
+    background: url("./images/zooanimals.png");
+    width: 100%; 
+    height: 510px; /*510px*/
+    background-size:100%;
+}
+
+.rectangle {
+    width: 100%;
+    height: 600px;
+    background: white;
+}
+
+p.recp1 {
+    text-align: left;
+    width: 100% - 300px;
+    color: #2F75A7;
+    font-size: 49px;
+    font-size-adjust: none;
+    margin-top: 100px;
+    margin-left: 40px;
+    position: absolute;
+}
+
+p.recp2 {
+    text-align: left;
+    width: 100% - 300px;
+    font-size: 27px;
+    font-size-adjust: none;
+    margin-top: 350px;
+    margin-left: 40px;
+    position: absolute;
+}
+
+.tutorial {
+    width: 100%;
+    height: 600px;
+    background-color: #D9D9D9;
+}
+
+.credits {
+    width: 100%;
+    height: 750px;
+    background-color: #D9D9D9;
+    display: flexbox;
+}
+
+p.contr {
+    position: absolute;
+    font-size: 35px;
+    margin-left: 40px;
+    margin-top: 40px;
+    display: flexbox;
+}
+
+.roles {
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    margin-left: -200px;
+    margin-top: 100px;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.names {
+    position: absolute;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 100px;
+    margin-left: 100px;
+    display: flexbox;
+    flex-direction: column;
+}
+
+.fsdimage {
+    position: absolute;
+    display: flexbox;
+    background-image: url("./assets/industrial_sunset_puresky_4k_new.jpg");
+    width: 400px;
+    height: 400px;
+    margin-left: 1300px;
+    margin-top: 150px;
+}

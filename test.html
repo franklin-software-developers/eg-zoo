@@ -7,6 +7,7 @@
   <title>EG ZOO AR Experience</title>
   <script src="aframe.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.4.0/dist/aframe-cursor-teleport-component.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.1.0/dist/aframe-extras.min.js"></script>
   <script src="link-controls.js"></script>
   <script src="camera-position.js"></script>
 </head>
@@ -15,9 +16,12 @@
       <a-assets>
         <a-asset-item id="new_test2" src="assets/entrancearea2.gltf"></a-asset-item>
         <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item>
+        <a-asset-item id="giraffe" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
+        <a-asset-item id="giraffe2" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
         
         <img id="preview" src="assets/industrial_sunset_puresky_4k_new.jpg">
       </a-assets>
+      
       <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
       <!-- building -->
       <a-entity light="color:#FCF6EA; intensity: 0.42; type: ambient"></a-entity>
@@ -32,10 +36,13 @@
       <a-entity class="collision" shadow="cast: false" obj-model="obj: #pathfinal-o; mtl: #pathfinal-m" blending="none" transparent="false" side="double"></a-entity>
       <!-- end -->
   
+      <a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="-47.45 -6.32531 173.8" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="assets/giraffe.glb" animation-mixer="clip:Take 01; loop: 2; timeScale: .8" material="side: double" position="-80 8.59 163" scale="10 11 10" rotation="-0.778 -75 0.084"></a-entity>
+
       <a-link href="new.html" position="-205 9 35" image="#preview" peekMode="true" title="Savannah"></a-link>
     
       <a-entity class="collision" shadow="" gltf-model="#new_test2" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity>
-      <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity>
+      <!-- <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity> -->
     
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
         <a-camera id="head" position="0 8 0" camera wasd-controls="enabled:false" look-controls="reverseMouseDrag: true" fov="43.8">

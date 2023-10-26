@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
   <title>EG ZOO AR Experience</title>
-  <script src="aframe_scripts/aframe.js"></script>
-  <script src="aframe_scripts/aframe-cursor-teleport-component.js"></script>
+  <script src="scripts/aframe.js"></script>
+  <script src="scripts/aframe-cursor-teleport-component.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.1.0/dist/aframe-extras.min.js"></script>
-  <script src="aframe_scripts/link-controls.js"></script>
-  <script src="aframe_scripts/camera-position.js"></script>
+  <script src="scripts/link-controls.js"></script>
+  <script src="scripts/camera-position.js"></script>
 </head>
 <body>
   <a-scene loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse">
@@ -31,7 +31,7 @@
       <!-- start -->
       <a-box material="color: red" geometry="" position="0 12 0"></a-box>
       
-      <a-link href="entrance.html" position="120 0 -260" image="#preview" peekMode="true" title="Exhibit"></a-link>
+      <a-link href="entrance.html" position="120 0 -260" image="#preview" peekMode="true" title="Entrance"></a-link>
     
       <a-entity class="collision" shadow="" gltf-model="#new_test4" rotation="0 180 0" position="675 -10 -154" blending="none" transparent="false" side="double"></a-entity>
       <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity>

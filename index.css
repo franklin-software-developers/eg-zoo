@@ -405,7 +405,7 @@ p.contr {
 
   .column-boxes {
     flex: 33.33%;
-    height: 200px;
+    height: 10px;
     font-size: 20px;
     font-family: 'Lato', Arial, Verdana, sans-serif;
     text-align: left;

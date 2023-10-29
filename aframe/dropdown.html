@@ -1,0 +1,56 @@
+<style>
+  h4{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align:center;
+    font-size: larger;
+    opacity: 100%;
+  }
+  body{
+    margin:0;
+  }
+  div{
+    float:right;
+    position:relative;
+    background-color:#33333372;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0 64 20 64;
+    text-align:center;
+  }
+
+  select{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 5px;
+    padding:3px;
+    cursor:pointer;
+    font-size: large;
+  }
+
+</style>
+
+<div style="display:none" id="ddown">
+    <h4>Select Exhibit</h4>
+    <select id="dropdownSelect" onchange="this.ownerDocument.defaultView.parent.location.replace(document.querySelector('#dropdownSelect').value)" selected="Select One">
+      <option>Select One</option>
+      <option value="entrance.html">Entrance</option>
+      <option value="savanna1.html">Savannah</option>
+      <option value="">Exhibit 3</option>
+      <option value="">Exhibit 4</option>
+    </select> 
+</div>
+
+<script>
+  var s = false;
+  function f() {
+    if(!s){
+      s=true
+    } else {
+      document.querySelector("#ddown").style.display="block";
+    }
+  }
+  var observer = new MutationObserver(f) || new WebKitMutationObserver(f);
+
+  observer.observe(document.defaultView.parent.document.querySelector(".a-loader-title"), {attributes:true});
+</script>

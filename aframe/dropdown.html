@@ -43,14 +43,14 @@
 
 <script>
   var s = false;
-
-  var observer = new document.defaultView.parent.MutationObserver(function() {
+  function f() {
     if(!s){
       s=true
     } else {
       document.querySelector("#ddown").style.display="block";
     }
-  });
+  }
+  var observer = new MutationObserver(f) || new WebKitMutationObserver(f);
 
   observer.observe(document.defaultView.parent.document.querySelector(".a-loader-title"), {attributes:true});
 </script>

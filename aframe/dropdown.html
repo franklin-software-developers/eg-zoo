@@ -27,9 +27,10 @@
     cursor:pointer;
     font-size: large;
   }
+
 </style>
 
-<div>
+<div style="display:none" id="ddown">
     <h4>Select Exhibit</h4>
     <select id="dropdownSelect" onchange="this.ownerDocument.defaultView.parent.location.replace(document.querySelector('#dropdownSelect').value)" selected="Select One">
       <option>Select One</option>
@@ -39,3 +40,17 @@
       <option value="">Exhibit 4</option>
     </select> 
 </div>
+
+<script>
+  var s = false;
+
+  var observer = new document.defaultView.parent.MutationObserver(function() {
+    if(!s){
+      s=true
+    } else {
+      document.querySelector("#ddown").style.display="block";
+    }
+  });
+
+  observer.observe(document.defaultView.parent.document.querySelector(".a-loader-title"), {attributes:true});
+</script>

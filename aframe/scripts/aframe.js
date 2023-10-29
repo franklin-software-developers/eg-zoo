@@ -27387,7 +27387,9 @@ class AScene extends AEntity {
       // that we are also `requestPresent`ing. Until then, don't fullscreen if headset
       // connected.
       if (!self.isMobile && !self.checkHeadsetConnected()) {
-        requestFullscreen(self.canvas);
+        // requestFullscreen(self.canvas);
+        // Customization: fullscreen entire a-scene to include dropdown menu
+        requestFullscreen(self.canvas.parentElement); 
       }
       self.resize();
       if (resolve) {

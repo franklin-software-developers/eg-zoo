@@ -153,31 +153,31 @@ p.contr {
 }*/
 
 .ttrClick {
-    background-image: url("../eg-zoo/images/tutorialClick.png");
+    background-image: url("images/tutorialClick.png");
     width: 600px;
     height: 337px;
 }
 
 .ttrClick:hover {
-    background-image: url("../eg-zoo/images/tutorialClick.gif");
+    background-image: url("images/tutorialClick.gif");
 }
 
 .ttrPortal {
-    background-image: url("../eg-zoo/images/tutorialPortal.png");
+    background-image: url("images/tutorialPortal.png");
     width: 600px;
     height: 337px;
 }
 
 .ttrPortal:hover {
-    background-image: url("../eg-zoo/images/tutorialPortal.gif");
+    background-image: url("images/tutorialPortal.gif");
 }
 
 .ttrTurn {
-    background-image: url("../eg-zoo/images/tutorialTurn.png");
+    background-image: url("images/tutorialTurn.png");
     width: 600px;
     height: 337px;
 }
 
 .ttrTurn:hover {
-    background-image: url("../eg-zoo/images/tutorialTurn.gif");
+    background-image: url("images/tutorialTurn.gif");
 }

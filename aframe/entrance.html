@@ -12,7 +12,7 @@
   <script src="scripts/camera-position.js"></script>
 </head>
 <body>
-    <a-scene loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: basic;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse" id="scene">
+    <a-scene loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse" id="scene">
       <iframe src="dropdown.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe>
 
       <a-assets>
@@ -31,7 +31,7 @@
       <!-- shadow -->
       <a-entity light="color:#FCF6EA; intensity: 0.5; castShadow: true; type: point; shadowBias: -0.003; decay: -0.3" position="60.879 136.62738 101.03318" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
       <!-- sun -->
-      <a-entity light="color:#FCF9D9; type:directional; intensity: 1" position="-0.5 -4.30949 5.35426"></a-entity>
+      <a-entity light="color:#FCF9D9; type:directional; intensity: 2" position="-0.5 -4.30949 5.35426"></a-entity>
       
       <!-- start -->
       <a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="-47.45 -6.32531 173.8" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>

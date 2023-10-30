@@ -15794,7 +15794,7 @@ module.exports.Component = registerComponent('light', {
       }
     },
     shadowRadius: {
-      default: 1,
+      default: 1.5,
       if: {
         castShadow: true
       }

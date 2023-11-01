@@ -18,7 +18,6 @@
         <a-asset-item id="new_test4" src="assets/everythingtesttextured2.gltf"></a-asset-item>
         <a-asset-item id="boundary" src="assets/entrancepath.gltf"></a-asset-item>
         <!-- <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item> -->
-        <a-asset-item id="giraffe" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
         <a-asset-item id="giraffe2" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
         <img id="preview" src="assets/industrial_sunset_puresky_4k_new.jpg">
       </a-assets>
@@ -34,9 +33,10 @@
       <!-- start -->   
       <a-link href="entrance.html" position="-97 -0.37 -439" image="#preview" peekMode="true" title="Entrance"></a-link>
 
-<a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="-47.45 -6.32531 173.8" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="assets/giraffe.glb" animation-mixer="clip:Take 01; loop: 2; timeScale: .8" material="side: double" position="-80 8.59 163" scale="10 11 10" rotation="-0.4244 -75 0.179"></a-entity>
-
+<a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="-138 -17.865 -145.26" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
+      <a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.5" material="side: double" position="-167 -19.27 139.59" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
+      
+      
       <a-entity class="collision" shadow="" gltf-model="#boundary" rotation="0 180 0" position="209 -10 -157" blending="none" transparent="false" side="double"></a-entity>
       <a-entity shadow="" gltf-model="#new_test4" rotation="0 180 0" position="209 -10 -157" blending="none" transparent="false" side="double"></a-entity>
       <!-- <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity> -->

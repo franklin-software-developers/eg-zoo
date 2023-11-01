@@ -465,7 +465,7 @@ p.contr {
   border-radius: 6px;
 }
 
-    @media screen and (max-width: 600px), (max-height: 400px) {
+    @media screen and (max-width: 780px), (max-height: 780px) {
   #fullscreen {
     visibility: visible;
     display: block;

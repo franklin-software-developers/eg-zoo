@@ -409,20 +409,49 @@ p.contr {
   font-size: 20px;
   font-family: 'Lato', Arial, Verdana, sans-serif;
   text-align: left;
-  padding-bottom: 300px;
-  margin-bottom: 100px;
+  padding-bottom: 10%;
+  margin-bottom: 15%;
   margin-left: .1%;
   margin-right: .1%;
 }
 
+
 .container-boxes {
   background-color: #f8f8f8;
-  padding: 30px;
+  padding: 1%;
   display: flex;
 }
 
 #tutorialTitle {
   margin-left: 20px;
+}
+
+.tutorialText {
+  text-align: left;
+  font-size: 25px;
+  height: 20px;
+  padding: 1%;
+}
+
+@media screen and (max-width: 780px), (max-height: 780px) {
+  .tutorialText {
+  font-size: 15px;
+      height: 10px;
+  }
+}
+
+@media screen and (max-width: 400px), (max-height: 400px) {
+  .tutorialText {
+  font-size: 10px;
+      height: 10px;
+  }
+}
+
+@media screen and (max-width: 780px), (max-height: 780px) {
+  .firstCharacter {
+  font-size: 15px;
+      height: 10px;
+  }
 }
 
 .firstcharacter {

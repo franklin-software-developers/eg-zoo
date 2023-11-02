@@ -13,32 +13,38 @@
 </head>
 <body>
   <a-scene stats loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse">
-    <iframe src="dropdown.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe>  
+    <!-- <iframe src="dropdown.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe> -->
       <a-assets>
         <a-asset-item id="new_test4" src="assets/everythingtesttextured2.gltf"></a-asset-item>
         <a-asset-item id="boundary" src="assets/entrancepath.gltf"></a-asset-item>
-        <!-- <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item> -->
         <a-asset-item id="giraffe2" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
+        <!-- <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item> -->
+        
         <img id="preview" src="assets/industrial_sunset_puresky_4k_new.jpg">
       </a-assets>
       
-      <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg" scale="1.25 1.25 1.25"></a-sky>
+      <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg" scale="1.25 1.25 1.25" position="182 0 327"></a-sky>
       <!-- building -->
-      <a-entity light="color:#FCF6EA; intensity: 0.42; type: ambient"></a-entity>
+      <a-entity light="color:#FCF6EA; intensity: 0.42; type: ambient" position="182 0 327"></a-entity>
       <!-- shadow -->
-      <a-entity light="color:#FCF6EA; intensity: 0.5; castShadow: true; type: point; shadowBias: -0.007; decay: -0.3; distance: 0.000" position="0 136.62738 0" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
+      <a-entity light="color:#FCF6EA; intensity: 0.5; castShadow: true; type: point; shadowBias: -0.007; decay: -0.3; distance: 0.000" position="182 136 327" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
       <!-- sun -->
-      <a-entity light="color:#FCF9D9; type:directional; intensity: 1" position="-0.5 -4.30949 5.35426"></a-entity>
+      <a-entity light="color:#FCF9D9; type:directional; intensity: 1; target: new_test4" position="182 -4.30949 327"></a-entity>
+      
+      <a-entity light="color: #FCF6EA; intensity: 0.15; type: spot; shadowBias: -0.007; decay: -0.3" position="40.45326 205.68609 -263.93782" data-aframe-default-light="" aframe-injected="" rotation="-60 -168 0"></a-entity>
+      
+      
+      <a-entity light="color: #FCF6EA; intensity: 0.1; type: spot; shadowBias: -0.007; decay: -0.3" position="182 400 327" data-aframe-default-light="" aframe-injected="" rotation="-90 0 0"></a-entity>
       
       <!-- start -->   
       <a-link href="entrance.html" position="-97 -0.37 -439" image="#preview" peekMode="true" title="Entrance"></a-link>
 
-<a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="-138 -17.865 -145.26" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
-      <a-entity shadow="cast: true" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.5" material="side: double" position="-167 -19.27 139.59" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
+      <a-entity shadow="cast: true; receive: true;" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="4 -17.865 191" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
+      <a-entity shadow="cast: true; receive: true;" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.7; startAt: 3.4; timeScale: 0.8" material="side: double" position="-29 -17.54 194" scale="10 10 10" rotation="0.289 133 2.59"></a-entity>
       
       
-      <a-entity class="collision" shadow="" gltf-model="#boundary" rotation="0 180 0" position="209 -10 -157" blending="none" transparent="false" side="double"></a-entity>
-      <a-entity shadow="" gltf-model="#new_test4" rotation="0 180 0" position="209 -10 -157" blending="none" transparent="false" side="double"></a-entity>
+      <a-entity class="collision" shadow="" gltf-model="#boundary" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity>
+      <a-entity shadow="" gltf-model="#new_test4" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity>
       <!-- <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity> -->
       <!-- end -->
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">

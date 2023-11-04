@@ -12,10 +12,11 @@
   <script src="scripts/camera-position.js"></script>
 </head>
 <body>
-  <a-scene stats loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse">
+  <a-scene loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse">
     <!-- <iframe src="dropdown.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe> -->
       <a-assets>
-        <a-asset-item id="new_test4" src="assets/everythingtesttextured2.gltf"></a-asset-item>
+        <!-- <a-asset-item id="new_test4" src="assets/everythingtesttextured2.gltf"></a-asset-item> -->
+        <a-asset-item id="preview3" src="assets/preview3.gltf"></a-asset-item>
         <a-asset-item id="boundary" src="assets/entrancepath.gltf"></a-asset-item>
         <a-asset-item id="giraffe2" response-type="arraybuffer" src="assets/giraffe.glb"></a-asset-item>
         <!-- <a-asset-item id="new_test3" src="assets/entranceborder.gltf"></a-asset-item> -->
@@ -42,9 +43,14 @@
       <a-entity shadow="cast: true; receive: true;" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 2" material="side: double" position="4 -17.865 191" scale="10 10 10" rotation="0.289 -140.722 2.654"></a-entity>
       <a-entity shadow="cast: true; receive: true;" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.7; startAt: 3.4; timeScale: 0.8" material="side: double" position="-29 -17.54 194" scale="10 10 10" rotation="0.289 133 2.59"></a-entity>
       
-      
+      <a-entity shadow="" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.7; startAt: 5.2" material="side: double" position="197.95123 -17.9333 172.18637" scale="10 10 10" rotation="0.2887707287459349 147.25359109539235 2.653940507045973"></a-entity>
+      <a-entity shadow="" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 0.8; startAt: 10.3" material="side: double" position="4 -17.865 381.98609" scale="10 10 10" rotation="0.2887707287459349 -90.72729390117073 2.653940507045973"></a-entity>
+      <a-entity shadow="" gltf-model="assets/giraffe2.glb" animation-mixer="clip: loopEating; loop: 1.2" material="side: double" position="-140.06935 -17.865 327.4051" scale="10 10 10" rotation="0.2887707287459349 132.9416783308195 2.653940507045973"></a-entity>
+
       <a-entity class="collision" shadow="" gltf-model="#boundary" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity>
-      <a-entity shadow="" gltf-model="#new_test4" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity>
+      <!-- <a-entity shadow="" gltf-model="#new_test4" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity> -->
+      <a-entity shadow="" gltf-model="#preview3" rotation="0 180 0" position="391 -10 170" blending="none" transparent="false" side="double"></a-entity>
+      
       <!-- <a-entity class="collision" gltf-model="#new_test3" rotation="0 180 0" position="300 0 150" blending="none" transparent="false" side="double"></a-entity> -->
       <!-- end -->
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
@@ -55,4 +61,5 @@
       <a-entity laser-controls="hand: right" raycaster="objects: .clickable" line="color: red; opacity: 0.75" blink-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
     </a-scene>
   </div>
+  
 </html>

@@ -428,7 +428,7 @@ p.contr {
 
 .tutorialText {
   text-align: left;
-  font-size: 25px;
+  font-size: 1em;
   height: 20px;
   padding: 1%;
 }
@@ -442,14 +442,14 @@ p.contr {
 
 @media screen and (max-width: 400px), (max-height: 400px) {
   .tutorialText {
-  font-size: 10px;
+  font-size: 15px;
       height: 10px;
   }
 }
 
 @media screen and (max-width: 780px), (max-height: 780px) {
   .firstCharacter {
-  font-size: 15px;
+  font-size: 1em;
       height: 10px;
   }
 }

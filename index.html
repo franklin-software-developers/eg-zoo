@@ -428,7 +428,7 @@
     padding-right: calc(var(--bs-gutter-x)*0.5);
     padding-left: calc(var(--bs-gutter-x)*0.5);
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
   }
 
   @media (min-width:36rem) {
@@ -1124,11 +1124,13 @@
   }
 
   .contribution-intro {
-    text-align:"left";
-    font-size:1.2em;
-    padding-top:3em;
+    text-align: "left";
+    font-size: 1.2em;
+    padding-top: 3em;
     margin: 0em 2em;
-}
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
 
   .justify-content-end {
     -webkit-box-pack: end !important;
@@ -1367,6 +1369,13 @@
   .card-img-overlay {
     background-color: rgba(0, 0, 0, .3);
     padding: 1rem 0
+  }
+
+  .contribution-intro {
+    text-align: "left";
+    font-size: 1.2em;
+    padding-top: 3em;
+    margin: 0em 2em;
   }
 
   .bg-title span {
@@ -1845,7 +1854,7 @@
 
   .header .block-tb-megamenu .tbm-main {
     width: 100%;
-    max-height: 77px;
+    max-height: 75px;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -1979,36 +1988,36 @@
       height: -moz-fit-content;
       height: fit-content
     }
-    
+
     @media screen and (max-width: 600px) {
-  .tbm-main {
-    visibility: visible;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-  }
-}
-    
-@media screen and (max-width: 600px) {
-  .tbm-button {
-    visibility: visible;
-    display: inline;
-  }
-}
+      .tbm-main {
+        visibility: visible;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .tbm-button {
+        visibility: visible;
+        display: inline;
+      }
+    }
 
     @media screen and (max-width: 400px), (max-height: 400px) {
-  .tbm-collapse {
-    visibility: hidden;
-    clear: both;
-    float: left;
-    margin: 10px auto 5px 20px;
-    width: 28%;
-    display: none;
-    size: 1px;
-  }
-}
+      .tbm-collapse {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        margin: 10px auto 5px 20px;
+        width: 28%;
+        display: none;
+        size: 1px;
+      }
+    }
 
     .header .block-tb-megamenu .tbm-main .tbm-collapse {
       padding-top: 4.75rem;
@@ -2019,15 +2028,42 @@
     }
 
     .header .block-tb-megamenu .tbm-main .tbm-collapse ul {
-      background-color: #fff
+      background-color: #ffffff
     }
 
+    /*navigation bar spacing */
     .header .block-tb-megamenu .tbm-main .tbm-collapse ul li {
       width: 100%;
       margin-top: 0;
       border: 0;
       margin-bottom: 1.5rem;
-      padding: 0 1.25rem
+      padding: 0 1.25rem;
+    }
+
+    /*jump landscape nav bar*/
+    @media only screen and (orientation:landscape) {
+      .header .block-tb-megamenu .tbm-main .tbm-collapse {
+        padding-top: 1.5rem;
+        margin-left: -1.2em;
+        height: 100vh;
+        overflow: auto;
+        -webkit-box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3);
+        box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3)
+      }
+
+      .header .block-tb-megamenu .tbm-main .tbm-collapse ul li {
+        width: 100%;
+        margin-top: 0;
+        border: 1;
+        margin-bottom: 0rem;
+        padding: 0em 0em;
+        margin: 0em -16em;
+        left: 17em;
+      }
+
+      .tbm-link.level-1:focus {
+        background-color: #ffffff
+      }
     }
 
     .header .block-tb-megamenu .tbm-main .tbm-collapse ul li .tbm-link-container {
@@ -2095,7 +2131,7 @@
 
   @media only screen and (min-width:90rem) {
     .header .block-tb-megamenu .tbm-main .tbm-collapse ul li {
-      margin-top: .5rem
+      margin-top: .5rem;
     }
   }
 
@@ -4322,124 +4358,7 @@
               </div>
             </div>
           </nav>
-          <div id=block-mainnavigation class="block block-tb-megamenu block-tb-megamenu-menu-blockmain">
-
-
-            <div class=content>
-
-              <nav class="tbm tbm-main tbm-no-arrows animate slide" id=tbm-main data-breakpoint=767 data-duration=400
-                data-delay=200 aria-label="main navigation" data-initialized=true>
-                <button class="tbm-button sf-hidden" type=button aria-label=button data-uw-rm-empty-ctrl>
-
-                </button>
-                <div class=tbm-collapse>
-                  <ul class="tbm-nav level-0 items-7" role=list>
-                    <li class="tbm-item level-1 site-search-mobile tbm-justify tbm-item--has-dropdown sf-hidden"
-                      aria-level=1>
-
-
-                    </li>
-                    <li class="tbm-item level-1 tbm-item--has-dropdown" aria-level=1>
-                      <div class="tbm-link-container blabla">
-                        <a href=https://www.elkgrovecity.org/residents class="tbm-link level-1 tbm-toggle"
-                          title="Animal Services, Trash+Help" aria-expanded=false>
-                          Residents
-                          <span class=tbm-caption>Animals, Trash, Bus +Help</span>
-                        </a>
-                        <button class="tbm-submenu-toggle sf-hidden" aria-expanded=false></button>
-                      </div>
-                      <div class="tbm-submenu tbm-item-child sf-hidden" role=list>
-
-                      </div>
-                    </li>
-                    <li class="tbm-item level-1 tbm-item--has-dropdown" aria-level=1>
-                      <div class="tbm-link-container blabla">
-                        <a href=https://www.elkgrovecity.org/business class="tbm-link level-1 tbm-toggle"
-                          title="Permits, RFPs, Construction +Build" aria-expanded=false>
-                          Business
-                          <span class=tbm-caption>Permits, Inspection, RFPs +Build</span>
-                        </a>
-                        <button class="tbm-submenu-toggle sf-hidden" aria-expanded=false></button>
-                      </div>
-                      <div class="tbm-submenu tbm-item-child sf-hidden" role=list>
-
-                      </div>
-                    </li>
-                    <li class="tbm-item level-1 tbm-item--has-dropdown" aria-level=1>
-                      <div class="tbm-link-container blabla">
-                        <a href=https://www.elkgrovecity.org/visitors class="tbm-link level-1 tbm-toggle"
-                          title="Explore, Attractions + Events" aria-expanded=false>
-                          Visitors
-                          <span class=tbm-caption>Explore, Attractions +Events</span>
-                        </a>
-                        <button class="tbm-submenu-toggle sf-hidden" aria-expanded=false></button>
-                      </div>
-                      <div class="tbm-submenu tbm-item-child sf-hidden" role=list>
-
-                      </div>
-                    </li>
-                    <li class="tbm-item level-1 tbm-item--has-dropdown" aria-level=1>
-                      <div class="tbm-link-container blabla">
-                        <a href=https://www.elkgrovecity.org/government class="tbm-link level-1 tbm-toggle"
-                          title="Meetings, Council, Elections +Services" aria-expanded=false>
-                          Government
-                          <span class=tbm-caption>Meetings, Council, Elections +Services</span>
-                        </a>
-                        <button class="tbm-submenu-toggle sf-hidden" aria-expanded=false></button>
-                      </div>
-                      <div class="tbm-submenu tbm-item-child sf-hidden" role=list>
-
-                      </div>
-                    </li>
-                    <li class="tbm-item level-1 tbm-item--has-dropdown" aria-level=1>
-                      <div class="tbm-link-container blabla">
-                        <a href=https://www.elkgrovecity.org/departments class="tbm-link level-1 tbm-toggle"
-                          title="All Services  Discover" aria-expanded=false>
-                          Departments
-                          <span class=tbm-caption>All Services +Discover</span>
-                        </a>
-                        <button class="tbm-submenu-toggle sf-hidden" aria-expanded=false></button>
-                      </div>
-                      <div class="tbm-submenu tbm-item-child sf-hidden" role=list>
-
-                      </div>
-                    </li>
-                    <li class="tbm-item level-1 mobile-top-menu tbm-item--has-dropdown sf-hidden" aria-level=1>
-
-                      <div class="mobile-top-sub-menu tbm-submenu tbm-item-child sf-hidden" role=list>
-                        <div class="tbm-row sf-hidden">
-
-                          <div class="tbm-column span6 sf-hidden">
-                            <div class="tbm-column-inner sf-hidden">
-                              <div class="tbm-block sf-hidden">
-                                <div class="block-inner sf-hidden">
-                                  <div id=block-gtranslate-block
-                                    class="block block-gtranslate block-gtranslate-block sf-hidden">
-
-
-                                    <div class="content sf-hidden">
-
-                                      <div class="gtranslate sf-hidden">
-                                        <style>
-                                          body {
-                                            top: 0 !important
-                                          }
-                                        </style>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
+          <!-- temp deleted navbar -->
 
         </header>
         <div class=highlighted>
@@ -4571,15 +4490,15 @@
             </div>
 
 
-            <div style= "padding-top:5em" class="paragraph paragraph--type--plain-text paragraph--view-mode--default">
+            <div style="padding-top:5em" class="paragraph paragraph--type--plain-text paragraph--view-mode--default">
               <div class="container container-override">
-                <div class="iframe-contaner"
-                  <div class="iframe-contaner"
-                      style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
-                      <iframe src="aframe/savanna1.html"
-                        style="position: absolute; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none"></iframe>
-                  </div>
-                  
+                <h2>Zoo AR Simulation</h2>
+                <div class="iframe-contaner" <div class="iframe-contaner"
+                  style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
+                  <iframe src="aframe/savanna1.html"
+                    style="position: absolute; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none"></iframe>
+                </div>
+
                 <a id="fullscreen" href="aframe/savanna1.html">Full Screen</a>
               </div>
             </div>
@@ -4591,21 +4510,24 @@
         </div>
         <div class="container-boxes">
           <div class="column-boxes">
-            <img class="static" src="images/tutorialClick.png" onmouseover="this.src='images/tutorialClick.gif'" onmouseout="this.src='images/tutorialClick.png'">
+            <img class="static" src="images/tutorialClick.png" onmouseover="this.src='images/tutorialClick.gif'"
+              onmouseout="this.src='images/tutorialClick.png'">
             <p class="tutorialText">
               <span class="firstcharacter">1</span>
               Tap or click on the ground to traverse the environment.
             </p>
           </div>
           <div class="column-boxes">
-            <img class="static" src="images/tutorialTurn.png" onmouseover="this.src='images/tutorialTurn.gif'" onmouseout="this.src='images/tutorialTurn.png'">
+            <img class="static" src="images/tutorialTurn.png" onmouseover="this.src='images/tutorialTurn.gif'"
+              onmouseout="this.src='images/tutorialTurn.png'">
             <p class="tutorialText">
               <span class="firstcharacter">2</span>
               Drag your finger or cursor to look around the environment
             </p>
           </div>
           <div class="column-boxes">
-            <img class="static" src="images/tutorialPortal.png" onmouseover="this.src='images/tutorialPortal.gif'" onmouseout="this.src='images/tutorialPortal.png'">
+            <img class="static" src="images/tutorialPortal.png" onmouseover="this.src='images/tutorialPortal.gif'"
+              onmouseout="this.src='images/tutorialPortal.png'">
             <p class="tutorialText">
               <span class="firstcharacter">3</span>
               Tap or click the portal to be taken to the next exhibit, the savannah.
@@ -4711,365 +4633,361 @@
     </div>
     <div id=skip_image_header></div>
   </div>
-<!-- credits -->
-<div id=text_block class="text-block padding-primary grey-bg" style="overflow: auto;">
-  <h4 class="contribution-intro">This augmented reality (AR) simulation was developed by Franklin High School's Fullstack Developer club, with Clayton Dagler serving as its advisor. In this academic partnership between the City of Elk Grove and the Elk Grove Unified School District, students develop this visualization with 3D modeling software and virtual reality libraries. The club focuses on preparing beginner and experienced programmers' resume through opportunities in projects, guest speakers, and networking.</p>
-</div>
+  <!-- credits -->
 
-<div id="text-block" style="padding-left:2em;" class="text-block  grey-bg">
-  <br><br>
-<img src="images/credits.png">
-<!-- end credits -->
-</div>
-      <div id=form class=two-column-block>
-        <div class="paragraph paragraph--type--two-column paragraph--view-mode--default">
-          <div class="container container-override col-50-50">
-            <div class=left-content>
+  <div id=text_block class="text-block padding-primary grey-bg" style="overflow: auto; resize:both; font-size: 15px;">
+    <h4 class="contribution-intro">This augmented reality (AR) simulation was developed by Franklin High School's
+      Fullstack Developer club, with Clayton Dagler serving as its advisor. In this academic partnership between the
+      City of Elk Grove and the Elk Grove Unified School District, students develop this visualization with 3D modeling
+      software and virtual reality libraries. The club focuses on preparing beginner and experienced programmers' resume
+      through opportunities in projects, guest speakers, and networking.</p>
+  </div>
 
-              <div
-                class="field field--name-field-left-content field--type-entity-reference-revisions field--label-visually_hidden">
-                <div class="field__label visually-hidden">Left Content</div>
-                <div class=field__item>
-                  <div id=form_block class="form-block padding-primary skip-block-wrapper">
-                    <div class=skip-block>
-                      <a class=skip-link href=#skip_form_block aria-label="Skip Form Block" tab-index=0
-                        data-uw-rm-brl=false><span>Skip Form</span></a>
-                    </div>
-                    <div class="paragraph paragraph--type--drupal-forms paragraph--view-mode--default">
-                      <div class="container container-override">
+  <div id="text-block" style="padding-left:2em;" class="text-block  grey-bg">
+    <br><br>
+    <img src="images/credits.png" style="resize: both; overflow: auto;">
+    <!-- end credits -->
+  </div>
+  <div id=form class=two-column-block>
+    <div class="paragraph paragraph--type--two-column paragraph--view-mode--default">
+      <div class="container container-override col-50-50">
+        <div class=left-content>
 
-                        <div
-                          class="field field--name-field-drupal-forms field--type-block-field field--label-hidden field__item">
-                          <div id=block-webform class="block block-webform block-webform-block">
+          <div
+            class="field field--name-field-left-content field--type-entity-reference-revisions field--label-visually_hidden">
+            <div class="field__label visually-hidden">Left Content</div>
+            <div class=field__item>
+              <div id=form_block class="form-block padding-primary skip-block-wrapper">
+                <div class=skip-block>
+                  <a class=skip-link href=#skip_form_block aria-label="Skip Form Block" tab-index=0
+                    data-uw-rm-brl=false><span>Skip Form</span></a>
+                </div>
+                <div class="paragraph paragraph--type--drupal-forms paragraph--view-mode--default">
+                  <div class="container container-override">
 
-                            <h2>Contact</h2>
+                    <div
+                      class="field field--name-field-drupal-forms field--type-block-field field--label-hidden field__item">
+                      <div id=block-webform class="block block-webform block-webform-block">
 
-                            <div class=content>
+                        <h2>Contact</h2>
 
-                              <form
-                                class="webform-submission-form webform-submission-add-form webform-submission--zoo-comments-and-questions-form webform-submission--zoo-comments-and-questions-add-form webform-submission--zoo-comments-and-questions-node-1419-form webform-submission--zoo-comments-and-questions-node-1419-add-form webform-submission__zoo-comments-and-questions-node-1419-add-form webform-submission__zoo-comments-and-questions-form js-webform-details-toggle webform-details-toggle"
-                                data-drupal-selector=webform-submission-zoo-comments-and-questions-node-1419-add-form
-                                action=/strategic-planning-and-innovation/new-zoo method=post
-                                id=webform-submission-zoo-comments-and-questions-node-1419-add-form accept-charset=UTF-8
-                                data-once=form-updated
-                                data-drupal-form-fields=edit-name,edit-email,edit-phone,edit-comments-questions,recaptcha-v3-token,edit-submit>
+                        <div class=content>
+
+                          <form
+                            class="webform-submission-form webform-submission-add-form webform-submission--zoo-comments-and-questions-form webform-submission--zoo-comments-and-questions-add-form webform-submission--zoo-comments-and-questions-node-1419-form webform-submission--zoo-comments-and-questions-node-1419-add-form webform-submission__zoo-comments-and-questions-node-1419-add-form webform-submission__zoo-comments-and-questions-form js-webform-details-toggle webform-details-toggle"
+                            data-drupal-selector=webform-submission-zoo-comments-and-questions-node-1419-add-form
+                            action=/strategic-planning-and-innovation/new-zoo method=post
+                            id=webform-submission-zoo-comments-and-questions-node-1419-add-form accept-charset=UTF-8
+                            data-once=form-updated
+                            data-drupal-form-fields=edit-name,edit-email,edit-phone,edit-comments-questions,recaptcha-v3-token,edit-submit>
 
 
-                                <div
-                                  class="js-form-item js-form-type-textfield form-type-textfield js-form-item-name form-item-name mb-3 custom-form-required">
-                                  <label for=edit-name class="js-form-required form-required sf-hidden">Name</label>
-                                  <input data-drupal-selector=edit-name type=text id=edit-name name=name value size=60
-                                    maxlength=255 class="required form-control" required aria-required=true
-                                    placeholder=Name data-uw-rm-form=nfx>
-                                </div>
-                                <div
-                                  class="js-form-item js-form-type-email form-type-email js-form-item-email form-item-email mb-3 custom-form-required">
-                                  <label for=edit-email class="js-form-required form-required sf-hidden">Email</label>
-                                  <input data-drupal-selector=edit-email type=email id=edit-email name=email value
-                                    size=60 maxlength=254 class="form-email required form-control" required
-                                    aria-required=true placeholder=Email data-uw-rm-form=nfx>
-                                </div>
-                                <div
-                                  class="js-form-item js-form-type-tel form-type-tel js-form-item-phone form-item-phone mb-3 custom-form-required">
-                                  <label for=edit-phone class="js-form-required form-required sf-hidden">Phone</label>
-                                  <input data-drupal-selector=edit-phone type=tel id=edit-phone name=phone value size=30
-                                    maxlength=128 class="form-tel required form-control" required aria-required=true
-                                    placeholder=Phone data-uw-rm-form=nfx>
-                                </div>
-                                <div
-                                  class="js-form-item js-form-type-textarea form-type-textarea js-form-item-comments-questions form-item-comments-questions mb-3">
-                                  <label for=edit-comments-questions
-                                    class="js-form-required form-required sf-hidden">Comments/Questions</label>
-                                  <div class="form-textarea-wrapper custom-form-required">
-                                    <textarea data-drupal-selector=edit-comments-questions id=edit-comments-questions
-                                      name=comments_questions rows=5 cols=60
-                                      class="form-textarea required form-control resize-vertical" required
-                                      aria-required=true placeholder=Comments/Questions data-uw-rm-form=nfx></textarea>
-                                  </div>
-                                </div>
-                                <div data-drupal-selector=edit-captcha class=captcha>
-                                </div>
-                                <div data-drupal-selector=edit-actions
-                                  class="form-actions js-form-wrapper form-wrapper mb-3" id=edit-actions><button
-                                    class="webform-button--submit button button--primary js-form-submit form-submit btn btn-primary"
-                                    data-drupal-selector=edit-submit type=submit id=edit-submit name=op value=Submit
-                                    data-uw-rm-form=submit>Submit</button>
-                                </div>
-
-                              </form>
+                            <div
+                              class="js-form-item js-form-type-textfield form-type-textfield js-form-item-name form-item-name mb-3 custom-form-required">
+                              <label for=edit-name class="js-form-required form-required sf-hidden">Name</label>
+                              <input data-drupal-selector=edit-name type=text id=edit-name name=name value size=60
+                                maxlength=255 class="required form-control" required aria-required=true placeholder=Name
+                                data-uw-rm-form=nfx>
                             </div>
-                          </div>
-                        </div>
+                            <div
+                              class="js-form-item js-form-type-email form-type-email js-form-item-email form-item-email mb-3 custom-form-required">
+                              <label for=edit-email class="js-form-required form-required sf-hidden">Email</label>
+                              <input data-drupal-selector=edit-email type=email id=edit-email name=email value size=60
+                                maxlength=254 class="form-email required form-control" required aria-required=true
+                                placeholder=Email data-uw-rm-form=nfx>
+                            </div>
+                            <div
+                              class="js-form-item js-form-type-tel form-type-tel js-form-item-phone form-item-phone mb-3 custom-form-required">
+                              <label for=edit-phone class="js-form-required form-required sf-hidden">Phone</label>
+                              <input data-drupal-selector=edit-phone type=tel id=edit-phone name=phone value size=30
+                                maxlength=128 class="form-tel required form-control" required aria-required=true
+                                placeholder=Phone data-uw-rm-form=nfx>
+                            </div>
+                            <div
+                              class="js-form-item js-form-type-textarea form-type-textarea js-form-item-comments-questions form-item-comments-questions mb-3">
+                              <label for=edit-comments-questions
+                                class="js-form-required form-required sf-hidden">Comments/Questions</label>
+                              <div class="form-textarea-wrapper custom-form-required">
+                                <textarea data-drupal-selector=edit-comments-questions id=edit-comments-questions
+                                  name=comments_questions rows=5 cols=60
+                                  class="form-textarea required form-control resize-vertical" required
+                                  aria-required=true placeholder=Comments/Questions data-uw-rm-form=nfx></textarea>
+                              </div>
+                            </div>
+                            <div data-drupal-selector=edit-captcha class=captcha>
+                            </div>
+                            <div data-drupal-selector=edit-actions
+                              class="form-actions js-form-wrapper form-wrapper mb-3" id=edit-actions><button
+                                class="webform-button--submit button button--primary js-form-submit form-submit btn btn-primary"
+                                data-drupal-selector=edit-submit type=submit id=edit-submit name=op value=Submit
+                                data-uw-rm-form=submit>Submit</button>
+                            </div>
 
+                          </form>
+                        </div>
                       </div>
                     </div>
+
                   </div>
-                  <div id=skip_form_block></div>
                 </div>
               </div>
+              <div id=skip_form_block></div>
             </div>
-            <div class=right-content>
+          </div>
+        </div>
+        <div class=right-content>
 
-              <div
-                class="field field--name-field-right-content field--type-entity-reference-revisions field--label-visually_hidden">
-                <div class="field__label visually-hidden">Right Content</div>
-                <div class=field__item>
-                  <div id=form_block class="form-block padding-primary skip-block-wrapper">
-                    <div class=skip-block>
-                      <a class=skip-link href=#skip_form_block aria-label="Skip Form Block" tab-index=0
-                        data-uw-rm-brl=false><span>Skip Form</span></a>
-                    </div>
-                    <div class="paragraph paragraph--type--drupal-forms paragraph--view-mode--default">
-                      <div class="container container-override">
+          <div
+            class="field field--name-field-right-content field--type-entity-reference-revisions field--label-visually_hidden">
+            <div class="field__label visually-hidden">Right Content</div>
+            <div class=field__item>
+              <div id=form_block class="form-block padding-primary skip-block-wrapper">
+                <div class=skip-block>
+                  <a class=skip-link href=#skip_form_block aria-label="Skip Form Block" tab-index=0
+                    data-uw-rm-brl=false><span>Skip Form</span></a>
+                </div>
+                <div class="paragraph paragraph--type--drupal-forms paragraph--view-mode--default">
+                  <div class="container container-override">
 
-                        <div
-                          class="field field--name-field-drupal-forms field--type-block-field field--label-hidden field__item">
-                          <div
-                            class="ik-constant-contact-sigup-form block block-ik-constant-contact block-ik-constant-contact-multi"
-                            data-drupal-selector=ik-constant-contact-sigup-form
-                            id=block-constantcontactmultiplelistssignupform>
+                    <div
+                      class="field field--name-field-drupal-forms field--type-block-field field--label-hidden field__item">
+                      <div
+                        class="ik-constant-contact-sigup-form block block-ik-constant-contact block-ik-constant-contact-multi"
+                        data-drupal-selector=ik-constant-contact-sigup-form
+                        id=block-constantcontactmultiplelistssignupform>
 
-                            <h2>Sign up for Updates</h2>
+                        <h2>Sign up for Updates</h2>
 
-                            <div class=content>
+                        <div class=content>
 
-                              <form action=/strategic-planning-and-innovation/new-zoo method=post
-                                id=ik-constant-contact-sigup-form accept-charset=UTF-8 data-once=form-updated
-                                data-drupal-form-fields=edit-email--2,edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4,edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb,edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09,edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f,edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09,edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4,edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09,edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905,edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09,recaptcha-v3-token--2,edit-submit--2>
+                          <form action=/strategic-planning-and-innovation/new-zoo method=post
+                            id=ik-constant-contact-sigup-form accept-charset=UTF-8 data-once=form-updated
+                            data-drupal-form-fields=edit-email--2,edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4,edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb,edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09,edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f,edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09,edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4,edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09,edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905,edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09,recaptcha-v3-token--2,edit-submit--2>
 
-                                <div
-                                  class="js-form-item js-form-type-email form-type-email js-form-item-email form-item-email mb-3 custom-form-required">
-                                  <label for=edit-email--2 class="js-form-required form-required sf-hidden">Email
-                                    Address</label>
-                                  <input data-drupal-selector=edit-email type=email id=edit-email--2 name=email value
-                                    size=60 maxlength=254 class="form-email required form-control" required
-                                    aria-required=true placeholder="Email Address" data-uw-rm-form=nfx>
-                                </div>
-                                <fieldset data-drupal-selector=edit-list-id id=edit-list-id--wrapper
-                                  class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper mb-3"
-                                  required aria-required=true>
-                                  <legend class=sf-hidden>
-
-                                  </legend>
-                                  <div class=fieldset-wrapper>
-                                    <div id=edit-list-id class=checkbox>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4 form-item-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4">
-                                        <input data-drupal-selector=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4
-                                          type=checkbox id=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4
-                                          name=list_id[0cdd26b8-7dfe-11eb-a243-fa163e8150d4]
-                                          value=0cdd26b8-7dfe-11eb-a243-fa163e8150d4
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4>
-                                          Smart City Plan
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-371f8e76-6192-11eb-9969-fa163eae0edb form-item-list-id-371f8e76-6192-11eb-9969-fa163eae0edb">
-                                        <input data-drupal-selector=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb
-                                          type=checkbox id=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb
-                                          name=list_id[371f8e76-6192-11eb-9969-fa163eae0edb]
-                                          value=371f8e76-6192-11eb-9969-fa163eae0edb
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb>
-                                          Old Town Library Relocation
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09 form-item-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09">
-                                        <input data-drupal-selector=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09
-                                          type=checkbox id=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09
-                                          name=list_id[494826bc-cc73-11ea-9797-d4ae52a45a09]
-                                          value=494826bc-cc73-11ea-9797-d4ae52a45a09
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09>
-                                          General Plan
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-64923044-2162-11ec-b19e-fa163ee70e7f form-item-list-id-64923044-2162-11ec-b19e-fa163ee70e7f">
-                                        <input data-drupal-selector=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f
-                                          type=checkbox id=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f
-                                          name=list_id[64923044-2162-11ec-b19e-fa163ee70e7f]
-                                          value=64923044-2162-11ec-b19e-fa163ee70e7f
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f>
-                                          Zoo
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09 form-item-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09">
-                                        <input data-drupal-selector=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09
-                                          type=checkbox id=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09
-                                          name=list_id[8ad96b14-cc68-11ea-9797-d4ae52a45a09]
-                                          value=8ad96b14-cc68-11ea-9797-d4ae52a45a09
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09>
-                                          Housing Element Update
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4 form-item-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4">
-                                        <input data-drupal-selector=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4
-                                          type=checkbox id=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4
-                                          name=list_id[afc9d3c4-fefb-11ec-b927-fa163e8150d4]
-                                          value=afc9d3c4-fefb-11ec-b927-fa163e8150d4
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4>
-                                          Sustainability and Climate Change
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09 form-item-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09">
-                                        <input data-drupal-selector=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09
-                                          type=checkbox id=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09
-                                          name=list_id[b8414c10-cc69-11ea-9797-d4ae52a45a09]
-                                          value=b8414c10-cc69-11ea-9797-d4ae52a45a09
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09>
-                                          Project Elevate
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905 form-item-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905">
-                                        <input data-drupal-selector=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905
-                                          type=checkbox id=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905
-                                          name=list_id[d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905]
-                                          value=d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905>
-                                          Triangle SPA
-                                        </label>
-                                      </div>
-
-                                      <div
-                                        class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09 form-item-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09">
-                                        <input data-drupal-selector=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09
-                                          type=checkbox id=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09
-                                          name=list_id[f2e6b66e-cc75-11ea-9797-d4ae52a45a09]
-                                          value=f2e6b66e-cc75-11ea-9797-d4ae52a45a09
-                                          class="form-checkbox form-check-input" data-uw-rm-form=nfx>
-                                        <label class=form-check-label
-                                          for=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09>
-                                          Bicycle, Pedestrian, and Trails Master Plan
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </fieldset>
-                                <div data-drupal-selector=edit-captcha class=captcha>
-                                </div>
-                                <button data-drupal-selector=edit-submit type=submit id=edit-submit--2 name=op
-                                  value=Subscribe class="button js-form-submit form-submit btn btn-primary"
-                                  data-uw-rm-form=submit>Subscribe</button>
-                                <div class=ct-ct-desc>
-                                  By submitting this form, you are consenting to receive communications from: The City
-                                  of Elk Grove, 8401 Laguna Palms Way, Elk Grove, CA, 95758, US,
-                                  http://www.elkgrovecity.org. You can revoke your consent to receive emails at any time
-                                  by using the SafeUnsubscribe® link, found at the bottom of every email.
-                                  <a href=https://www.constantcontact.com/legal/service-provider target=_blank
-                                    aria-label="Emails are serviced by Constant Contact. - opens in new tab"
-                                    data-uw-rm-ext-link
-                                    uw-rm-external-link-id=https://www.constantcontact.com/legal/service-provider$emailsareservicedbyconstantcontact.>Emails
-                                    are serviced by Constant Contact.</a>
-                                </div>
-                              </form>
+                            <div
+                              class="js-form-item js-form-type-email form-type-email js-form-item-email form-item-email mb-3 custom-form-required">
+                              <label for=edit-email--2 class="js-form-required form-required sf-hidden">Email
+                                Address</label>
+                              <input data-drupal-selector=edit-email type=email id=edit-email--2 name=email value
+                                size=60 maxlength=254 class="form-email required form-control" required
+                                aria-required=true placeholder="Email Address" data-uw-rm-form=nfx>
                             </div>
-                          </div>
-                        </div>
+                            <fieldset data-drupal-selector=edit-list-id id=edit-list-id--wrapper
+                              class="fieldgroup form-composite required js-form-item form-item js-form-wrapper form-wrapper mb-3"
+                              required aria-required=true>
+                              <legend class=sf-hidden>
 
+                              </legend>
+                              <div class=fieldset-wrapper>
+                                <div id=edit-list-id class=checkbox>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4 form-item-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4">
+                                    <input data-drupal-selector=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4
+                                      type=checkbox id=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4
+                                      name=list_id[0cdd26b8-7dfe-11eb-a243-fa163e8150d4]
+                                      value=0cdd26b8-7dfe-11eb-a243-fa163e8150d4 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-0cdd26b8-7dfe-11eb-a243-fa163e8150d4>
+                                      Smart City Plan
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-371f8e76-6192-11eb-9969-fa163eae0edb form-item-list-id-371f8e76-6192-11eb-9969-fa163eae0edb">
+                                    <input data-drupal-selector=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb
+                                      type=checkbox id=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb
+                                      name=list_id[371f8e76-6192-11eb-9969-fa163eae0edb]
+                                      value=371f8e76-6192-11eb-9969-fa163eae0edb class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-371f8e76-6192-11eb-9969-fa163eae0edb>
+                                      Old Town Library Relocation
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09 form-item-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09">
+                                    <input data-drupal-selector=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09
+                                      type=checkbox id=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09
+                                      name=list_id[494826bc-cc73-11ea-9797-d4ae52a45a09]
+                                      value=494826bc-cc73-11ea-9797-d4ae52a45a09 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-494826bc-cc73-11ea-9797-d4ae52a45a09>
+                                      General Plan
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-64923044-2162-11ec-b19e-fa163ee70e7f form-item-list-id-64923044-2162-11ec-b19e-fa163ee70e7f">
+                                    <input data-drupal-selector=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f
+                                      type=checkbox id=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f
+                                      name=list_id[64923044-2162-11ec-b19e-fa163ee70e7f]
+                                      value=64923044-2162-11ec-b19e-fa163ee70e7f class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-64923044-2162-11ec-b19e-fa163ee70e7f>
+                                      Zoo
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09 form-item-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09">
+                                    <input data-drupal-selector=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09
+                                      type=checkbox id=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09
+                                      name=list_id[8ad96b14-cc68-11ea-9797-d4ae52a45a09]
+                                      value=8ad96b14-cc68-11ea-9797-d4ae52a45a09 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-8ad96b14-cc68-11ea-9797-d4ae52a45a09>
+                                      Housing Element Update
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4 form-item-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4">
+                                    <input data-drupal-selector=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4
+                                      type=checkbox id=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4
+                                      name=list_id[afc9d3c4-fefb-11ec-b927-fa163e8150d4]
+                                      value=afc9d3c4-fefb-11ec-b927-fa163e8150d4 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-afc9d3c4-fefb-11ec-b927-fa163e8150d4>
+                                      Sustainability and Climate Change
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09 form-item-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09">
+                                    <input data-drupal-selector=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09
+                                      type=checkbox id=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09
+                                      name=list_id[b8414c10-cc69-11ea-9797-d4ae52a45a09]
+                                      value=b8414c10-cc69-11ea-9797-d4ae52a45a09 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-b8414c10-cc69-11ea-9797-d4ae52a45a09>
+                                      Project Elevate
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905 form-item-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905">
+                                    <input data-drupal-selector=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905
+                                      type=checkbox id=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905
+                                      name=list_id[d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905]
+                                      value=d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-d4bcc3f8-d5d1-11ea-8d6d-d4ae52806905>
+                                      Triangle SPA
+                                    </label>
+                                  </div>
+
+                                  <div
+                                    class="js-form-item js-form-type-checkbox checkbox form-check mb-3 js-form-item-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09 form-item-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09">
+                                    <input data-drupal-selector=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09
+                                      type=checkbox id=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09
+                                      name=list_id[f2e6b66e-cc75-11ea-9797-d4ae52a45a09]
+                                      value=f2e6b66e-cc75-11ea-9797-d4ae52a45a09 class="form-checkbox form-check-input"
+                                      data-uw-rm-form=nfx>
+                                    <label class=form-check-label for=edit-list-id-f2e6b66e-cc75-11ea-9797-d4ae52a45a09>
+                                      Bicycle, Pedestrian, and Trails Master Plan
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <div data-drupal-selector=edit-captcha class=captcha>
+                            </div>
+                            <button data-drupal-selector=edit-submit type=submit id=edit-submit--2 name=op
+                              value=Subscribe class="button js-form-submit form-submit btn btn-primary"
+                              data-uw-rm-form=submit>Subscribe</button>
+                            <div class=ct-ct-desc>
+                              By submitting this form, you are consenting to receive communications from: The City
+                              of Elk Grove, 8401 Laguna Palms Way, Elk Grove, CA, 95758, US,
+                              http://www.elkgrovecity.org. You can revoke your consent to receive emails at any time
+                              by using the SafeUnsubscribe® link, found at the bottom of every email.
+                              <a href=https://www.constantcontact.com/legal/service-provider target=_blank
+                                aria-label="Emails are serviced by Constant Contact. - opens in new tab"
+                                data-uw-rm-ext-link
+                                uw-rm-external-link-id=https://www.constantcontact.com/legal/service-provider$emailsareservicedbyconstantcontact.>Emails
+                                are serviced by Constant Contact.</a>
+                            </div>
+                          </form>
+                        </div>
                       </div>
                     </div>
+
                   </div>
-                  <div id=skip_form_block></div>
                 </div>
               </div>
+              <div id=skip_form_block></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class=field__item>
+  </div>
+  </div>
+  <div class=field__item>
 
 
-      <div id=skip_text_block></div>
-    </div>
-    <div class=field__item>
-      <div id=text_image_block class="text-with-image-block skip-block-wrapper">
-        <div class=skip-block>
-          <a class=skip-link href=#skip_image_header aria-label="Skip Image Header" tab-index=0
-            data-uw-rm-brl=false><span>Skip Header</span></a>
-        </div>
-        <div class="paragraph paragraph--type--text-with-image paragraph--view-mode--default">
-          <div class=card>
-            <div class="scroll-xs-image d-block d-sm-none sf-hidden">
+    <div id=skip_text_block></div>
+  </div>
+  <div class=field__item>
+    <div id=text_image_block class="text-with-image-block skip-block-wrapper">
+      <div class=skip-block>
+        <a class=skip-link href=#skip_image_header aria-label="Skip Image Header" tab-index=0
+          data-uw-rm-brl=false><span>Skip Header</span></a>
+      </div>
+      <div class="paragraph paragraph--type--text-with-image paragraph--view-mode--default">
+        <div class=card>
+          <div class="scroll-xs-image d-block d-sm-none sf-hidden">
 
-            </div>
-            <div class=card-img-overlay>
-              <div class="container container-override">
-                <div class=row>
-                  <div class="col-md-7 text-detail">
-                  </div>
-                  <div class="col-md-5 text-links aos-init aos-animate" data-aos=fade-left>
+          </div>
+          <div class=card-img-overlay>
+            <div class="container container-override">
+              <div class=row>
+                <div class="col-md-7 text-detail">
+                </div>
+                <div class="col-md-5 text-links aos-init aos-animate" data-aos=fade-left>
 
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
+
+
       </div>
-      <div id=skip_image_header></div>
     </div>
-    <div class=field__item>
-    </div>
-    <div class=field__item>
-      <div id=text_image_block class="text-with-image-block skip-block-wrapper">
-        <div class=skip-block>
-          <a class=skip-link href=#skip_image_header aria-label="Skip Image Header" tab-index=0
-            data-uw-rm-brl=false><span>Skip Header</span></a>
-        </div>
-        <div class="paragraph paragraph--type--text-with-image paragraph--view-mode--default">
-          <div class=card>
-            <div class="scroll-xs-image d-block d-sm-none sf-hidden">
+    <div id=skip_image_header></div>
+  </div>
+  <div class=field__item>
+  </div>
+  <div class=field__item>
+    <div id=text_image_block class="text-with-image-block skip-block-wrapper">
+      <div class=skip-block>
+        <a class=skip-link href=#skip_image_header aria-label="Skip Image Header" tab-index=0
+          data-uw-rm-brl=false><span>Skip Header</span></a>
+      </div>
+      <div class="paragraph paragraph--type--text-with-image paragraph--view-mode--default">
+        <div class=card>
+          <div class="scroll-xs-image d-block d-sm-none sf-hidden">
 
-            </div>
-            <div class=card-img-overlay>
-              <div class="container container-override">
-                <div class=row>
-                  <div class="col-md-7 text-detail">
-                  </div>
-                  <div class="col-md-5 text-links aos-init" data-aos=fade-left>
+          </div>
+          <div class=card-img-overlay>
+            <div class="container container-override">
+              <div class=row>
+                <div class="col-md-7 text-detail">
+                </div>
+                <div class="col-md-5 text-links aos-init" data-aos=fade-left>
 
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-
         </div>
+
+
       </div>
-      <div id=skip_image_header></div>
     </div>
+    <div id=skip_image_header></div>
+  </div>
   </div>
 
   </div>

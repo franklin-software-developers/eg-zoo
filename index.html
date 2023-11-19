@@ -3363,7 +3363,18 @@
     transition: transform .3s;
     opacity: 1
   }
-
+  .contribution-category {
+    font-weight: 700;
+    width:40%;
+  }
+  .contribution-name-list {
+    list-style-type: none;
+    width:40%;
+  }
+  .contribution-section {
+    width:130%;
+    display:flex;
+  }
   .node--type-article .node__content .text-block p a,
   .node--type-article .node__content .text-block .text-block-desc>ul>li a {
     padding: 0
@@ -3891,6 +3902,12 @@
     justify-content: center !important;
     width: 26px;
     height: 27px
+  }
+
+  #contribution-title{
+    margin-bottom:1.5em;
+    font-size: 37px;
+    font-weight:600;
   }
 </style>
 <link rel=icon
@@ -4642,12 +4659,60 @@
       software and virtual reality libraries. The club focuses on preparing beginner and experienced programmers' resume
       through opportunities in projects, guest speakers, and networking.</p>
   </div>
+<!--jump to here-->
+  <div id="text-block" style="padding-bottom:10em; padding-left:2em;" class="text-block grey-bg">
+    <h3 id="contribution-title">AR Project Contributers</h3>
+    <div style="right: 15%; position:absolute">
+      <img src="images/fsd.png" style="resize: both; overflow: auto; width:15em;">
+    </div>
+    <div style="width:100%;">
+      <div style="width:60%;">
+        <!--left section of contribution-->
+        <div style="display:flex;" id="contribution-container">
+          <div style="margin-left:6em; position:block;">
+            <div class="contribution-section">
+              <p class="contribution-category">CAD/AR Lead</p>
+              <ul class="contribution-name-list">
+                <li>Jaden Chung</li>
+              </ul>
+            </div>
+          <div class="contribution-section">
+          <p class="contribution-category">CAD</p>
+          <ul class="contribution-name-list">
+            <li>Alex Lal</li>
+            <li>Tony Tong</li>
+            <li>Ethan Tran</li>
+            <li>Matthew Yu Yang</li>
+          </ul>
+          </div>
+        </div>
+        <!--Right section of contribution-->
+        <div style="margin-left:9em; position:block;">
+          <div class="contribution-section">
+            <p class="contribution-category">Programming Lead</p>
+            <ul class="contribution-name-list">
+              <li>Nuri Kim</li>
+            </ul>
+          </div>
 
-  <div id="text-block" style="padding-left:2em;" class="text-block  grey-bg">
-    <br><br>
-    <img src="images/credits.png" style="resize: both; overflow: auto;">
-    <!-- end credits -->
+          <div class="contribution-section">
+          <p class="contribution-category">3D Programmers</p>
+          <ul class="contribution-name-list">
+            <li>Nina Dong</li>
+            <li>Oscar Liang</li>
+            <li>Pratham Rangwala</li>
+            <li>Priyam Rangwala</li>
+            <li>Aisaiah Daniels</li>
+            <li>Tristan Park</li>
+          </ul>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
   </div>
+
   <div id=form class=two-column-block>
     <div class="paragraph paragraph--type--two-column paragraph--view-mode--default">
       <div class="container container-override col-50-50">

@@ -1123,15 +1123,6 @@
     display: none !important
   }
 
-  .contribution-intro {
-    text-align: "left";
-    font-size: 1.2em;
-    padding-top: 3em;
-    margin: 0em 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
-
   .justify-content-end {
     -webkit-box-pack: end !important;
     -webkit-justify-content: flex-end !important;
@@ -1369,13 +1360,6 @@
   .card-img-overlay {
     background-color: rgba(0, 0, 0, .3);
     padding: 1rem 0
-  }
-
-  .contribution-intro {
-    text-align: "left";
-    font-size: 1.2em;
-    padding-top: 3em;
-    margin: 0em 2em;
   }
 
   .bg-title span {
@@ -2790,11 +2774,115 @@
       padding-left: 9.375rem
     }
   }
+  .contribution-div{
+    padding-left:0em;
+  }
+  .contribution-intro {
+    text-align: "left";
+    font-size: 1.2em;
+    padding-top: 3em;
+    margin: 0em 2em;
+  }
+  .contribution-category {
+    font-weight: 700;
+    width:30%;
+  }
+  .contribution-name-list {
+    list-style-type: none;
+  }
+  .contribution-section {
+    display:flex;
+  }
+
+  .three-col-left{
+    float: left;
+    padding-left:2em;
+    width:100%;
+  }
+  .three-col-right{
+    text-align: center;
+    float:right;
+    width:100%;
+    margin-top:5em;
+  }
+  .three-col-center{
+    float: right;
+    width: 100%;
+    padding-left:3em;
+  }
+  .fullstack-logo{
+    width:10em;
+  }
+  @media only screen and (min-width: 750px) {
+    .three-col-left{
+      float: left;
+      padding-left:0em;
+      width: 50%;
+    }
+  }
+  @media only screen and (min-width: 750px) {
+    .three-col-right{
+      text-align: center;
+      float:right;
+      width:100%;
+      margin-top:5em;
+    }
+  }
+  @media only screen and (min-width: 750px) {
+    .contribution-div{
+      padding-left:0.5em;
+    }
+  }
+  @media only screen and (min-width: 750px) {
+    .three-col-center{
+      float: right;
+      width: 50%;
+      padding-left:0em;
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    .fullstack-logo{
+    width:16em;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .contribution-div{
+      padding-left:2em;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .three-col-left{
+      float: left;
+      width: 33.333%;
+      padding-left:2em;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .three-col-right{
+      float: right;
+      width: 33.333%;
+      margin-top:0em;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .three-col-center{
+      display: inline-block;
+      float:none;
+      padding-left:2em;
+      width: 33.333%;
+    }
+  }
+  @media only screen and (min-width: 1000px) {
+    .contribution-category {
+      font-weight: 700;
+      width:30%;
+    }
+  }
 
   .faq-block h2 {
     margin-bottom: 1rem
   }
-
   .faq-block .field--name-field-faq {
     display: -webkit-box;
     display: -webkit-flex;
@@ -4019,7 +4107,6 @@
                 </div>
           </div>
 
-
           <div style="padding-top:5em" class="paragraph paragraph--type--plain-text paragraph--view-mode--default">
             <div class="container container-override">
               <h2>Zoo AR Simulation</h2>
@@ -4034,6 +4121,115 @@
           </div>
         </div>
       </div>
+      <br>
+      <div>
+        <h1 id="tutorialTitle">Visualization Controls</h1>
+      </div>
+      <div class="container-boxes">
+        <div class="column-boxes">
+          <img class="static" src="images/tutorialClick.png" onmouseover="this.src='images/tutorialClick.gif'"
+            onmouseout="this.src='images/tutorialClick.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">1</span>
+            Tap or click on the ground to traverse the environment.
+          </p>
+        </div>
+        <div class="column-boxes">
+          <img class="static" src="images/tutorialTurn.png" onmouseover="this.src='images/tutorialTurn.gif'"
+            onmouseout="this.src='images/tutorialTurn.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">2</span>
+            Drag your finger or cursor to look around the environment
+          </p>
+        </div>
+        <div class="column-boxes">
+          <img class="static" src="images/tutorialPortal.png" onmouseover="this.src='images/tutorialPortal.gif'"
+            onmouseout="this.src='images/tutorialPortal.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">3</span>
+            Tap or click the portal to be taken to the next exhibit, the savannah.
+          </p>
+          </div>
+
+
+          <div style="padding-top:5em" class="paragraph paragraph--type--plain-text paragraph--view-mode--default">
+            <div class="container container-override">
+              <h2>Zoo AR Simulation</h2>
+              <div class="iframe-contaner" <div class="iframe-contaner"
+                style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
+                <iframe src="aframe/savanna1.html"
+                  style="position: absolute; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none"></iframe>
+              </div>
+
+              <a id="fullscreen" href="aframe/savanna1.html">Full Screen</a>
+            </div>
+          </div>
+        </div>
+        <div id=skip_text_block></div>
+      </div>
+    </div>
+  </div>
+  
+<!-- credits -->
+<div id=text_block class="text-block padding-primary grey-bg" style="overflow: auto; resize:both; font-size: 15px;">
+  <h4 class="contribution-intro">This augmented reality (AR) simulation was developed by Franklin High School's
+    Fullstack Developer club, with Clayton Dagler serving as its advisor. In this academic partnership between the
+    City of Elk Grove and the Elk Grove Unified School District, students develop this visualization with 3D modeling
+    software and virtual reality libraries. The club focuses on preparing beginner and experienced programmers' resume
+    through opportunities in projects, guest speakers, and networking.</p>
+</div>
+<div id="text-block" style="padding-bottom:40em;" class="text-block grey-bg contribution-div">
+  <h3 style="margin-bottom:1.5em; font-size: 37px; font-weight:600;">AR Project Contributers</h3>
+  <div style="">
+
+    <!--left section of contribution-->
+    <div class="three-col-left" style="">
+      <div style="">
+        <div class="contribution-section">
+          <p class="contribution-category">CAD/AR Lead</p>
+          <ul class="contribution-name-list">
+            <li>Jaden Chung</li>
+          </ul>
+        </div>
+      <div class="contribution-section">
+        <p class="contribution-category">CAD</p>
+        <ul class="contribution-name-list">
+          <li>Alex Lal</li>
+          <li>Tony Tong</li>
+          <li>Ethan Tran</li>
+          <li>Matthew Yu Yang</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  
+    <!--Right section of contribution-->
+    <div class="three-col-center" style="">
+      <div style="">
+        <div class="contribution-section">
+          <p class="contribution-category" style="">Programming Lead</p>
+          <ul class="contribution-name-list">
+            <li>Nuri Kim</li>
+          </ul>
+        </div>
+        <div class="contribution-section">
+          <p class="contribution-category">3D Programmers</p>
+          <ul class="contribution-name-list">
+            <li>Nina Dong</li>
+            <li>Oscar Liang</li>
+            <li>Pratham Rangwala</li>
+            <li>Priyam Rangwala</li>
+            <li>Aisaiah Daniels</li>
+            <li>Tristan Park</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="three-col-right" style="">
+      <img src="images/fsd.png" class="fullstack-logo">
+    </div>
+  </div>
       <br>
       <div>
         <h1 id="tutorialTitle">Visualization Controls</h1>

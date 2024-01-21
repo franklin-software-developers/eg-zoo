@@ -64,12 +64,50 @@
     
       <!-- camera -->
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-        <a-camera id="head" position="0 0 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
+        <a-camera id="head" rotation="90 -75 0.179" position="0 0 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
       </a-entity>
     </a-scene>
   </div>
   <div>
-    <button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
-    <button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
+    <button onclick="navigateLeft()" class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+    <button onclick="navigateRight()" class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
   </div>
+  <script>
+    let camera = document.getElementById("head");
+    //keeps track of camera location. Because value must be int and not string, must be store separately
+    let animals =[
+      {"name": "lion",
+       "cameraX": 0,
+       "cameraY": 0,
+       "cameraZ": 0
+      },
+      {"name": "test1",
+       "cameraX": 20,
+       "cameraY": 0,
+       "cameraZ": 0
+      },
+      {"name": "test2",
+       "cameraX": -20,
+       "cameraY": 0,
+       "cameraZ": 0
+      },
+    ]
+    let index = 0;
+    function navigateLeft() {
+      if (index > 0) {
+        index--;
+        console.log(index);
+        console.log(animals[index].name);
+        camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+      }
+    }
+    function navigateRight() {
+      if (index < animals.length-1) {
+        index++;
+        console.log(index);
+        console.log(animals[index].name);
+        camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+      }
+    }
+  </script>
 </html>

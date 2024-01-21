@@ -41,14 +41,33 @@
   #rightNavigationButton {
     right: 0px; 
   }
+  #navigationIndex{
+    z-index:10;
+    bottom: 60%;
+    position:relative;
+    left:26%;
+    width:50%;
+    font-size:3em;
+    text-align: center;
+  }
+  #navigationIndexDiv{
+    z-index:10;
+    position: fixed;
+    width:100%;
+    bottom: 0%;
+    left:0%;
+    height: 4em;
+  }
   </style>
 </head>
 <body>
     <a-scene loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse" id="scene">
-      <iframe src="exhibitNavigation.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe>
+      <!--<iframe src="exhibitNavigation.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe>-->
       <a-assets>
         <a-asset-item id="lion" response-type="arraybuffer" src="assets/lion.glb"></a-asset-item>
-        <img id="preview" src="">
+        <!--https://sketchfab.com/3d-models/tree-low-poly-4cd243eb74c74b3ea2190ebcec0439fb-->
+        <a-asset-item id="tree" response-type="arraybuffer" src="assets/tree.glb"></a-asset-item>
+        <!--<img id="preview" src="">-->
       </a-assets>
       
       <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
@@ -57,11 +76,12 @@
       <!-- sun -->
       <a-entity light="color:#FCF9D9; type:directional; intensity: 3" position="-0.5 -4.30949 5.35426"></a-entity>
       
-      <a-cylinder color="gray" position="-0 -20 0" height="3" radius="200"></a-cylinder>
+      <a-cylinder color="gray" position="-0 -20 0" height="3" radius="250"></a-cylinder>
       <!-- lion -->
-      <a-entity shadow="cast: true; receive: false" gltf-model="assets/lion.glb" animation-mixer="clip: GltfAnimation 0; loop: 1" material="side: double" position="10 -10 -50" scale="0.3 0.3 0.3" rotation="0.289 -140.722 2.654"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="assets/lion.glb" animation-mixer="clip: GltfAnimation 0; loop: 1; timeScale: .8" material="side: double" rotation="-0.4244 -75 0.179" position="0 -10 -40" scale="0.3 0.3 0.3"></a-entity>
-    
+      <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: GltfAnimation 0; loop: 1" material="side: double" position="10 -10 -50" scale="0.3 0.3 0.3" rotation="0.289 -140.722 2.654"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: GltfAnimation 0; loop: 1; timeScale: .8" material="side: double" rotation="-0.4244 -75 0.179" position="10 -10 -20" scale="0.3 0.3 0.3"></a-entity>
+      <!-- tree -->
+      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" animation-mixer="clip: GltfAnimation 0; loop: 1; timeScale: .8" material="side: double" rotation="-0.4244 -75 0.179" position="200 -40 -100" scale="0.05 0.05 0.05"></a-entity>
       <!-- camera -->
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
         <a-camera id="head" rotation="90 -75 0.179" position="0 0 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
@@ -70,43 +90,55 @@
   </div>
   <div>
     <button onclick="navigateLeft()" class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+    <div id="navigationIndexDiv">
+      <p id="navigationIndex">Lion</p>
+    </div>
     <button onclick="navigateRight()" class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
   </div>
   <script>
     let camera = document.getElementById("head");
+    let animalIndexName = document.getElementById("navigationIndex");
     //keeps track of camera location. Because value must be int and not string, must be store separately
     let animals =[
-      {"name": "lion",
+      {"name": "Lion",
        "cameraX": 0,
        "cameraY": 0,
        "cameraZ": 0
       },
-      {"name": "test1",
-       "cameraX": 20,
+      {"name": "Tree",
+       "cameraX": 200,
        "cameraY": 0,
-       "cameraZ": 0
+       "cameraZ": -150,
       },
-      {"name": "test2",
-       "cameraX": -20,
+      {"name": "Nowhere",
+       "cameraX": -200,
        "cameraY": 0,
        "cameraZ": 0
       },
     ]
     let index = 0;
+    function updateIndex () {
+      console.log(index);
+      console.log(animals[index].name);
+      animalIndexName.innerHTML = animals[index].name;
+      camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+    }
     function navigateLeft() {
       if (index > 0) {
         index--;
-        console.log(index);
-        console.log(animals[index].name);
-        camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+        updateIndex();
+      } else {
+        index = animals.length-1;
+        updateIndex();
       }
     }
     function navigateRight() {
       if (index < animals.length-1) {
         index++;
-        console.log(index);
-        console.log(animals[index].name);
-        camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+        updateIndex();
+      } else {
+        index = 0;
+        updateIndex();
       }
     }
   </script>

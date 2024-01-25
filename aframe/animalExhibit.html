@@ -67,7 +67,6 @@
         <a-asset-item id="lion" response-type="arraybuffer" src="assets/lionExhibit/lion.glb"></a-asset-item>
         <!--https://sketchfab.com/3d-models/tree-low-poly-4cd243eb74c74b3ea2190ebcec0439fb-->
         <a-asset-item id="tree" response-type="arraybuffer" src="assets/lionExhibit/tree.glb"></a-asset-item>
-        <!--<img id="preview" src="">-->
       </a-assets>
       
       <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
@@ -76,9 +75,9 @@
       <!-- sun -->
       <a-entity light="color:#FCF9D9; type:directional; intensity: 3" position="-0.5 -4.30949 5.35426"></a-entity>
       <!--ground-->
-      <a-cylinder shadow="cast: true;" color="#009A17" position="-0 -11.5 0" height="3" radius="250"></a-cylinder>
+      <a-cylinder shadow="cast: true;" roughness="1" repeat="40 40" src="https://th.bing.com/th/id/R.b00bbc94ec46de571f74ae710a06663f?rik=SZDcFTq8j69zUQ&pid=ImgRaw&r=0" color="#C2B280" position="-0 -11.5 0" height="3" radius="250"></a-cylinder>
       <!-- lion -->
-      <a-entity shadow="cast: true; receive: false" light="type: hemisphere; color: #BBB" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1"  position="-25 -10 -60" scale="11 11 11" rotation="0.289 -90 2.654"></a-entity>
+      <a-entity shadow="cast: true; receive: false" light="type: hemisphere; color: #BBB" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1"  position="-25 -10 -60" scale="11 11 11" rotation="-5 -10 0"></a-entity>
       <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .75" rotation="-5 -10 0" position="4 -10 -40" scale="11 11 11"></a-entity>
       <!-- tree -->
       <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="200 -10 -100" scale="0.05 0.05 0.05"></a-entity>

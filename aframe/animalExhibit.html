@@ -148,7 +148,7 @@
       camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
     }
     function navigateLeft() {
-      aframe.style.filter = "brightness(0%)";
+      fadeOut();
       if (index > 0) {
         index--;
         updateIndex();
@@ -158,8 +158,7 @@
       }
     }
     function navigateRight() {
-      aframe.classList.remove("aframeTransition");
-      aframe.style.filter = "brightness(0%)";
+      fadeOut()
       if (index < animals.length-1) {
         index++;
         updateIndex();
@@ -168,7 +167,10 @@
         updateIndex();
       }
     }
-
+function fadeOut() {
+  aframe.classList.remove("aframeTransition");
+  aframe.style.filter = "brightness(0%)";
+}
 function fadeIn() {
   this.classList.add("aframeTransition");
   this.style.filter = "brightness(100%)";

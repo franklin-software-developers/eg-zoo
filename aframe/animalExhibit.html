@@ -60,13 +60,13 @@
   }
   a-scene{
     filter: brightness(100%);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.0001s linear;
+    transition: all 0.0001s linear;
   }
-  /*a-scene:hover{
-    -webkit-filter: brightness(130%);
-    filter: brightness(130%);
-  }*/
+  .aframeTransition{
+    -webkit-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+  }
   </style>
 </head>
 <body>
@@ -158,6 +158,7 @@
       }
     }
     function navigateRight() {
+      aframe.classList.remove("aframeTransition");
       aframe.style.filter = "brightness(0%)";
       if (index < animals.length-1) {
         index++;
@@ -169,6 +170,7 @@
     }
 
 function fadeIn() {
+  this.classList.add("aframeTransition");
   this.style.filter = "brightness(100%)";
 }
   </script>

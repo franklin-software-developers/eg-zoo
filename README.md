@@ -60,15 +60,13 @@ Those who have contributed to the project so far.
 
 |   |   |
 |---|---|
-| CAD/AR Lead  | Jaden Chung  |
-| CAD/AR  | Alex Lal |
+| Visualization/AR Lead  | Jaden Chung  |
+| Visualization/AR  | Alex Lal |
 |   | Tony Tong  |
-|   | Ethan Tran  |
 |   | Matthew Yu Yang  |
 | Programming Lead  | Nuri Kim  |
 | Experienced Coders  | Jaden Chung |
 |   | Oscar Liang  |
-|   | Pratham Rangwala  |
-|   | Priyam Rangwala  |
+|   | Nina Dong  |
 | Beginner Coders | Tristan Park |
 |   |  |

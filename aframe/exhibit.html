@@ -2,60 +2,54 @@
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
-    <script src="animation_click.js"></script>
-    <script src="lion_low.glb"></script>
-    <script src="rhino_demo2.glb"></script>
-    <script src="skyskysky.jpg"></script>
-    <script src="src\castle_hill_kirriemuir.glb"></script>
-    <script src="src\realistic__maple_tree_models.glb"></script>
-    <script src="src\maple_tree.glb"></script>
-    <script src="src\plant_bush.glb"></script>
-    <script src="src\photorealistic_bush.glb"></script>
-    <script src="src\bush.glb"></script>
+    <script src="../aframe/scripts/animation_click.js"></script>
+    <script src="../src/lion_low.glb"></script>
+    <script src="../src/rhino_demo2.glb"></script>
+    <script src="../src/skyskysky.jpg"></script>
+    <!-- <script src="../src/castle_hill_kirriemuir.glb"></script>--> 
+    <script src="../src/realistic__maple_tree_models.glb"></script>
+    <script src="../src/maple_tree.glb"></script>
+    <script src="../src/plant_bush.glb"></script>
+    <script src="../src/photorealistic_bush.glb"></script>
+    <script src="../src/bush.glb"></script>
   </head>
   <body>
     <a-scene cursor="rayOrigin: mouse">
       <a-assets>
         <a-asset-item id="giraffe" response-type="arraybuffer" src="https://cdn.glitch.global/14e49df6-b69d-45e0-b559-e2c1aa523aaf/giraffemotions.glb?v=1705643079445"></a-asset-item>
-        <a-asset-item id="lion" response-type="arraybuffer" src="src\lion_low.glb"></a-asset-item>
-        <a-asset-item id="rhino" response-type="arraybuffer" src="src\rhino_demo2.glb"></a-asset-item>
-        <a-asset-item id="hill" response-type="arraybuffer" src="src\castle_hill_kirriemuir.glb"></a-asset-item>
-        <a-asset-item id="tree1" response-type="arraybuffer" src="src\realistic__maple_tree_models.glb"></a-asset-item>
-        <a-asset-item id="tree2" response-type="arraybuffer" src="src\maple_tree.glb"></a-asset-item>
-        <a-asset-item id="bush1" response-type="arraybuffer" src="src\plant_bush.glb"></a-asset-item>
-        <a-asset-item id="bush2" response-type="arraybuffer" src="src\photorealistic_bush.glb"></a-asset-item>
-        <a-asset-item id="bush3" response-type="arraybuffer" src="src\bush.glb"></a-asset-item>
-        <img id="sky" response-type="arraybuffer" src="src\skyskysky.jpg">
-        <img id="groundTexture" src="src\grass_ground_68_24_basecolor_diffuse.jpg">
+        <a-asset-item id="lion" response-type="arraybuffer" src="../src/lion_low.glb"></a-asset-item>
+        <a-asset-item id="rhino" response-type="arraybuffer" src="../src/rhino_demo2.glb"></a-asset-item>
+        <!-- <a-asset-item id="hill" response-type="arraybuffer" src="../src/castle_hill_kirriemuir.glb"></a-asset-item> -->
+        <a-asset-item id="tree1" response-type="arraybuffer" src="../src/realistic__maple_tree_models.glb"></a-asset-item>
+        <a-asset-item id="tree2" response-type="arraybuffer" src="../src/maple_tree.glb"></a-asset-item>
+        <a-asset-item id="bush1" response-type="arraybuffer" src="../src/plant_bush.glb"></a-asset-item>
+        <a-asset-item id="bush2" response-type="arraybuffer" src="../src/photorealistic_bush.glb"></a-asset-item>
+        <a-asset-item id="bush3" response-type="arraybuffer" src="../src/bush.glb"></a-asset-item>
+        <img id="sky" response-type="arraybuffer" src="../src/skyskysky.jpg">
+        <img id="groundTexture" src="../src/grass_ground_68_24_basecolor_diffuse.jpg">
       </a-assets>
       <a-entity gltf-model="#giraffe" animation_click rotation="0 20 0" position="0.380 0 2.464"></a-entity>
       <a-entity gltf-model="#lion" rotation="0 20 0" position="-13.6 0 -11.98"></a-entity>
       <a-entity gltf-model="#rhino" scale="0.15 0.15 0.15" rotation="0 50 0" position="13.72 0.654 -11.73"></a-entity>
 
-      <a-entity gltf-model="src\plant_bush.glb" scale="0.001 0.001 0.001" position="-7.69177 0 5.72411"></a-entity>
-      <a-entity gltf-model="src\plant_bush.glb" scale="0.001 0.001 0.001" position="-3.83067 0 4.81812"></a-entity>
-      <a-entity gltf-model="src\plant_bush.glb" scale="0.001 0.001 0.001" position="-0.94652 0 8.08588"></a-entity>
-      <a-entity gltf-model="src\plant_bush.glb" scale="0.001 0.001 0.001" position="3.16933 0 2.31647"></a-entity>
-      <a-entity gltf-model="src\plant_bush.glb" scale="0.001 0.001 0.001" position="5.84999 0 6.66282"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="-4.51626 0 2.68866"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="-2.67798 0 1.68268"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="-0.67121 0 0"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="1.83371 0 0"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="4.25761 0 1.94964"></a-entity>
-      <a-entity gltf-model="src\bush.glb" scale="0.025 0.025 0.025" position="5.9801 0 3.38405"></a-entity>
+      <a-entity gltf-model="../src/plant_bush.glb" scale="0.001 0.001 0.001" position="-7.69177 0 5.72411"></a-entity>
+      <a-entity gltf-model="../src/plant_bush.glb" scale="0.001 0.001 0.001" position="-3.83067 0 4.81812"></a-entity>
+      <a-entity gltf-model="../src/plant_bush.glb" scale="0.001 0.001 0.001" position="-0.94652 0 8.08588"></a-entity>
+      <a-entity gltf-model="../src/plant_bush.glb" scale="0.001 0.001 0.001" position="3.16933 0 2.31647"></a-entity>
+      <a-entity gltf-model="../src/plant_bush.glb" scale="0.001 0.001 0.001" position="5.84999 0 6.66282"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="-4.51626 0 2.68866"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="-2.67798 0 1.68268"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="-0.67121 0 0"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="1.83371 0 0"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="4.25761 0 1.94964"></a-entity>
+      <a-entity gltf-model="../src/bush.glb" scale="0.025 0.025 0.025" position="5.9801 0 3.38405"></a-entity>
       
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="-7.18098 0 2.83495" scale="0.48 0.67 0.73"></a-entity>
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="-3.33033 0 -0.11692" scale="0.54 0.63 0.57"></a-entity>
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="1.39505 0 -1.31184" scale="0.67 0.75 0.54"></a-entity>
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="5.69126 0 2.35016" scale="0.55 0.61 0.4"></a-entity>
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="9.18844 -0.06836 2.60101" scale="0.59 0.74 0.61"></a-entity>
-      <a-entity gltf-model="src\realistic__maple_tree_models.glb" position="-10.64114 0 5.10269" scale="0.65 0.66 0.54"></a-entity>
-  
-   
-  
-
-      
-
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="-7.18098 0 2.83495" scale="0.48 0.67 0.73"></a-entity>
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="-3.33033 0 -0.11692" scale="0.54 0.63 0.57"></a-entity>
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="1.39505 0 -1.31184" scale="0.67 0.75 0.54"></a-entity>
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="5.69126 0 2.35016" scale="0.55 0.61 0.4"></a-entity>
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="9.18844 -0.06836 2.60101" scale="0.59 0.74 0.61"></a-entity>
+      <a-entity gltf-model="../src/realistic__maple_tree_models.glb" position="-10.64114 0 5.10269" scale="0.65 0.66 0.54"></a-entity>
 
       <a-sky src="#sky" intensity="1.8" type="ambient" ></a-sky>
       <a-light intensity="1.3" type="ambient"></a-light>

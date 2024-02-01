@@ -76,7 +76,8 @@
         <a-asset-item id="lion" response-type="arraybuffer" src="assets/lionExhibit/lion.glb"></a-asset-item>
         <!--https://sketchfab.com/3d-models/tree-low-poly-4cd243eb74c74b3ea2190ebcec0439fb-->
         <a-asset-item id="tree" response-type="arraybuffer" src="assets/lionExhibit/tree.glb"></a-asset-item>
-        <a-asset-item id="fern" response-type="arraybuffer" src="assets/lionExhibit/fern.glb"></a-asset-item>
+        <a-asset-item id="fallenLog" response-type="arraybuffer" src="assets/lionExhibit/fallenLog.glb"></a-asset-item>
+        <a-asset-item id="fallenTree" response-type="arraybuffer" src="assets/lionExhibit/fallenTree.glb"></a-asset-item>
         <a-asset-item id="rock" response-type="arraybuffer" src="assets/lionExhibit/rock.glb"></a-asset-item>
         <a-asset-item id="grassPatch" response-type="arraybuffer" src="assets/lionExhibit/grassPatch.glb"></a-asset-item>
         <a-asset-item id="lionExhibit" response-type="arraybuffer" src="assets/lionExhibit/lionexhibit.glb"></a-asset-item>
@@ -84,9 +85,9 @@
       
       <a-sky src="assets/industrial_sunset_puresky_4k_new.jpg"></a-sky>
       <!--shadow-->
-      <a-entity light="color:#FCF6EA; type:directional; intensity: 0.9; castShadow: true; type: point; shadowBias: -0.001; decay: -0.3" position="60 30 100" data-aframe-default-light="" aframe-injected="" rotation="-60 0 0"></a-entity>
+      <a-entity light="color:#DDD; type:directional; intensity: 1.5; castShadow: true; type: point; shadowBias: -0.005; decay: -0.3" position="60 30 100" rotation="-60 0 0"></a-entity>
       <!-- sun -->
-      <a-entity light="color:#FCF9D9; type:directional; intensity: 4" position="-0.5 -4.30949 5.35426"></a-entity>
+      <a-entity light="color:#EEEEEE; type:directional; intensity: 1" position="-0.5 -4.30949 5.35426"></a-entity>
       <!--ground-->
       <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
       <!-- lion -->
@@ -94,15 +95,19 @@
       <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .75" rotation="0 -10 0" position="-17 -0.245 -55.8" scale="9.5 9.5 9.7"></a-entity>
       <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .9" rotation="-1 -44.8 -7.3" position="36 -10.33 -45.63" scale="11 11 11"></a-entity>
       <!-- tree -->
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="62 1.6 -94" scale="0.05 0.05 0.025"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="-83 -10 38" scale="0.07 0.07 0.05"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="51 -24 -194" scale="0.05 0.05 0.025"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="70 -10 -80" scale="0.05 0.05 0.025"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="-70 -10 80" scale="0.07 0.07 0.05"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="100 -10 80" scale="0.05 0.05 0.025"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="-100 -10 0" scale="0.05 0.05 0.025"></a-entity>
       <!-- grass patch -->
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="3.7 -10.4 -60" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="30 -10.25 -43" scale="6 1 2.5"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 -96" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="14 -9.95 -114" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 -136" scale="6 1 3"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 0" scale="6 1 3"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="30 -10.25 -60" scale="6 1 2.5"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 -30" scale="6 1 3"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 30" scale="6 1 3"></a-entity>
+      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 60" scale="6 1 3"></a-entity>
+      <!-- log -->
+      <a-entity shadow="cast: true; receive: true" gltf-model="#fallenTree" rotation="-0.4244 -75 0.179" position="20 -10.25 100" scale="2 2 2"></a-entity>
+     
       <!-- rock -->
       <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="-64 -13 47.9" scale="20 20 20"></a-entity>
       <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="89 -17 0" scale="25 25 25"></a-entity>
@@ -144,22 +149,24 @@
        "cameraY": 0,
        "cameraZ": 0
       },
-      {"name": "Lion 2",
-       "cameraX": -60,
+      {"name": "Camera 2",
+       "cameraX": -90,
        "cameraY": 0,
-       "cameraZ": -70,
+       "cameraZ": 0,
       },
       {"name": "Camera 3",
-       "cameraX": 230,
-       "cameraY": 283,
-       "cameraZ": 220
+       "cameraX": 80,
+       "cameraY": 0,
+       "cameraZ": 0,
       },
     ]
     //index of the arrow navigation
     let index = 0;
     function updateIndex () {
+      console.log(index);
+      console.log(animals[index].cameraX + ", " + animals[index].cameraY + ", " + animals[index].cameraZ);
       animalIndexName.innerHTML = animals[index].name;
-      camera.object3D.position.set(animals[index].cameraX, animals[0].cameraY, animals[0].cameraZ);
+      camera.object3D.position.set(animals[index].cameraX, animals[index].cameraY, animals[index].cameraZ);
     }
     function navigateLeft() {
       fadeOut();

@@ -160,7 +160,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:-50, y:0, z:40, duration:3000, animation:"loopWalk"});
+      move(lion, {x:-50, y:0, z:-80, duration:3000, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -191,7 +191,17 @@ function fadeIn() {
   }
  */
 function move(element, property) {
-  var angle = 0;
+  let angle = 0;
+  let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
+  let location;
+  if ((property.x > 0 && property.z < 0) || (property.x < 0 && property.z > 0)) {
+    location = "property: position; to: " + (element.object3D.position.x+property.z) + " " + element.object3D.position.y + " " + (element.object3D.position.z-property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+  } else if ((property.x > 0 && property.z > 0)||(property.x < 0 && property.z < 0)) {
+    location = "property: position; to: " + (element.object3D.position.x+property.z) + " " + element.object3D.position.y + " " + (element.object3D.position.z+property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+  } else {
+    location = "property: position; to: " + (element.object3D.position.x+property.z) + " " + element.object3D.position.y + " " + (element.object3D.position.z-property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+    console.log("location calculation error");
+  }
   if (property.x>0 && property.z>0) {
     //quadrant 1
     angle = 0 + Math.abs((Math.atan(property.z/property.x)*(180/Math.PI)));
@@ -208,12 +218,11 @@ function move(element, property) {
     angle = 0;
     console.log("rotation calculation error");
   }
-  let animation = "clip:"+property.animation+"; loop: 0; timeScale: .75";
   angle = 'property: rotation; to: 0 ' + angle + ' 0; dur: 350; easing:linear; loop: false;';
-  let location = "property: position; to: " + (element.object3D.position.x+property.z) + " " + element.object3D.position.y + " " + (element.object3D.position.z-property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation', location);
   element.setAttribute('animation__2', angle);
+  console.log(property.x+", "+property.z);
 }
   </script>
 </html>

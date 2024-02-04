@@ -73,11 +73,9 @@
     <a-scene id="aframe" loading-screen="dotsColor: black; backgroundColor: white" ar-hit-test="target:#objects;" webxr renderer="precision: high; antialias: auto; colorManagement: true; sortObjects: true; physicallyCorrectLights: true" light="defaultLightsEnabled: false" antialias="true" shadow="autoUpdate: true; enabled: true; type: pcfsoft;" raycaster="far: 100; objects: [link]; autoRefresh: false" cursor="rayOrigin: mouse" id="scene">
       <!--<iframe src="exhibitNavigation.html"  style="z-index: 100; position:relative; border:0; float:right;"></iframe>-->
       <a-assets>
-        <a-asset-item id="lion" response-type="arraybuffer" src="assets/lionExhibit/lion.glb"></a-asset-item>
+        <a-asset-item id="lion" response-type="arraybuffer" src="assets/giraffe2.glb"></a-asset-item>
         <!--https://sketchfab.com/3d-models/tree-low-poly-4cd243eb74c74b3ea2190ebcec0439fb-->
         <a-asset-item id="tree" response-type="arraybuffer" src="assets/lionExhibit/tree.glb"></a-asset-item>
-        <a-asset-item id="fallenLog" response-type="arraybuffer" src="assets/lionExhibit/fallenLog.glb"></a-asset-item>
-        <a-asset-item id="fallenTree" response-type="arraybuffer" src="assets/lionExhibit/fallenTree.glb"></a-asset-item>
         <a-asset-item id="rock" response-type="arraybuffer" src="assets/lionExhibit/rock.glb"></a-asset-item>
         <a-asset-item id="grassPatch" response-type="arraybuffer" src="assets/lionExhibit/grassPatch.glb"></a-asset-item>
         <a-asset-item id="lionExhibit" response-type="arraybuffer" src="assets/lionExhibit/lionexhibit.glb"></a-asset-item>
@@ -91,30 +89,8 @@
       <!--ground-->
       <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
       <!-- lion -->
-      <a-entity shadow="cast: true; receive: false" light="type: hemisphere; color: #BBB" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1"  position="-65.9 -9.589 -60" scale="11 11 11" rotation="-5.5 80 0.97"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .75" rotation="0 -10 0" position="-17 -0.245 -55.8" scale="9.5 9.5 9.7"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .9" rotation="-1 -44.8 -7.3" position="36 -10.33 -45.63" scale="11 11 11"></a-entity>
-      <!-- tree -->
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="70 -10 -80" scale="0.05 0.05 0.025"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="-70 -10 80" scale="0.07 0.07 0.05"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="100 -10 80" scale="0.05 0.05 0.025"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#tree" rotation="-0.4244 -75 0.179" position="-100 -10 0" scale="0.05 0.05 0.025"></a-entity>
-      <!-- grass patch -->
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 0" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="30 -10.25 -60" scale="6 1 2.5"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 -30" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 30" scale="6 1 3"></a-entity>
-      <a-entity shadow="cast: true; receive: false" gltf-model="#grassPatch" rotation="-0.4244 -75 0.179" position="20 -10.25 60" scale="6 1 3"></a-entity>
-      <!-- log -->
-      <a-entity shadow="cast: true; receive: true" gltf-model="#fallenTree" rotation="-0.4244 -75 0.179" position="20 -10.25 100" scale="2 2 2"></a-entity>
-     
-      <!-- rock -->
-      <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="-64 -13 47.9" scale="20 20 20"></a-entity>
-      <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="89 -17 0" scale="25 25 25"></a-entity>
-      <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="-10 -9 -90" scale="15 15 15"></a-entity>
-      
-      <a-entity shadow="cast: true; receive: true" gltf-model="#lionExhibit" rotation="0 0 0" position="0 -9.1 -96.5" scale="1 1 1"></a-entity>
-      <!-- camera -->
+        <a-entity id="lionTest" position="-17 0 -55.8" shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip:loopIdle01; loop: 1; timeScale: .50" scale="5 5 5"></a-entity>
+
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
         <a-camera id="head" rotation="0 0 0" position="0 5 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
       </a-entity>
@@ -144,9 +120,9 @@
         },
     */
     let animals =[
-      {"name": "Lion",
+      {"name": "Lion1",
        "cameraX": 0,
-       "cameraY": 0,
+       "cameraY": 5,
        "cameraZ": 0
       },
       {"name": "Camera 2",
@@ -160,6 +136,7 @@
        "cameraZ": 0,
       },
     ]
+    let lion = document.getElementById("lionTest");
     //index of the arrow navigation
     let index = 0;
     function updateIndex () {
@@ -168,26 +145,34 @@
       animalIndexName.innerHTML = animals[index].name;
       camera.object3D.position.set(animals[index].cameraX, animals[index].cameraY, animals[index].cameraZ);
     }
+    updateIndex();
+    //shift to prev camera
     function navigateLeft() {
-      fadeOut();
+      move(lion, {x:50, y:0, z:-40, duration:3000, animation:"loopWalk"});
+      /*fadeOut();
       if (index > 0) {
         index--;
         updateIndex();
       } else {
         index = animals.length-1;
         updateIndex();
-      }
+      }*/
     }
+    //shift to next camera
     function navigateRight() {
-      fadeOut()
+      move(lion, {x:-50, y:0, z:40, duration:3000, animation:"loopWalk"});
+      //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
+      
+      /*fadeOut()
       if (index < animals.length-1) {
         index++;
         updateIndex();
       } else {
         index = 0;
         updateIndex();
-      }
+      }*/
     }
+//camera transition animation
 function fadeOut() {
   aframe.classList.remove("aframeTransition");
   aframe.style.filter = "brightness(0%)";
@@ -195,6 +180,40 @@ function fadeOut() {
 function fadeIn() {
   this.classList.add("aframeTransition");
   this.style.filter = "brightness(100%)";
+}
+/*property
+ {
+  x: ending x,
+  y: ending y,
+  z: ending z,
+  duration: animation duration,
+  animation: animation name
+  }
+ */
+function move(element, property) {
+  var angle = 0;
+  if (property.x>0 && property.z>0) {
+    //quadrant 1
+    angle = 0 + Math.abs((Math.atan(property.z/property.x)*(180/Math.PI)));
+  } else if (property.x<0 && property.z>0) {
+    //quadrant 2
+    angle = 180 - Math.abs((Math.atan(property.z/property.x)*(180/Math.PI)));
+  } else if (property.x<0 && property.z<0) {
+    //quadrant 3
+    angle = 180 + Math.abs((Math.atan(property.z/property.x)*(180/Math.PI)));
+  } else if (property.x>0 && property.z<0) {
+    //quadrant 4
+    angle = 360 - Math.abs((Math.atan(property.z/property.x)*(180/Math.PI)));
+  } else {
+    angle = 0;
+    console.log("rotation calculation error");
+  }
+  let animation = "clip:"+property.animation+"; loop: 0; timeScale: .75";
+  angle = 'property: rotation; to: 0 ' + angle + ' 0; dur: 350; easing:linear; loop: false;';
+  let location = "property: position; to: " + (element.object3D.position.x+property.z) + " " + element.object3D.position.y + " " + (element.object3D.position.z-property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+  element.setAttribute('animation-mixer', animation);
+  element.setAttribute('animation', location);
+  element.setAttribute('animation__2', angle);
 }
   </script>
 </html>

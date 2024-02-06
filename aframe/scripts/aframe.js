@@ -23436,7 +23436,7 @@ var KEYS = ['KeyW', 'KeyA', 'KeyS', 'KeyD', 'ArrowUp', 'ArrowLeft', 'ArrowRight'
 module.exports.Component = registerComponent('wasd-controls', {
   schema: {
     acceleration: {
-      default: 65
+      default: 400
     },
     adAxis: {
       default: 'x',

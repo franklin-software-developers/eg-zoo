@@ -163,7 +163,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:-50, y:0, z:-100, duration:3000, animation:"loopWalk"});
+      move(lion, {x:5, y:0, z:-70, duration:3000, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -200,7 +200,7 @@ function move(element, property) {
   console.log("relative: x: "+property.x + ", y: " + property.z)
   console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
   //decides whether to subtract or add z position
-  location = "property: position; to: " + ((property.x)) + " " + element.object3D.position.y + " " + ((property.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
   /*
   if ((property.x > 0 && property.z < 0)) {
     console.log(element.object3D.position.x+property.x);
@@ -225,7 +225,7 @@ function move(element, property) {
   */
   let valueX = (property.x)
   let valueZ = (property.z);
-  let trigAng = (Math.round((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI)))));
+  let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
     //quadrant 1
@@ -247,8 +247,9 @@ function move(element, property) {
     angle = 0;
     console.log("rotation calculation error");
   }
-  console.log("angle: " + (angle));
-  console.log("Tan: " + trigAng);
+  //console.log("new Angle: " + element.object3D.rotation.y);
+  console.log("angle: " + (angle)); //element.object3D.rotation.y
+  //console.log("Tan: " + trigAng);
   angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 100; easing:linear; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);

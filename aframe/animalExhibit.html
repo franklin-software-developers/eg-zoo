@@ -87,15 +87,15 @@
       <!-- sun -->
       <a-entity light="color:#EEEEEE; type:directional; intensity: 1" position="-0.5 -4.30949 5.35426"></a-entity>
       <!--ground-->
-      <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
+      <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -1 0" height="3" radius="500"></a-cylinder>
       <!-- lion -->
-        <a-entity animation-mixer="clip:loopIdle01" id="lionTest" rotation="0 0 0" position="0 0 0" shadow="cast: true; receive: false" gltf-model="#lion" scale="5 5 5"></a-entity>
+        <a-entity animation-mixer="clip:loopIdle01" id="lionTest" rotation="0 0 0" position="0 0 -30" shadow="cast: true; receive: false" gltf-model="#lion" scale="10 10 10"></a-entity>
         <a-entity rotation="0 0 0"  position="20 0 -40" shadow="cast: true; receive: false" gltf-model="#lion" scale="5 5 5"></a-entity>
         
         <!--animation-mixer="clip:loopIdle01; loop: 1; timeScale: .50"-->
 
       <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
-        <a-camera id="head" rotation="0 0 0" position="0 5 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
+        <a-camera id="head" rotation="0 0 0" position="0 8 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
       </a-entity>
     </a-scene>
   </div>
@@ -185,7 +185,7 @@ function fadeIn() {
   this.style.filter = "brightness(100%)";
 }
 /*property
- {
+  {
   x: ending x,
   y: ending y,
   z: ending z,
@@ -250,7 +250,7 @@ function move(element, property) {
   //console.log("new Angle: " + element.object3D.rotation.y);
   console.log("angle: " + (angle)); //element.object3D.rotation.y
   //console.log("Tan: " + trigAng);
-  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 100; easing:linear; loop: false;';
+  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1500; easing:easeOutCubic; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);

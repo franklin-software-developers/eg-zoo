@@ -122,6 +122,7 @@
         "cameraZ": 0
         },
     */
+   //move(lion, {x:-50, y:0, z:0, speed:20, animation:"loopWalk"});
     let animals =[
       {"name": "Lion1",
        "cameraX": 0,
@@ -151,29 +152,25 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-50, y:0, z:0, speed:20, animation:"loopWalk"});
-      /*fadeOut();
+      fadeOut();
       if (index > 0) {
         index--;
         updateIndex();
       } else {
         index = animals.length-1;
         updateIndex();
-      }*/
+      }
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:0, y:0, z:-150, speed:20, animation:"loopWalk"});
-      //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
-      
-      /*fadeOut()
+      fadeOut()
       if (index < animals.length-1) {
         index++;
         updateIndex();
       } else {
         index = 0;
         updateIndex();
-      }*/
+      }
     }
 //camera transition animation
 function fadeOut() {
@@ -202,8 +199,6 @@ function move(element, property) {
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
   let location;
-  console.log("relative: x: "+property.x + ", y: " + property.z)
-  console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
   //decides whether to subtract or add z position
   location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000 + "; easing: linear; loop: false;";
   let valueX = property.x;

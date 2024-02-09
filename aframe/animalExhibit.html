@@ -151,7 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-90, y:0, z:90, duration:3000, animation:"loopWalk"});
+      move(lion, {x:-50, y:0, z:30, duration:3000, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
         index--;
@@ -163,7 +163,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:5, y:0, z:-70, duration:3000, animation:"loopWalk"});
+      move(lion, {x:-50, y:0, z:-25, duration:3000, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -197,32 +197,11 @@ function move(element, property) {
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
   let location;
+  let distance = Math.sqrt(property.x*property.x+property.z*property.z)
   console.log("relative: x: "+property.x + ", y: " + property.z)
   console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
   //decides whether to subtract or add z position
   location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-  /*
-  if ((property.x > 0 && property.z < 0)) {
-    console.log(element.object3D.position.x+property.x);
-    console.log(element.object3D.position.x+property.z);
-    console.log("functional1")
-    location = "property: position; to: " + ((property.x)) + " " + element.object3D.position.y + " " + ((property.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-  } else if ((property.x < 0 && property.z > 0)) {
-    console.log("functional2")
-    location = "property: position; to: " + ((property.x)) + " " + element.object3D.position.y + " " + ((property.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-  } else if ((property.x > 0 && property.z > 0)) {
-    location = "property: position; to: " + (property.x) + " " + element.object3D.position.y + " " + (property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-    console.log("functional3")
-    console.log(element.object3D.position.x+property.x);
-    console.log(element.object3D.position.x+property.z);
-  } else if ((property.x > 0 && property.z < 0)) {
-    console.log("functional4")
-    location = "property: position; to: " + 0 + " " + element.object3D.position.y + " " + (property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-  } else {
-    location = "property: position; to: " + (property.x) + " " + element.object3D.position.y + " " + (property.z) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-    console.log("location calculation error");
-  }
-  */
   let valueX = (property.x)
   let valueZ = (property.z);
   let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
@@ -247,15 +226,12 @@ function move(element, property) {
     angle = 0;
     console.log("rotation calculation error");
   }
-  //console.log("new Angle: " + element.object3D.rotation.y);
   console.log("angle: " + (angle)); //element.object3D.rotation.y
-  //console.log("Tan: " + trigAng);
-  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1500; easing:easeOutCubic; loop: false;';
+  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:easeOutCubic; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);
   element.setAttribute('animation', location);
-
 }
   </script>
 </html>

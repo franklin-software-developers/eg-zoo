@@ -194,6 +194,11 @@ function fadeIn() {
   }
  */
 function move(element, property) {
+  property.y = property.y || 0;
+  property.x = property.x || 0;
+  property.z = property.z || 0;
+  property.ease = property.ease || "easeOutCubic";
+  property.speed = property.speed || 20;
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
   let location;
@@ -240,7 +245,7 @@ function move(element, property) {
     console.log("rotation calculation error");
   }
   console.log("angle: " + (angle)); //element.object3D.rotation.y
-  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:easeOutCubic; loop: false;';
+  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);

@@ -151,7 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-50, y:0, z:0, duration:3000, animation:"loopWalk"});
+      move(lion, {x:-50, y:0, z:0, speed:20, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
         index--;
@@ -163,7 +163,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:0, y:0, z:-25, duration:3000, animation:"loopWalk"});
+      move(lion, {x:0, y:0, z:-150, speed:20, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -197,11 +197,10 @@ function move(element, property) {
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
   let location;
-  let distance = Math.sqrt(property.x*property.x+property.z*property.z)
   console.log("relative: x: "+property.x + ", y: " + property.z)
   console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
   //decides whether to subtract or add z position
-  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
+  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000 + "; easing: linear; loop: false;";
   let valueX = property.x;
   let valueZ = property.z;
   let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
@@ -224,13 +223,17 @@ function move(element, property) {
     console.log("quad 4")
   } else if (valueZ == 0) {
       if (valueX < 0)
+      //directly left
         angle = 180;
       else
+      //directly right
         angle = 0;
   } else if (valueX == 0) {
       if (valueZ < 0)
+      //directly down
         angle = 270;
       else
+      //directly up
         angle = 90;
   } else {
     angle = 0;

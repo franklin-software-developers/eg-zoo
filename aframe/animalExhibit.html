@@ -151,7 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-50, y:0, z:30, duration:3000, animation:"loopWalk"});
+      move(lion, {x:-50, y:0, z:0, duration:3000, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
         index--;
@@ -163,7 +163,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:-50, y:0, z:-25, duration:3000, animation:"loopWalk"});
+      move(lion, {x:0, y:0, z:-25, duration:3000, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -202,8 +202,8 @@ function move(element, property) {
   console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
   //decides whether to subtract or add z position
   location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + property.duration + "; easing: linear; loop: false;";
-  let valueX = (property.x)
-  let valueZ = (property.z);
+  let valueX = property.x;
+  let valueZ = property.z;
   let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
@@ -222,6 +222,16 @@ function move(element, property) {
     //quadrant 4
     angle = (360 - trigAng);
     console.log("quad 4")
+  } else if (valueZ == 0) {
+      if (valueX < 0)
+        angle = 180;
+      else
+        angle = 0;
+  } else if (valueX == 0) {
+      if (valueZ < 0)
+        angle = 270;
+      else
+        angle = 90;
   } else {
     angle = 0;
     console.log("rotation calculation error");

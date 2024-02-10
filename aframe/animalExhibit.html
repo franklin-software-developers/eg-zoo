@@ -133,8 +133,11 @@
     aframe.addEventListener("transitionend", fadeIn);
     let camera = document.getElementById("head");
     let animalIndexName = document.getElementById("navigationIndex");
-    //move(lion1, {x:100, y:0, z:0, speed:20, ease:"easeOutCubic", animation:"Animation_Armature", animationSpeed:1.25});
-    /*move function parameters
+    /*
+    ALL PARAMETERS: move(lion1, {x:100, y:0, z:0, speed:20, ease:"easeOutCubic", animation:"Animation_Armature", animationSpeed:1.25});
+    
+    IMPORTANT PARAMETERS: move(lion1, {x:100, z:0, speed:20, animation:"Animation_Armature"});
+    Move function parameters:
       id: id of a-entity,
       {
       x: ending x,
@@ -146,6 +149,8 @@
       animation speed: how fast to play the animation,
       }
     */
+
+    
     //keeps track of camera location. Because value must be int and not string, must be store separately
     /*ADD ANIMALS HERE:
       just create an object with the template below and your camera will be automatically added

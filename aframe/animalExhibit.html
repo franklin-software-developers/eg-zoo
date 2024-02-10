@@ -151,7 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-50, y:0, z:0, speed:20, animation:"loopWalk"});
+      move(lion, {x:-100, y:0, z:50, speed:20, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
         index--;
@@ -163,7 +163,7 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:0, y:0, z:-150, speed:20, animation:"loopWalk"});
+      move(lion, {x:0, z:-150, speed:20, animation:"loopWalk"});
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()

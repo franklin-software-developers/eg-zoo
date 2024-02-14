@@ -89,8 +89,8 @@
       <!--ground-->
       <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -1 0" height="3" radius="500"></a-cylinder>
       <!-- lion -->
-        <a-entity animation-mixer="clip:loopIdle01" id="lionTest" rotation="0 0 0" position="0 0 -30" shadow="cast: true; receive: false" gltf-model="#lion" scale="10 10 10"></a-entity>
-        <a-entity rotation="0 0 0"  position="20 0 -40" shadow="cast: true; receive: false" gltf-model="#lion" scale="5 5 5"></a-entity>
+        <a-entity animation-mixer="clip:loopIdle01" id="giraffe" rotation="0 0 0" position="0 0 -30" shadow="cast: true; receive: false" gltf-model="#lion" scale="10 10 10"></a-entity>
+        <a-entity rotation="0 0 0"  position="20 0 -40" shadow="cast: true; receive: false" id="smallGiraffe" gltf-model="#lion" scale="5 5 5"></a-entity>
         
         <!--animation-mixer="clip:loopIdle01; loop: 1; timeScale: .50"-->
 
@@ -139,7 +139,7 @@
        "cameraZ": 0,
       },
     ]
-    let lion = document.getElementById("lionTest");
+
     //index of the arrow navigation
     let index = 0;
     function updateIndex () {
@@ -151,7 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      move(lion, {x:-100, y:0, z:50, speed:20, animation:"loopWalk"});
+      //move(lion, {x:-100, y:0, z:50, speed:20, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
         index--;
@@ -163,7 +163,11 @@
     }
     //shift to next camera
     function navigateRight() {
-      move(lion, {x:0, z:-150, speed:20, animation:"loopWalk"});
+      //move(lion, {x:-30, y:0, z:50, speed:20, animation:"loopWalk"});
+      movePath(path);
+      /*setTimeout(function() {
+        move(lion, {x:0, z:-150, speed:20, animation:"loopWalk"});
+      }, 2000);*/
       //lion.setAttribute('animation', "property: rotation; to: 30 -10 -10; dur: 2000; easing: linear; loop: false");
       
       /*fadeOut()
@@ -193,7 +197,28 @@ function fadeIn() {
   animation: animation name
   }
  */
-function move(element, property) {
+let lion = document.getElementById("giraffe");
+let path1 = [
+  {x:0, y:0, z:-80, speed:20, animation:"loopWalk"},
+  {x:80, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
+  {x:-80, y:0, z:0, speed:20, animation:"loopWalk"}
+]
+let path2 = [
+  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
+  {x:-80, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:-80, speed:20, animation:"loopWalk"},
+  {x:80, y:0, z:0, speed:20, animation:"loopWalk"}
+]
+function movePath (id, path) {
+  let counter = 0;
+  move(id, path, path[0], counter);
+}
+movePath(giraffe, path1);
+movePath(smallGiraffe, path2);
+
+function move(element, path, property, counter) {
+  //property = path[counter];
   property.y = property.y || 0;
   property.x = property.x || 0;
   property.z = property.z || 0;
@@ -202,10 +227,11 @@ function move(element, property) {
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: 1.25";
   let location;
-  console.log("relative: x: "+property.x + ", y: " + property.z)
-  console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z)
+  console.log("relative: x: "+property.x + ", y: " + property.z);
+  console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z);
+  let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
   //decides whether to subtract or add z position
-  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000 + "; easing: linear; loop: false;";
+  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
   let valueX = property.x;
   let valueZ = property.z;
   let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
@@ -244,12 +270,27 @@ function move(element, property) {
     angle = 0;
     console.log("rotation calculation error");
   }
+  if (angle > 180) {
+    angle = angle-360;
+  }
   console.log("angle: " + (angle)); //element.object3D.rotation.y
   angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);
   element.setAttribute('animation', location);
-}
+    if (counter < path.length) {
+      setTimeout(function() {
+        //plus one because first is already ran
+        if (counter+1 < path.length) {
+          counter++;
+          move(element, path, path[counter], counter);
+        } else {
+          counter = 0;
+        }
+      }, moveDuration);
+      //counter++;
+    }
+  }
   </script>
 </html>

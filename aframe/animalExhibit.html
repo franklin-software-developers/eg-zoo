@@ -133,9 +133,11 @@
     aframe.addEventListener("transitionend", fadeIn);
     let camera = document.getElementById("head");
     let animalIndexName = document.getElementById("navigationIndex");
+
     /*
-    ALL PARAMETERS: move(lion1, {x:100, y:0, z:0, speed:20, ease:"easeOutCubic", animation:"Animation_Armature", animationSpeed:1.25});
-    
+    Example: move(lion1, {x:100, z:-20, speed:20, animation:"Animation_Armature"});
+
+    ALL PARAMETERS: move(id, {x:0, y:0, z:0, speed:20, ease:"easeOutCubic", animation:"Animation_Armature", animationSpeed:1.25});
     IMPORTANT PARAMETERS: move(lion1, {x:100, z:0, speed:20, animation:"Animation_Armature"});
     Move function parameters:
       id: id of a-entity,

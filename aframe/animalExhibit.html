@@ -151,6 +151,7 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
+      movePath(smallGiraffe, path2);
       //move(lion, {x:-100, y:0, z:50, speed:20, animation:"loopWalk"});
       /*fadeOut();
       if (index > 0) {
@@ -164,7 +165,7 @@
     //shift to next camera
     function navigateRight() {
       //move(lion, {x:-30, y:0, z:50, speed:20, animation:"loopWalk"});
-      movePath(path);
+      movePath(giraffe, path1);
       /*setTimeout(function() {
         move(lion, {x:0, z:-150, speed:20, animation:"loopWalk"});
       }, 2000);*/
@@ -214,8 +215,12 @@ function movePath (id, path) {
   let counter = 0;
   move(id, path, path[0], counter);
 }
-movePath(giraffe, path1);
-movePath(smallGiraffe, path2);
+//must wait a little for everything to be completely loaded. Else calculation will be off
+setTimeout(function(){
+  movePath(giraffe, path1);
+  movePath(giraffe, path2);
+}, 1000)
+//movePath(smallGiraffe, path2);
 
 function move(element, path, property, counter) {
   //property = path[counter];
@@ -231,10 +236,10 @@ function move(element, path, property, counter) {
   console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z);
   let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
   //decides whether to subtract or add z position
-  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + element.object3D.position.y + " " + ((property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
+  location = "property: position; to: " + (Math.ceil(property.x+element.object3D.position.x)) + " " + Math.ceil(property.y+element.object3D.position.y) + " " + (Math.ceil(property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
   let valueX = property.x;
   let valueZ = property.z;
-  let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
+  let trigAng = ((Math.abs(Math.atan((Math.ceil(property.z))/(Math.ceil(property.x)))*(180/Math.PI))));
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
     //quadrant 1

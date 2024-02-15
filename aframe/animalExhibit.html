@@ -200,16 +200,20 @@ function fadeIn() {
  */
 let lion = document.getElementById("giraffe");
 let path1 = [
-  {x:0, y:0, z:-80, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
   {x:80, y:0, z:0, speed:20, animation:"loopWalk"},
   {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
-  {x:-80, y:0, z:0, speed:20, animation:"loopWalk"}
+  {x:80, y:0, z:0, speed:20, animation:"loopWalk"}
 ]
 let path2 = [
-  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
-  {x:-80, y:0, z:0, speed:20, animation:"loopWalk"},
-  {x:0, y:0, z:-80, speed:20, animation:"loopWalk"},
-  {x:80, y:0, z:0, speed:20, animation:"loopWalk"}
+  {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:-40, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:-40, speed:20, animation:"loopWalk"},
+  {x:40, y:0, z:-40, speed:20, animation:"loopWalk"}
 ]
 function movePath (id, path) {
   let counter = 0;
@@ -218,7 +222,7 @@ function movePath (id, path) {
 //must wait a little for everything to be completely loaded. Else calculation will be off
 setTimeout(function(){
   movePath(giraffe, path1);
-  movePath(giraffe, path2);
+  movePath(smallGiraffe, path2);
 }, 1000)
 //movePath(smallGiraffe, path2);
 
@@ -275,8 +279,10 @@ function move(element, path, property, counter) {
     angle = 0;
     console.log("rotation calculation error");
   }
-  if (angle > 180) {
-    angle = angle-360;
+  let counterAngle = angle-360;
+  if (angle >= 181) {
+    console.log("importatnt: " + (angle))
+    //angle = angle-360;
   }
   console.log("angle: " + (angle)); //element.object3D.rotation.y
   angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:'+property.ease+'; loop: false;';
@@ -290,8 +296,10 @@ function move(element, path, property, counter) {
         if (counter+1 < path.length) {
           counter++;
           move(element, path, path[counter], counter);
+          //else function below is when animation is done
         } else {
           counter = 0;
+          console.log("animation completed!")
         }
       }, moveDuration);
       //counter++;

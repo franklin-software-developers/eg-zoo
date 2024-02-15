@@ -76,7 +76,6 @@
       <a-asset-item id="lion" response-type="arraybuffer" src="assets/lionExhibit/lion.glb"></a-asset-item>
       <!--https://sketchfab.com/3d-models/tree-low-poly-4cd243eb74c74b3ea2190ebcec0439fb-->
       <a-asset-item id="tree" response-type="arraybuffer" src="assets/lionExhibit/tree.glb"></a-asset-item>
-      <a-asset-item id="fallenLog" response-type="arraybuffer" src="assets/lionExhibit/fallenLog.glb"></a-asset-item>
       <a-asset-item id="fallenTree" response-type="arraybuffer" src="assets/lionExhibit/fallenTree.glb"></a-asset-item>
       <a-asset-item id="rock" response-type="arraybuffer" src="assets/lionExhibit/rock.glb"></a-asset-item>
       <a-asset-item id="grassPatch" response-type="arraybuffer" src="assets/lionExhibit/grassPatch.glb"></a-asset-item>
@@ -228,32 +227,28 @@ function fadeIn() {
   animation: animation name
   }
  */
-let lion = document.getElementById("giraffe");
-let path1 = [
-  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
-  {x:80, y:0, z:0, speed:20, animation:"loopWalk"},
-  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
-  {x:80, y:0, z:0, speed:20, animation:"loopWalk"}
-]
-let path2 = [
-  {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
-  {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
-  {x:0, y:0, z:40, speed:20, animation:"loopWalk"},
-  {x:-40, y:0, z:40, speed:20, animation:"loopWalk"},
-  {x:-40, y:0, z:0, speed:20, animation:"loopWalk"},
-  {x:-40, y:0, z:-40, speed:20, animation:"loopWalk"},
-  {x:0, y:0, z:-40, speed:20, animation:"loopWalk"},
-  {x:40, y:0, z:-40, speed:20, animation:"loopWalk"}
-]
+//let lion = document.getElementById("giraffe");
+
 function movePath (id, path) {
   let counter = 0;
   move(id, path, path[0], counter);
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
 setTimeout(function(){
-  movePath(lion1, path1);
-  movePath(lion2, path2);
-}, 1000)
+  movePath(lion1, [
+    {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
+    {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
+    {x:40, y:0, z:-20, speed:20, animation:"loopWalk"},
+    {x:-160, y:0, z:-80, speed:20, animation:"loopWalk"}]);
+  /*movePath(lion2, [{x:40, y:0, z:0, speed:20, animation:"loopWalk"},
+    {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
+    {x:0, y:0, z:40, speed:20, animation:"loopWalk"},
+    {x:-40, y:0, z:40, speed:20, animation:"loopWalk"},
+    {x:-40, y:0, z:0, speed:20, animation:"loopWalk"},
+    {x:-40, y:0, z:-40, speed:20, animation:"loopWalk"},
+    {x:0, y:0, z:-40, speed:20, animation:"loopWalk"},
+    {x:40, y:0, z:-40, speed:20, animation:"loopWalk"}]);*/
+}, 3000)
 //movePath(smallGiraffe, path2);
 
 function move(element, path, property, counter) {
@@ -268,7 +263,7 @@ function move(element, path, property, counter) {
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
   let location;
   console.log("relative: x: "+property.x + ", y: " + property.z);
-  console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z);
+  console.log("absolute: x: "+Math.ceil(element.object3D.position.x) + ", y: " + Math.ceil(element.object3D.position.z));
   let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
   //decides whether to subtract or add z position
   location = "property: position; to: " + (Math.ceil(property.x+element.object3D.position.x)) + " " + Math.ceil(property.y+element.object3D.position.y) + " " + (Math.ceil(property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
@@ -278,20 +273,16 @@ function move(element, path, property, counter) {
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
     //quadrant 1
-    console.log("quad 1")
     angle = 0 + trigAng;
   } else if ((valueX<0) && (valueZ>0)) {
     //quadrant 2
-    console.log("quad 2")
     angle = 180 - trigAng;
   } else if ((valueX<0) && (valueZ<0)) {
     //quadrant 3
-    console.log("quad 3")
     angle = 180 + trigAng;
   } else if ((valueX>0) && (valueZ<0)) {
     //quadrant 4
     angle = (360 - trigAng);
-    console.log("quad 4")
   } else if (valueZ == 0) {
       if (valueX < 0)
       //directly left
@@ -312,6 +303,7 @@ function move(element, path, property, counter) {
   }
   let counterAngle = angle-360;
   if (angle >= 181) {
+    angle = angle-360;
     console.log("importatnt: " + (angle))
     //angle = angle-360;
   }

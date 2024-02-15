@@ -219,7 +219,45 @@ function fadeIn() {
   this.classList.add("aframeTransition");
   this.style.filter = "brightness(100%)";
 }
-function move(element, property) {
+/*property
+  {
+  x: ending x,
+  y: ending y,
+  z: ending z,
+  duration: animation duration,
+  animation: animation name
+  }
+ */
+let lion = document.getElementById("giraffe");
+let path1 = [
+  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
+  {x:80, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:80, speed:20, animation:"loopWalk"},
+  {x:80, y:0, z:0, speed:20, animation:"loopWalk"}
+]
+let path2 = [
+  {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:40, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:0, speed:20, animation:"loopWalk"},
+  {x:-40, y:0, z:-40, speed:20, animation:"loopWalk"},
+  {x:0, y:0, z:-40, speed:20, animation:"loopWalk"},
+  {x:40, y:0, z:-40, speed:20, animation:"loopWalk"}
+]
+function movePath (id, path) {
+  let counter = 0;
+  move(id, path, path[0], counter);
+}
+//must wait a little for everything to be completely loaded. Else calculation will be off
+setTimeout(function(){
+  movePath(lion1, path1);
+  movePath(lion2, path2);
+}, 1000)
+//movePath(smallGiraffe, path2);
+
+function move(element, path, property, counter) {
+  //property = path[counter];
   property.y = property.y || 0;
   property.x = property.x || 0;
   property.z = property.z || 0;
@@ -229,11 +267,14 @@ function move(element, property) {
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
   let location;
+  console.log("relative: x: "+property.x + ", y: " + property.z);
+  console.log("absolute: x: "+element.object3D.position.x + ", y: " + element.object3D.position.z);
+  let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
   //decides whether to subtract or add z position
-  location = "property: position; to: " + ((property.x+element.object3D.position.x)) + " " + (property.y+element.object3D.position.y) + " " + ((property.z+element.object3D.position.z)) + "; dur: " + (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000 + "; easing: linear; loop: false;";
+  location = "property: position; to: " + (Math.ceil(property.x+element.object3D.position.x)) + " " + Math.ceil(property.y+element.object3D.position.y) + " " + (Math.ceil(property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
   let valueX = property.x;
   let valueZ = property.z;
-  let trigAng = ((Math.abs(Math.atan((property.z)/(property.x))*(180/Math.PI))));
+  let trigAng = ((Math.abs(Math.atan((Math.ceil(property.z))/(Math.ceil(property.x)))*(180/Math.PI))));
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
     //quadrant 1
@@ -269,12 +310,31 @@ function move(element, property) {
     angle = 0;
     console.log("rotation calculation error");
   }
+  let counterAngle = angle-360;
+  if (angle >= 181) {
+    console.log("importatnt: " + (angle))
+    //angle = angle-360;
+  }
   console.log("angle: " + (angle)); //element.object3D.rotation.y
   angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);
   element.setAttribute('animation', location);
-}
+    if (counter < path.length) {
+      setTimeout(function() {
+        //plus one because first is already ran
+        if (counter+1 < path.length) {
+          counter++;
+          move(element, path, path[counter], counter);
+          //else function below is when animation is done
+        } else {
+          counter = 0;
+          console.log("animation completed!")
+        }
+      }, moveDuration);
+      //counter++;
+    }
+  }
   </script>
 </html>

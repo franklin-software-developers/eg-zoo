@@ -14,6 +14,12 @@
   :root {
     --navigationButtonHeight:10%;
   }
+  body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-text-select: none;
+    -webkit-user-select: none;
+  }
   .center {
     margin: 0;
     position: absolute;
@@ -227,13 +233,10 @@ function fadeIn() {
   animation: animation name
   }
  */
-//let lion = document.getElementById("giraffe");
 
 function movePath (id, path) {
-  //let id = document.getElementById(animal);
   let counter = 0;
   move(id, path, path[0], counter);
-  //move(id, [{x:(id.object3D.position.x - id.initalCoord[0]), y:(id.object3D.position.y - id.initalCoord[1]), z:(id.object3D.position.z - id.initalCoord[2]), speed:20, animation:"loopWalk"}], path[0], counter);
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
 setTimeout(function(){
@@ -246,9 +249,7 @@ setTimeout(function(){
 }, 3000)
 
 function move(element, path, property, counter, initalCoord) {
-  //property = path[counter];
   initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z];
-  console.log(`intial code test here: ${initalCoord[0]}`)
   property.y = property.y || 0;
   property.x = property.x || 0;
   property.z = property.z || 0;
@@ -256,8 +257,9 @@ function move(element, path, property, counter, initalCoord) {
   property.ease = property.ease || "easeOutCubic";
   property.speed = property.speed || 20;
   let angle = 0;
+  console.log("\n");
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
-  console.log("relative: x: "+property.x + ", y: " + property.z);
+  console.log("relative: x: "+Math.ceil(property.x) + ", y: " + Math.ceil(property.z));
   console.log("absolute: x: "+Math.ceil(element.object3D.position.x) + ", y: " + Math.ceil(element.object3D.position.z));
   let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
   //decides whether to subtract or add z position
@@ -318,7 +320,7 @@ function move(element, path, property, counter, initalCoord) {
         //else function below is when animation is done
       } else {
         counter = 0;
-        //move(element, path, [{x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}], counter);
+        //repeat animation in infinite loop
         move(element, path, path[counter], counter, initalCoord);
         console.log("%cAnimation completed!","color:red;");
       }

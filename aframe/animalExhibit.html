@@ -238,30 +238,12 @@ function movePath (id, path) {
 //must wait a little for everything to be completely loaded. Else calculation will be off
 setTimeout(function(){
   movePath(lion1, [
-    {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:-20, speed:20, animation:"loopWalk"},
-    {x:-100, y:0, z:-80, speed:20, animation:"loopWalk"},
-    {x:-30, y:0, z:100, speed:20, animation:"loopWalk"}
+    {x:40, y:0, z:40, speed:20, animation:"Animation_Armature"},
+    {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
+    {x:40, y:0, z:-20, speed:20, animation:"loopWAnimation_Armaturealk"},
+    {x:-100, y:0, z:-80, speed:20, animation:"Animation_Armature"},
   ]);
-
-    /*[
-    {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:0, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:-20, speed:20, animation:"loopWalk"},
-    {x:-100, y:0, z:-80, speed:20, animation:"loopWalk"},
-    {x:-30, y:0, z:100, speed:20, animation:"loopWalk"}]
-    */
-  /*movePath(lion2, [{x:40, y:0, z:0, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:40, speed:20, animation:"loopWalk"},
-    {x:0, y:0, z:40, speed:20, animation:"loopWalk"},
-    {x:-40, y:0, z:40, speed:20, animation:"loopWalk"},
-    {x:-40, y:0, z:0, speed:20, animation:"loopWalk"},
-    {x:-40, y:0, z:-40, speed:20, animation:"loopWalk"},
-    {x:0, y:0, z:-40, speed:20, animation:"loopWalk"},
-    {x:40, y:0, z:-40, speed:20, animation:"loopWalk"}]);*/
 }, 3000)
-//movePath(smallGiraffe, path2);
 
 function move(element, path, property, counter, initalCoord) {
   //property = path[counter];
@@ -272,7 +254,6 @@ function move(element, path, property, counter, initalCoord) {
   property.z = property.z || 0;
   property.animationSpeed = property.animationSpeed || 1;
   property.ease = property.ease || "easeOutCubic";
-  console.log(`%c${element.object3D.position.z}`,"color:yellow;");
   property.speed = property.speed || 20;
   let angle = 0;
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
@@ -325,29 +306,23 @@ function move(element, path, property, counter, initalCoord) {
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);
   element.setAttribute('animation', location);
-    //if (counter < path.length) {
-      setTimeout(function() {
-        //plus one because first is already ran
-        if (counter+1 < path.length+2) {
-          counter++;
-          if (counter+1 < path.length+1) {
-            move(element, path, path[counter], counter, initalCoord);
-          } else {
-            console.log(`%c${initalCoord[0]} - ${element.object3D.position.x} = ${(initalCoord[0]-element.object3D.position.x)}`,"color:orange;");
-            console.log(`counter: ${counter}`)
-            move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}, counter, initalCoord);
-          }
-          //
-          //else function below is when animation is done
-        } else {
-          counter = 0;
-          //move(element, path, [{x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}], counter);
+    setTimeout(function() {
+      //plus one because first is already ran
+      if (counter+1 < path.length+2) {
+        counter++;
+        if (counter+1 < path.length+1) {
           move(element, path, path[counter], counter, initalCoord);
-          console.log("%cAnimation completed!","color:red;");
+        } else {
+          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}, counter, initalCoord);
         }
-      }, moveDuration);
-      //counter++;
-    //}
+        //else function below is when animation is done
+      } else {
+        counter = 0;
+        //move(element, path, [{x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}], counter);
+        move(element, path, path[counter], counter, initalCoord);
+        console.log("%cAnimation completed!","color:red;");
+      }
+    }, moveDuration);
   }
   </script>
 </html>

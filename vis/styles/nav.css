@@ -1,0 +1,64 @@
+/* Styles for arrow buttons for cameras on visualization. */
+
+:root {
+    --navigationButtonHeight:10%;
+  }
+  body {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-text-select: none;
+    -webkit-user-select: none;
+  }
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .navigationButton {
+    z-index:10;
+    position: fixed;
+    bottom: calc(50% - var(--navigationButtonHeight));
+    width:5%;
+    border-radius:5em;
+    border: 0em red solid;
+    height:10%;
+  }
+  .navigationText {
+    font-size: 3em;
+    vertical-align: middle;
+  }
+  #leftNavigationButton {
+    left: 0px; 
+  }
+  #rightNavigationButton {
+    right: 0px; 
+  }
+  #navigationIndex{
+    z-index:10;
+    bottom: 60%;
+    position:relative;
+    left:26%;
+    width:50%;
+    font-size:3em;
+    text-align: center;
+  }
+  #navigationIndexDiv{
+    z-index:10;
+    position: fixed;
+    width:100%;
+    bottom: 0%;
+    left:0%;
+    height: 4em;
+  }
+  a-scene{
+    filter: brightness(100%);
+    -webkit-transition: all 0.0001s linear;
+    transition: all 0.0001s linear;
+  }
+  .aframeTransition{
+    -webkit-transition: all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+  }

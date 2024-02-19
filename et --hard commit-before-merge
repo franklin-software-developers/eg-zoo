@@ -1,0 +1,1233 @@
+[33mcommit 89ac70853378703b0706476f457a0d40e18c816a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mwaitPath[m[33m)[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 18 22:40:13 2024 -0800
+
+    save for merge
+
+[33mcommit 748fcbf863dc14d691be0cd6b18b3df77504bf54[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 18 22:39:23 2024 -0800
+
+    minor changes for movement
+
+[33mcommit c8027afa08d9c1df740472ca59e35b295ccb4589[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 18 14:16:26 2024 -0800
+
+    idle works now
+
+[33mcommit 17602dae815a0635401d47afddb76d984d94831b[m[33m ([m[1;31mupstream/main[m[33m)[m
+Merge: 4df9885 a712ba3
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Feb 17 17:42:40 2024 -0800
+
+    Merge pull request #27 from Caramel4764/nina-feature-movePath
+    
+    Nina feature move path. Fixes addressed at meeting; animals will not walk in sharp turns.
+
+[33mcommit 4df988575c889ee168305c8417c2d367f92ffda2[m
+Merge: 56798b8 9be57b1
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Thu Feb 15 22:35:56 2024 -0800
+
+    Merge pull request #26 from Caramel4764/nina-feature-move-function
+    
+    Nina-feature-move-function
+
+[33mcommit a712ba3caaafc89ed3463624af9b0a8b4d6c27e8[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 15 21:32:53 2024 -0800
+
+    quick animation fix and second animation added
+
+[33mcommit 46f7ad691271d833cc25c07e47b3ffbd4e95804d[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 15 21:30:26 2024 -0800
+
+    cleaner info code for console.log
+
+[33mcommit aa703b070b1b828493ebb889a9177f519825d878[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 15 21:22:23 2024 -0800
+
+    deleted debug code, briefly tidied code, lion has idle animation when moving (no walking animation)
+
+[33mcommit 467eb2760389272efc9c1a0b69baa114539e77b9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 15 21:17:10 2024 -0800
+
+    infinite walking loop
+
+[33mcommit 8732965bd4dbd0d0037d4e8455c0f6542c01e559[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Wed Feb 14 23:05:35 2024 -0800
+
+    angle algorithm and deleted debug console.logs
+
+[33mcommit ef1066f5fb2b54bbff341f0de6664cec5645db04[m
+Merge: 0244054 ea6c6c1
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Wed Feb 14 22:17:05 2024 -0800
+
+    merge current with new feature
+
+[33mcommit ea6c6c1937fdf1871cfdf7bbf86225020cabf3a4[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Wed Feb 14 21:59:48 2024 -0800
+
+    sync and different double movement
+
+[33mcommit 61da08c3400d0063bbd72edc97081232ea1635cf[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Feb 13 23:39:23 2024 -0800
+
+    walking works for multiple a-entity
+
+[33mcommit 1c0e9e078a8e69aff3fd20aff3eb368c3cdd464d[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Feb 13 23:19:29 2024 -0800
+
+    counter rotate plus began implementing path
+
+[33mcommit 02440548b59fdd363b273aa2c0b65a0ad6c36f82[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Feb 13 17:06:59 2024 -0800
+
+    sync
+
+[33mcommit 9e867aae9a546752e5a93c09efbfe9412cfa17a2[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Fri Feb 9 20:41:49 2024 -0800
+
+    added more elaborate comments for move function
+
+[33mcommit 7c3f0868d9269d089ee25b1ebaa1fc3803a9c9b1[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Fri Feb 9 20:37:01 2024 -0800
+
+    changed coord
+
+[33mcommit 9be57b12db3707bb64e09ed3fcd22b04bafb4f60[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 21:11:06 2024 -0800
+
+    fully merge, cleaned code, documentation
+
+[33mcommit 763fbdb5d18310827bc5d3d4db2da917239974d5[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 20:58:36 2024 -0800
+
+    merged
+
+[33mcommit 8a405728f91e2f75028247cb3a627a835b05fece[m[33m ([m[1;32mmerge[m[33m)[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 20:41:28 2024 -0800
+
+    optional parameters for move function
+
+[33mcommit 9911eb5cae65099c5e49856ea43bd54145fc311b[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 20:32:35 2024 -0800
+
+    speed argument instead of duration
+
+[33mcommit c6ef3fa7dfe0d06e23c586e4cf207f4c37d936cc[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 20:22:01 2024 -0800
+
+    90 angle turns now work
+
+[33mcommit 7ef56ae4e835f6f2570ff441cbe30f45d73ac713[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Feb 8 20:14:28 2024 -0800
+
+    cleaned code
+
+[33mcommit 48c56c85d2f829c8f3edabb573d2b13411824a72[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Feb 6 18:42:10 2024 -0800
+
+    fix scene
+
+[33mcommit 4e20526c5a2657d2031a12aa6a6b84c8c2aed81a[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Feb 5 18:22:41 2024 -0800
+
+    faster wasd movement for debugging purposes and move functions works now
+
+[33mcommit 3e8390a155db2c3b2ce67b19da21d98bce276700[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 4 20:34:52 2024 -0800
+
+    fix move function, again... multiple use still needs to be fixed
+
+[33mcommit c344e844733d13d1d3523d445432e3414905693b[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 4 16:01:06 2024 -0800
+
+    test
+
+[33mcommit c495767673d1bf981caa1f8ded462f3ca34b0c78[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 4 14:59:07 2024 -0800
+
+    walk function works no matter what trig quadrant
+
+[33mcommit 67a15af841a296b093469b75c6fb2e5b30ce6e08[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Feb 4 13:28:28 2024 -0800
+
+    Functional movement function created
+
+[33mcommit da0e9a2d4a06679b11e02427ef309265a523c170[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Wed Jan 31 16:59:58 2024 -0800
+
+    merge and slight change to files
+
+[33mcommit 56798b85a40699c773e102d15985792e4e8896ea[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Mon Jan 29 01:21:21 2024 -0800
+
+    Update README.md contributors
+
+[33mcommit 665e46a21fc3073ed8cd432ffbc85c0e72569bae[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Jan 29 01:07:41 2024 -0800
+
+    Added Twinmotion embed to index
+
+[33mcommit 9b29c48a55975532e222d958e9557aeca59b3267[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Jan 29 00:48:37 2024 -0800
+
+    Added lion exhibit area mesh test
+
+[33mcommit 67f58e67655e36efcb089fc41c1096932a1223e5[m
+Merge: da1fb7d 2ae9a68
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Jan 28 23:09:11 2024 -0800
+
+    Merge pull request #25 from Caramel4764/nina-feature-lion-and-cameraIndex
+    
+    Camera fade in and out transition
+
+[33mcommit da1fb7d72d93a38c1fea3424f5a0a2fc55154b58[m
+Merge: 754de96 bbc8660
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Jan 28 23:00:41 2024 -0800
+
+    Merge pull request #24 from franklin-software-developers/Tristan-feature-assets
+    
+    Tristan assets for exhibit
+
+[33mcommit bbc8660ebac67d6e112af1d36f4af3ab8692963e[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Jan 28 22:48:28 2024 -0800
+
+    Fix model imports
+    
+    Also commented out a castle_hill_kirriemuir.glb file. Discuss reintroduction after 1/29 call.
+
+[33mcommit c7a5fc6486749c971a6cd520f25a1463ecd99619[m
+Merge: 5f1126a 754de96
+Author: nurikimchi <64626132+nurikimchi@users.noreply.github.com>
+Date:   Sun Jan 28 21:02:23 2024 -0800
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo into Tristan-feature-assets
+    Update this branch with updated main.
+
+[33mcommit 754de96bea7c29470572f1d83970691af02b2a70[m
+Merge: 3a649a5 0e688ef
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Jan 28 21:00:58 2024 -0800
+
+    Merge pull request #23 from franklin-software-developers/Tristan-feature-exhibit
+    
+    Tristan-feature-exhibit
+
+[33mcommit 2ae9a687a3d15107a7201caaf004d61bd6f3526e[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 27 15:42:52 2024 -0800
+
+    furnished the demo to be less empty and changed the ground texture.
+
+[33mcommit d22d5bd7fb998592d8f14ec57a36ee21ad3513d9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 27 14:36:50 2024 -0800
+
+    quick fix for the left arrow. Before, only right arrow caused correct transition.
+
+[33mcommit f2e223476b3a5e4873b5245112724712a1720202[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 27 14:27:53 2024 -0800
+
+    instantly dark for the camera change before slowly lighting up
+
+[33mcommit 94c8f6ed19a09636e81d08797a7914906077efba[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 27 02:02:53 2024 -0800
+
+    transition for switching camera angle. Currently a WIP because text changes before screen dims.
+
+[33mcommit 5f1126ace7e17bb9adb657251645ac758a481d62[m[33m ([m[1;31mupstream/Tristan-feature-assets[m[33m)[m
+Author: Tristan Park <tristanpark1311@gmail.com>
+Date:   Fri Jan 26 16:37:57 2024 -0800
+
+    Tristan assets for exhibit
+    Tristan exhibit assets
+
+[33mcommit 0e688ef5255b89819dc505ed171900a35e503e0a[m[33m ([m[1;31mupstream/Tristan-feature-exhibit[m[33m)[m
+Author: Tristan Park <tristanpark1311@gmail.com>
+Date:   Thu Jan 25 18:41:24 2024 -0800
+
+    Tristan-feature-exhibit
+    demo aframe enviroment for zoo exhibition
+
+[33mcommit 3a649a5d1f41388bb2150d21ba9b0f25875f4e8f[m
+Merge: e0ff1cf 4cc3cac
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Thu Jan 25 15:53:43 2024 -0800
+
+    Merge pull request #22 from Caramel4764/nina-feature-lion-and-cameraIndex
+    
+    Nina feature lion and camera index
+
+[33mcommit 4cc3cac491146b86b7c0135a71d2f4a2b3b76fb9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Wed Jan 24 23:24:33 2024 -0800
+
+    deleted unused code in index.css. Organized index.html. Indented. Added texture to lion exhibit ground.
+
+[33mcommit 24038e9055476818c5abad2e5f80bf3c2372d7fe[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Jan 23 21:58:59 2024 -0800
+
+    shifted the css code from index.html to index.css. File is MUCH easier to navigate.
+
+[33mcommit 5bc4d36179412dbdfec1026498a97c21a6d488e1[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Jan 23 21:48:41 2024 -0800
+
+    lion exhibit src changes.
+
+[33mcommit d9d864caee8755e03024746a6691e0684170f313[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Jan 23 21:45:15 2024 -0800
+
+    added folder for lion exhibit. Everything else left untouched because I don't have access to everyone's code and changing root direction can lead to models not being found.
+
+[33mcommit a0c9d564417d75298555679421a0e81dc09d46d1[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Jan 23 21:40:03 2024 -0800
+
+    cleaned, deleted, and organized the files
+
+[33mcommit 1304099d89ed44926ce1b2d60fa17dec14a88ce9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Jan 21 16:54:29 2024 -0800
+
+    fixed shadow bias
+
+[33mcommit 1540b2445f075e42f5123bd7460a3be8f350b241[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sun Jan 21 16:48:37 2024 -0800
+
+    changed lion model, fixed coordinate, added shadow, fixed lighting
+
+[33mcommit 8d331bca239caf54e3a5bd642535e7bdf770a7b5[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 20 18:20:24 2024 -0800
+
+    recovered deleted files by accident
+
+[33mcommit 722c1c55076d6f95ac42d77f3c771f8e2b89f959[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 20 17:58:08 2024 -0800
+
+    infinite loop for navigation. Index added to screen at bottom as well.
+
+[33mcommit e6d1568193c92931f2f29224dfd64cfbc7b8f5a9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 20 16:30:17 2024 -0800
+
+    navigation arrows changes index and camera position onclick
+
+[33mcommit 389af62256f4df559f5fbd6df07a7621910d99b3[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Jan 20 16:01:44 2024 -0800
+
+    added in lion model, cylinder ground, and navigation arrows
+
+[33mcommit e0ff1cf541abbb278db920598ae11865bd374e67[m
+Merge: a873b5e 8f750dd
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Tue Nov 21 21:29:44 2023 -0800
+
+    Merge pull request #21 from Caramel4764/nina-feature-contribution
+    
+    Nina-feature-contribution
+
+[33mcommit 8f750dd49d910f4da7eaed24562fa384c61d8c28[m
+Merge: b287911 a873b5e
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Tue Nov 21 21:27:46 2023 -0800
+
+    Merge branch 'main' into nina-feature-contribution
+
+[33mcommit b287911fc562d70b810029f09f193dcb52c7c403[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Tue Nov 21 20:30:27 2023 -0800
+
+    up-to-date with another branch
+
+[33mcommit a873b5e8cbdd5d61662925b5163fccabc1dbd3c7[m
+Author: nurikimchi <64626132+nurikimchi@users.noreply.github.com>
+Date:   Tue Nov 21 11:23:05 2023 -0800
+
+    Removed navbar and footer
+    
+    Delete unoriginal styling and top section with image until future notice by city
+
+[33mcommit a5a3e0056e93e9c25c1c42c76564d2f7c078291d[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Nov 18 22:15:40 2023 -0800
+
+    removed contribution image file and fixed long names taking multiple lines
+
+[33mcommit 82c24bb2a985159832dd94ac8c94cd4d4948a337[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Nov 18 22:01:54 2023 -0800
+
+    replaced contribution image with HTML element
+
+[33mcommit d1756671059e6a9ab0e89d50863db0d96ca3f694[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Nov 18 20:31:27 2023 -0800
+
+    fetch and rebase
+
+[33mcommit 97e182c9b8ef7f0aae361753948d20e1ec6f2de7[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Nov 4 13:32:09 2023 -0700
+
+    Fix meshes
+
+[33mcommit 95c239f1aead874246beac3a9e24bebb2747a0d2[m
+Merge: 6acb695 1ea53fc
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Nov 4 03:02:10 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo
+
+[33mcommit 6acb69596ac739e03e07ec719aec07d94e8c9556[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Nov 4 02:58:44 2023 -0700
+
+    Mesh changes, scenery on savanna2
+
+[33mcommit 1ea53fc3c4555df3b98ba25621282f3f23469868[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Nov 4 00:46:59 2023 -0700
+
+    Temp remove nav bar altogether
+
+[33mcommit fd009c8f28c34766c2f30bd1c57487b2a1950f7f[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Nov 4 00:46:35 2023 -0700
+
+    Temp remove status box for presentation
+
+[33mcommit fe482c43def811cc1019bb764d81fe8a0a390d64[m
+Merge: 7e4585b 3be8272
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Nov 4 00:29:49 2023 -0700
+
+    Merge pull request #20 from Caramel4764/nina-bugfix-landscape-navigation
+    
+    Nina-bugfix-landscape-navigation
+
+[33mcommit 3be8272efe063831828d12a98028bd7b0d90d83f[m
+Merge: 02336bf 7e4585b
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Nov 4 00:25:50 2023 -0700
+
+    Merge branch 'main' into nina-bugfix-landscape-navigation
+
+[33mcommit 7e4585b456b1c57913cd492b3cf95ccade73c922[m
+Merge: a7798af 54055ec
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Nov 4 00:11:11 2023 -0700
+
+    Merge pull request #19 from franklin-software-developers/oscar-bugfix-fontsizefix
+    
+    mobile scaling compatibility changes
+
+[33mcommit 02336bf1275a2a729f6831912a78dcb05ca8879c[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Fri Nov 3 19:06:08 2023 -0700
+
+    navigation bar fits landscape mode better. Margin left of the navigation bar during landscape mode removed.
+
+[33mcommit 54055ec6d901897488e36d39bf790e8c6be23ec6[m
+Author: venpris fan <osliang727@gmail.com>
+Date:   Fri Nov 3 18:56:14 2023 -0700
+
+    changed div and font sizes to em for mobile compatibility
+
+[33mcommit a7798afd1109c1f19d1e51275a416cced437d97d[m
+Merge: 13a43b3 53a9dc2
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Fri Nov 3 02:05:29 2023 -0700
+
+    Merge pull request #17 from Caramel4764/nina-feature-updated-text
+    
+    Nina-feature-updated-text
+
+[33mcommit 53a9dc22a30e040be33204f6263112cd65e200af[m
+Merge: 10cb9f1 13a43b3
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Fri Nov 3 02:03:51 2023 -0700
+
+    Merge branch 'main' into nina-feature-updated-text
+
+[33mcommit 10cb9f1b6333e27aea55e35eeb25fca48824dc1f[m
+Author: Nina Dong <64933051+Caramel4764@users.noreply.github.com>
+Date:   Fri Nov 3 06:34:50 2023 +0000
+
+    changed intro text
+
+[33mcommit 33388383c0925fdc8ec75140a1dc3918c9e86604[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Thu Nov 2 23:29:30 2023 -0700
+
+    changed introduction text
+
+[33mcommit 13a43b3629c169fc6e4877c9db43d96a28c79573[m
+Merge: bc20be4 a9a896b
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Thu Nov 2 01:42:32 2023 -0700
+
+    Merge pull request #18 from franklin-software-developers/jadenkiu-feature-responsive
+    
+    Make tutorial section responsive, aframe only savanna scene
+
+[33mcommit a9a896b08efc9f30e40e0b97d3e817a040912312[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Thu Nov 2 01:40:06 2023 -0700
+
+    Responsive tutorial section, aframe only savanna
+
+[33mcommit f920b57cc9b3e8dafd15f8413e68f44b8978e1cd[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Wed Nov 1 11:40:42 2023 -0700
+
+    class for tutorial text
+
+[33mcommit bc20be4e2b0f6430460942a921cc227cfad77797[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Wed Nov 1 10:49:24 2023 -0700
+
+    Update giraffes
+
+[33mcommit 8368f55e457973004ff9ccce93cddd545c209bb2[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Wed Nov 1 10:17:45 2023 -0700
+
+    Add giraffes to savanna1.html
+
+[33mcommit 5c35554b9f7f57a1b477b4d116c6288318cf6143[m
+Merge: 3621d38 be74558
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Nov 1 03:01:05 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo
+
+[33mcommit 3621d38fd48f38335a565f23c3631f5bf8b9b691[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Nov 1 03:00:43 2023 -0700
+
+    Updated savanna1 scene to full coverage
+
+[33mcommit be74558a2d6a23bc965ec3f521ff6a5843fab65f[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Wed Nov 1 01:37:44 2023 -0700
+
+    Fullscreen button on iPad mini
+    
+    Upated media value so that fullscreen button also appears on iPad mini.
+
+[33mcommit 2c8e4a4a2d9df0c397e80f0c6c1f63f5b92ef829[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Nov 1 01:31:11 2023 -0700
+
+    Fullscreen button for mobile
+
+[33mcommit 4c07af0fa7b588f5abdccf5367aa5334cb967245[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Nov 1 01:04:34 2023 -0700
+
+    Removed nav div that blocked interaction on mobile
+
+[33mcommit 549ad48931f0a901d0287daeacea8ff0ba387bff[m
+Merge: 4ccb5ad d6d1dd9
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Tue Oct 31 13:25:44 2023 -0700
+
+    Merge pull request #16 from Caramel4764/main
+    
+    nina-wip-softer-shadow
+
+[33mcommit 6043eb1f7a614c610b2f6073c365c602b854d538[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 22:52:52 2023 -0700
+
+    added contributor introduction and deleted zoo design update
+
+[33mcommit f3074ea77c331cd91f54b727245194f7f7229d46[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:54:58 2023 -0700
+
+    merge fix
+
+[33mcommit 465f791262537bcc8fc5e8da948c02ecaebeede9[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:48:50 2023 -0700
+
+    solved a conflict
+
+[33mcommit d6d1dd9a6385adfe1ac2e22c3395110fdf5c150e[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:54:58 2023 -0700
+
+    merge fix
+
+[33mcommit 9552e1e19ddfc94e5f95db9ea945c3eefd7b4aba[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:48:50 2023 -0700
+
+    solved a conflict
+
+[33mcommit 333a790960e6f5dcaad308679cfc8070d2884498[m
+Merge: 0f8a10b 13a15e9
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:43:05 2023 -0700
+
+    Merge branch 'nina-wip-softer-shadow' of https://github.com/Caramel4764/eg-zoo into nina-wip-softer-shadow
+
+[33mcommit 0f8a10baf243609ed0e90d3b88e4b35e79c1e10c[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:37:55 2023 -0700
+
+    fetch and rebase to date
+
+[33mcommit 36c67fb3cbb1f7017eeda50a33d6267046da4bbd[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:18:18 2023 -0700
+
+    softer shadow and brighter lighting
+
+[33mcommit 13a15e9918f6a72f96002f4c60ed0d88d261b237[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Mon Oct 30 00:18:18 2023 -0700
+
+    softer shadow and brighter lighting
+
+[33mcommit 4ccb5ad4ef73c40786829f65aecc50802cb0064e[m
+Merge: a01f135 341ee4f
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 29 17:03:37 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo
+
+[33mcommit a01f135c9a6206e874231d15cc67847f4133bdde[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 29 17:03:35 2023 -0700
+
+    Fixed duplicated GIF previews
+
+[33mcommit 341ee4f3bd0e1f47a5d525aa61f7d6fa1e6f4230[m
+Merge: f5126ac 6609ecb
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 29 16:41:03 2023 -0700
+
+    Merge pull request #12 from franklin-software-developers/no-forks-allowed
+    
+    priyam-fix-responsive
+
+[33mcommit 6609ecbe250c26aeb7e919a1cd4d191e849d50e7[m
+Author: nurikimchi <64626132+nurikimchi@users.noreply.github.com>
+Date:   Sun Oct 29 16:39:23 2023 -0700
+
+    Remove stray -->
+
+[33mcommit ff78f7972360eeca1c28d0b696ecf3cc1a6cb974[m
+Author: Priyam R <108199880+NotARobot1208@users.noreply.github.com>
+Date:   Sun Oct 29 16:05:09 2023 -0700
+
+    Add files via upload
+    
+    add credits.png
+
+[33mcommit 9cc4e816e6d8f39f7dab87d1e6b89addd8014796[m
+Author: Priyam R <108199880+NotARobot1208@users.noreply.github.com>
+Date:   Sun Oct 29 16:04:13 2023 -0700
+
+    Update index.html
+    
+    base64'd img--> images/credits.png
+
+[33mcommit f5126aca8122f1c2950f9191b9a4b7cc649c7dcb[m
+Merge: f306edf 6868c2f
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 29 00:17:56 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo
+
+[33mcommit f306edff1c18fd5f25e615007a017fcaca97332a[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 29 00:17:25 2023 -0700
+
+    Fixed hardcoded images @catlover819
+
+[33mcommit 6868c2fe8a70da7846a2f17e4499f8533cfe63b0[m
+Merge: cc67eae 3cbd90f
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Oct 28 23:19:07 2023 -0700
+
+    Merge pull request #10 from franklin-software-developers/pratham-bugfix-dropdownfix
+    
+    Add Safari Support for MutationObserver
+
+[33mcommit 3cbd90fdf687d153f4960dbfb7353ad03562bc11[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sat Oct 28 23:07:59 2023 -0700
+
+    Add Safari Support for MutationObserver
+
+[33mcommit cc67eae569e14f054e6740ab6e29e3c5f8a44683[m
+Merge: f7262ab 8302bf0
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Oct 28 22:42:06 2023 -0700
+
+    Merge pull request #9 from franklin-software-developers/pratham-feature-dropdown
+    
+    Added dropdown to select exhibit
+
+[33mcommit 8302bf04edd2388ea1b6f6b8fff8a3432a52d9e5[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sat Oct 28 22:27:13 2023 -0700
+
+    Dropdown no longer shows while loading
+
+[33mcommit 5686fa2d43ec6266aa2e1be9a18416277dfced9a[m
+Merge: abfeac8 f7262ab
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Oct 28 21:36:17 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo into pratham-feature-dropdown
+
+[33mcommit f7262ab4c40266af0d6e22e1cc8aacfd0824f197[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Oct 28 21:33:43 2023 -0700
+
+    Format code
+
+[33mcommit abfeac86ed851a2a0c61deb17eae74c16e785a16[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sat Oct 28 21:32:02 2023 -0700
+
+    Added dropdown to select exhibit
+
+[33mcommit 8df1c9071c5dccf61932230689623b23a99008df[m
+Merge: 1be76a2 52112fa
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Oct 28 21:14:43 2023 -0700
+
+    Merge pull request #8 from franklin-software-developers/oscar-feature-tutorialhover
+    
+    tutorial gif hover play
+
+[33mcommit 52112faf60de0388cdd791ee691bf0b5f96cecb3[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Oct 28 21:03:27 2023 -0700
+
+    Fixed image sourcing
+
+[33mcommit c92588cfd26732d824639ef69ab6b787ee9c0ad8[m
+Merge: 11902aa 1be76a2
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Oct 28 21:01:11 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo into oscar-feature-tutorialhover
+
+[33mcommit 1be76a2899bd5d4f4d99cc472f3e29ef06eb1949[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Oct 25 23:39:26 2023 -0700
+
+    Consolidate aframe files to directory
+
+[33mcommit 9cab84fa34d973b4cec9aa514e43c55d81c4a362[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Oct 25 23:27:29 2023 -0700
+
+    Move aframe scripts, renamed & clean scenes
+
+[33mcommit 11902aa39a72ac11c1cdf84cce866e503ddcbab8[m
+Author: venpris fan <osliang727@gmail.com>
+Date:   Tue Oct 24 19:59:26 2023 -0700
+
+    + 3 gifs in /image; + hover-gif-play in index.html
+
+[33mcommit 798f464aedd395f27a412f160abd34660ffc6049[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 10:51:10 2023 -0700
+
+    Better proportions for button
+
+[33mcommit 3c7420a562ffc36d2fac848634f6400fb7b79576[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 10:44:09 2023 -0700
+
+    Removed redundant file, beautify code
+
+[33mcommit 7c2ab5dd5bf42cfb3ccf2995524730f0ee17127f[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 10:15:33 2023 -0700
+
+    Padding change to title
+
+[33mcommit 501edf48d68ed20d7f4add2a301915b8f0b4f592[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 10:03:32 2023 -0700
+
+    Added tutorial section
+
+[33mcommit 14b2d490fa9d075af7c3539d495eb5e8d94ef80d[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 09:21:58 2023 -0700
+
+    Updated cursor, use file instead of link
+
+[33mcommit 84bfb2ce42512ff304b31a839f0b16c77f8d1c43[m
+Merge: 12d4b07 58e3a2c
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Tue Oct 24 07:58:56 2023 -0700
+
+    Merge pull request #7 from franklin-software-developers/pratham-feature-webmock
+    
+    Potential webmock based on EG website
+
+[33mcommit 58e3a2ccac2128bdb1605b3b98c88539757d2bc2[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 03:35:34 2023 -0700
+
+    Disable stats for demo
+
+[33mcommit 9df24c1856e433e126ec167909b25386863c6298[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 03:34:49 2023 -0700
+
+    Added more textures for entrance area
+
+[33mcommit a4f74cbe335d65a7e50e10b3f4493ec43ecf7afa[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 03:07:07 2023 -0700
+
+    Restrict cursor area to path
+
+[33mcommit d42dc4b5c510536024bafb84dd1a46056f3e8246[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 02:43:44 2023 -0700
+
+    Added animated giraffes
+
+[33mcommit 073c316eed74b18c0c97212e974ae28961652a8e[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 24 00:35:24 2023 -0700
+
+    Beautify code
+
+[33mcommit 7284262c83998be0483d71c36e8048549febf9db[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Mon Oct 23 23:57:14 2023 -0700
+
+    Potential page for 3D zoo in EG Website
+
+[33mcommit 12d4b07dce376906e91d50e6b640f08e8064982e[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Oct 23 22:53:59 2023 -0700
+
+    Remove unused folder
+
+[33mcommit 4a7a2bbb608dfc5352f4e2c2ed94a5d796f694ff[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Oct 23 22:19:16 2023 -0700
+
+    Fixed image linking
+
+[33mcommit 8bbc08b73ad0fce8e029a686d5744157d4c0beb9[m
+Author: venpris fan <osliang727@gmail.com>
+Date:   Mon Oct 23 21:54:16 2023 -0700
+
+    + image folder & 3 images in it & index.css for site design, changed index.html
+
+[33mcommit 69f71f36b4a948f4f9f058d0eaab5d3bd0f1d971[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Oct 23 21:20:07 2023 -0700
+
+    Update README
+
+[33mcommit 8d2d05a8ae95eceebfe97f24956a779b7951cadf[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Mon Oct 23 21:17:05 2023 -0700
+
+    Removed unused loading files
+
+[33mcommit 2345ed743eaf3462fb79a2284b1b36d58db4fc49[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 20:00:44 2023 -0700
+
+    Update README.md
+
+[33mcommit 934b6461ed03b4ec204c88335bbe2cf15dece0dc[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 19:57:10 2023 -0700
+
+    Create README.md
+
+[33mcommit 09517d964c50cc6151f996ffc88a3ef7975391a4[m
+Merge: d4b1153 b661e11
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 16:49:26 2023 -0700
+
+    Merge pull request #5 from franklin-software-developers/tristanpark-testcommit
+    
+    Test Commit from Tristan Park
+
+[33mcommit b661e1154427abb53e9708e1c8266b734cb29bfd[m
+Author: TristanCode0327 <tristanpark1311@gmail.com>
+Date:   Sun Oct 22 16:37:02 2023 -0700
+
+    Test Commit
+
+[33mcommit d4b115376587d3302e1280cae691a7ff7068bbed[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 00:37:34 2023 -0700
+
+    Change portal placeholder text to "Exhibit"
+
+[33mcommit d71c84d1c0337d6ff0579372687f270c0571549a[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 00:36:56 2023 -0700
+
+    Change exhibit portal placeholder text to "Savannah"
+
+[33mcommit 56a7dd597bf018e83702b7363a8d239de2cd9006[m
+Merge: e3ff66d 521ab0d
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 00:27:37 2023 -0700
+
+    Merge pull request #4 from franklin-software-developers/prathamrn-feature-removewasd
+    
+    Prathamrn feature removewasd
+
+[33mcommit 521ab0d4311dba0698f77580d1d7ec70fc383331[m
+Merge: afcdef0 e3ff66d
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sun Oct 22 00:05:51 2023 -0700
+
+    Merge branch 'main' of https://github.com/franklin-software-developers/eg-zoo
+
+[33mcommit afcdef0c7ccf1f52194819e0f2eae3ddea3dfb84[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sun Oct 22 00:05:47 2023 -0700
+
+    Disabled WASD to prevent unintended movement
+
+[33mcommit e3ff66d463b8944c9f5d02fc164495a7ee612507[m
+Merge: 88411a8 ed19d24
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sun Oct 22 00:03:11 2023 -0700
+
+    Merge pull request #3 from Caramel4764/warm-lighting
+    
+    made lighting yellow and warmer
+
+[33mcommit ed19d24d08569597b6b4938bc4dd677b9ba6db74[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Oct 21 23:57:58 2023 -0700
+
+    lighting is less yellow
+
+[33mcommit 00e576c836b671b3b17741ab161d1b5965d81e37[m
+Author: Nina <nina.dong4764@gmail.com>
+Date:   Sat Oct 21 23:37:08 2023 -0700
+
+    made lighting yellow and warmer
+
+[33mcommit 88411a8205a920d8b3072455070df40374c0c96d[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 10 02:08:43 2023 -0700
+
+    Added instruction on how to refresh iframe content
+
+[33mcommit 092919a3ca4d0ed483a948f36e2f74a020cc1e4f[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 10 02:06:43 2023 -0700
+
+    Revert previous attempt
+
+[33mcommit d75d154bc1b27fa98b40cf4d6ddfac7d3a29d4ac[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 10 02:03:38 2023 -0700
+
+    Attempt to solve outdated Github Pages iframe
+
+[33mcommit 20e3b7e79f998837b3357c8c6f6d373352aef445[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Oct 10 01:58:01 2023 -0700
+
+    Updated mesh, positioned NEW scene, moved portals
+
+[33mcommit 29a07590e0a2ce2528d53152a0d125583e06e503[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 8 18:46:39 2023 -0700
+
+    Replaced out with index
+
+[33mcommit 9d3afba272d0ea72ac404988ffc8429baa53beb0[m
+Merge: 528aa5e a102bd7
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Sat Oct 7 19:35:04 2023 -0700
+
+    Merge pull request #2 from franklin-software-developers/jadentest
+
+[33mcommit a102bd785137623b39ec6df2ac9df2453b3088fd[m
+Author: prathamrn <108199841+prathamrn@users.noreply.github.com>
+Date:   Sat Oct 7 18:47:53 2023 -0700
+
+    Fixed portal rotation/text snapping
+
+[33mcommit 5f44fe293c05ead8cfe0e8fc5cf1697b9653db37[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Fri Oct 6 22:31:27 2023 -0700
+
+    Fixed a-link portal text glitching @prathamrn
+
+[33mcommit ee223d321323e0ce9e5d19b6a21d5d7f1c88f2c2[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Fri Oct 6 20:46:51 2023 -0700
+
+    Changed aframe.js to replicate issue
+
+[33mcommit db5f73c42b743ad2d2e4dc69fc4ab92984060a00[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Fri Oct 6 20:38:34 2023 -0700
+
+    Added portals for fixing, changed embed to files
+
+[33mcommit 0d8db3446e0e33be95b4126d2c88757e2752cd00[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Oct 1 00:37:25 2023 -0700
+
+    Textures, border, shadows, lighting, full model
+
+[33mcommit 528aa5eb783643f15788cffea7fabcf11bb7a699[m
+Merge: 51e183d 83f3897
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Fri Sep 22 23:24:22 2023 -0700
+
+    Merge pull request #1 from NotARobot1208/main
+    
+    Update test.html
+
+[33mcommit 83f389711f676f6a9f6ab7991f8eacd7342f3d45[m
+Author: Priyam R <108199880+NotARobot1208@users.noreply.github.com>
+Date:   Fri Sep 22 22:59:48 2023 -0700
+
+    Update test.html
+    
+    changed screen aspect ratio to 16:9
+
+[33mcommit 51e183d961dce49dcaed02951629358c5bf21f6d[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Fri Sep 22 22:23:25 2023 -0700
+
+    Removed junk
+
+[33mcommit 4c0c3e3b42256dfd6f0587a54d9e4e657123c0de[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Sat Sep 16 09:33:21 2023 -0700
+
+    init website folder
+
+[33mcommit 18b570427f47b2172316b68f3eee563318d89e30[m
+Author: Nuri Kim <nurikimchi@gmail.com>
+Date:   Fri Sep 15 06:30:46 2023 -0700
+
+    init for contribution
+
+[33mcommit 8aefe02c44fa03f26da1a26542c23065eef18dd0[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Sep 10 00:59:41 2023 -0700
+
+    Renamed test.js, removed unused css file
+
+[33mcommit 8eb303d2eb927a822ceb48f297078f435ac6db93[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Sep 10 00:56:11 2023 -0700
+
+    12x Mesh optimization, lighting, shadows
+
+[33mcommit 7ea24a33539c7fa17bee5278b966333cb069b591[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Sep 9 17:24:04 2023 -0700
+
+    Added lighting and shadows.
+
+[33mcommit f1564c14999b24eb2339b43d02b56bab61f1f132[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Aug 27 01:09:42 2023 -0700
+
+    New model load test
+
+[33mcommit aad24e855339b6be37a1aadc18ec0d413309b187[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Thu Aug 24 00:37:57 2023 -0700
+
+    Fixed num of slides and fit to Chromebook
+
+[33mcommit f0887b0d58b5e2029114d34f736f09a1b650ff44[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Aug 23 23:50:56 2023 -0700
+
+    Temporary slideshow
+
+[33mcommit e815883857d9cde9b0f775b4383104035d53e360[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 22:53:20 2023 -0700
+
+    Implemented aframe-cursor-teleport
+
+[33mcommit de89e489c832c14306a7db71a3432d50ec5a486b[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 21:59:53 2023 -0700
+
+    Test Slight coordinate update
+
+[33mcommit 7079fac26507ff70d551ef306e9e12827c5f35fd[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 21:59:07 2023 -0700
+
+    Test with model
+
+[33mcommit d2247bfe79e6a7a7a45edee0ac1ec552d11ba57a[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 18:29:36 2023 -0700
+
+    Test | Basic environment
+
+[33mcommit 6d66873923ad793c686c020258401a2b3c4abd79[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 17:28:34 2023 -0700
+
+    Linked test to index
+
+[33mcommit ea8eb842e2f996019f21ccc2e42299f95a8ebf9f[m
+Merge: 815dfa4 0519867
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 17:25:24 2023 -0700
+
+    Merge branch 'main' of https://github.com/jadenkiu/jadenkiuportfolio
+
+[33mcommit 815dfa4adafb88d5230f6de5c979a09e9c1b6cb6[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sat Aug 19 17:25:15 2023 -0700
+
+    Set up for test.
+
+[33mcommit 05198672c3bfc685c4ed976473bf2792ebb458f3[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Fri Apr 28 03:19:41 2023 -0700
+
+    Update index.html
+
+[33mcommit e9a4067b56f1f678a7d28275aa97a70a3bd1428a[m
+Author: Jaden Chung <58695202+jadenkiu@users.noreply.github.com>
+Date:   Fri Apr 28 03:15:31 2023 -0700
+
+    Update index.html
+
+[33mcommit 4df0c857d3c1305ff1b4ec8c6def670fd0257f3f[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Tue Apr 4 22:42:57 2023 -0700
+
+    Reverted to old video type
+
+[33mcommit dcde695c540670daf6c75d1a8a1e9526e937f039[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Wed Mar 22 20:42:44 2023 -0700
+
+    Temporary video solution to reduce storage.
+
+[33mcommit 67902348f89f9cc1920afaf58f728e328f933b65[m
+Author: jadenkiu <jadenkiu@gmail.com>
+Date:   Sun Mar 19 22:27:45 2023 -0700
+
+    Included new project
+
+[33mcommit ef89e407a7ac96fff08e4e7ad98f01253a32b634[m
+Author: jaden <jadenkiu@gmail.com>
+Date:   Sat Feb 18 14:44:27 2023 -0800
+
+    Indent fixed
+
+[33mcommit 257560badea12d83d9379666ff0b54a839939ce1[m
+Author: jaden <jadenkiu@gmail.com>
+Date:   Sun Feb 12 22:20:23 2023 -0800
+
+    Optimization
+    
+    Removed a few lines of redundant code
+
+[33mcommit ebdf3ce9ea1d3d317ec4d10cb20fe1915e37e193[m
+Author: jaden <jadenkiu@gmail.com>
+Date:   Sun Feb 12 21:15:16 2023 -0800
+
+    Fixed video playback on iOS devices.
+    
+    Small update
+
+[33mcommit a0a13e82578dd7b10f8e906ec23f18b894125113[m
+Merge: dd86859 ae80ab5
+Author: jaden <jadenkiu@gmail.com>
+Date:   Fri Feb 10 00:21:09 2023 -0800
+
+    Merge branch 'main' of https://github.com/jadenkiu/jadenkiuportfolio
+
+[33mcommit dd8685975940b8a42f809c0a8c0fd4bd259c3f9a[m
+Author: jaden <jadenkiu@gmail.com>
+Date:   Fri Feb 10 00:20:40 2023 -0800
+
+    Added projects section
+    
+    As stated in the change, the timer website will be up soon.
+
+[33mcommit ae80ab508b2cbd6e0aa0342469619b90fa968950[m
+Author: jaden <58695202+jadenkiu@users.noreply.github.com>
+Date:   Fri Feb 10 00:09:28 2023 -0800
+
+    Delete CNAME
+
+[33mcommit 9752f2fb93104f397904140e241e39ab3b0e4c47[m
+Author: jaden <58695202+jadenkiu@users.noreply.github.com>
+Date:   Fri Feb 10 00:09:16 2023 -0800
+
+    Create CNAME
+
+[33mcommit a7ff83c5482c70216537c968031cb8bd6d718524[m
+Author: jaden <jadenkiu@gmail.com>
+Date:   Fri Feb 10 00:07:31 2023 -0800
+
+    Initial Publish

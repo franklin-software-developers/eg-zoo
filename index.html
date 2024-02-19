@@ -1,74 +1,105 @@
 <!DOCTYPE html>
-<html lang=en dir=ltr
-  prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "
-  class=js data-uw-w-loader style=height:100% data-uw-rm-lang=false>
-<meta charset=utf-8>
-<link rel="stylesheet" type="text/css" href="index.css">
-<link rel="stylesheet" href="mystyle.css">
-<meta name=robots content="index, follow">
-<meta name=MobileOptimized content=width>
-<meta name=HandheldFriendly content=true>
-<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>EG 3D Zoo Visualization</title>
-<style>
-  img[src="data:,"],
-  source[src="data:,"] {
-    display: none !important
-  }
-</style>
+<html lang="en">
+<head>
+    <title>Nuri's Moving Solution</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
 </head>
-  <div style="padding-top:5em" class="paragraph">
-    <div class="container">
-      <h2>Zoo AR Simulation</h2>
-      <div class="twinmotion-embed-wrapper">
-        <iframe style="height: 100%; width: 100%; min-height: 720px; min-width: 1080px;"
-          title="Embedded presentation 'Zoo Presentation Demo'" frameborder="0"
-          allow="fullscreen; gyroscope; accelerometer; magnetometer; execution-while-out-of-viewport; execution-while-not-rendered; xr-spatial-tracking;"
-          allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-          src="https://twinmotion.unrealengine.com/presentation/Upt5YKDdnyX_TOgm"
-        >
-        </iframe>
-       </div>
-        <div class="iframe-contaner"
-          style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
-          <iframe src="aframe/animalExhibit.html" style="position: absolute; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none"></iframe>
-        </div>
-        <a id="fullscreen" href="aframe/savanna1.html">Full Screen</a>
-      </div>
-    </div>
-  </div>
-</div>
-      <div style="padding-top:7em">
-        <h1 id="tutorialTitle">Visualization Controls</h1>
-      </div>
+<body>
+    <script>
+        function calcAngle(from, to) {
+            let a = to[0] - from[0];
+            let b = to[2] - from[2];
 
-      <div class="container-boxes">
-        <div class="column-boxes">
-          <img class="static" src="images/tutorialClick.png" onmouseover="this.src='images/tutorialClick.gif'"
-            onmouseout="this.src='images/tutorialClick.png'">
-          <p class="tutorialText">
-            <span class="firstcharacter">1</span>
-            Tap or click on the ground to traverse the environment.
-          </p>
-        </div>
-        <div class="column-boxes">
-          <img src="images/tutorialTurn.png" onmouseover="this.src='images/tutorialTurn.gif'"
-            onmouseout="this.src='images/tutorialTurn.png'">
-          <p class="tutorialText">
-            <span class="firstcharacter">2</span>
-            Drag your finger or cursor to look around the environment
-          </p>
-        </div>
-        <div class="column-boxes">
-          <img src="images/tutorialPortal.png" onmouseover="this.src='images/tutorialPortal.gif'"
-            onmouseout="this.src='images/tutorialPortal.png'">
-          <p class="tutorialText">
-            <span class="firstcharacter">3</span>
-            Tap or click the portal to be taken to the next exhibit, the savannah.
-          </p>
-          </div>
-        </div>
+            let theta = Math.tan(a / b);
+            console.log(theta)
+            
+            return (`0 ${theta} 0`);
+        }
+    </script>
+    <a-scene>
+        <a-assets>
+        </a-assets>
+            <a-entity
+                id="GIRAFFE"
+                gltf-model="scene.glb"
+                position="5 0 0"
+                animation__0="
+                    property: position;
+                    from: 0 0 0;
+                    to: 0 0 0;
+                    dur: 0;
+                "
+                animation__1a="
+                    startEvents: animationcomplete__0, animationcomplete__1d;
+                    property: position;
+                    from: 0 0 0;
+                    to: 10 0 5;
+                    autoplay: true;
+                    dur: 5000;
+                "
+                animation__1b="
+                    startEvents: animationcomplete__1a;
+                    property: rotation;
+                    from: 0 0 0;
+                    to: 0 80 0;
+                    autoplay: false;
+                    dur: 2000
+                "
+                animation__1c="
+                    startEvents: animationcomplete__1b;
+                    property: position;
+                    from: 10 0 5;
+                    to: 0 0 0;
+                    autoplay: false;
+                    dur: 2000
+                "
+                animation__1d="
+                    startEvents: animationcomplete__1b;
+                    property: rotation;
+                    from: 0 90 0;
+                    to: 0 0 0;
+                    autoplay: false;
+                    dur: 2000
+                "
+            >
+            </a-entity>
+            
+        <a-box position="5 0 5" color="blue"></a-box>
+    </a-scene>
 
-      </div>
-    </div>
-  </div>
+    <script>
+        var el = document.querySelector('#GIRAFFE')
+
+        // object
+        let giraffeAnimation = {
+            endDrinking: 'EndDrinking'
+        }
+
+        function animationCorresponder(event) {
+            switch(event.detail.name) {
+                case "animation__1a":
+                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    break;
+                case "animation__1b":
+                    el.setAttribute('animation-mixer', {'clip': 'EndDrinking'});
+                    break;
+                case "animation__1c":
+                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    break;
+                case "animation__1d":
+                    el.setAttribute('animation-mixer', {'clip': 'EndDrinking'});
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        el.addEventListener('animationbegin', function (e) {
+            console.log(e.detail.name);
+        })
+
+        el.addEventListener('animationbegin', animationCorresponder)
+    </script>
+</body>
+</html>

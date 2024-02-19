@@ -118,7 +118,6 @@
     <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="89 -17 0" scale="25 25 25"></a-entity>
     <a-entity shadow="cast: true; receive: true" gltf-model="#rock" rotation="-0.4244 270 0.179" position="-10 -9 -90" scale="15 15 15"></a-entity>
     
-    <a-entity shadow="cast: true; receive: true" gltf-model="#lionExhibit" rotation="0 0 0" position="0 -9.1 -96.5" scale="1 1 1"></a-entity>
     <!-- camera -->
     <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
       <a-camera id="head" rotation="0 0 0" position="0 5 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
@@ -195,26 +194,21 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      fadeOut();
-      if (index > 0) {
-        index--;
-        updateIndex();
-      } else {
-        index = animals.length-1;
-        updateIndex();
-      }
+      movePath(lion1, [
+      {x:0, y:0, z:-40, speed:20, animation:"Animation_Armature"},
+      ]);
     }
     //shift to next camera
     function navigateRight() {
-      fadeOut()
-      if (index < animals.length-1) {
-        index++;
-        updateIndex();
-      } else {
-        index = 0;
-        updateIndex();
-      }
+      movePath(lion1, [
+      {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
+      ]);
     }
+    /*
+      {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
+      {x:40, y:0, z:-20, speed:20, animation:"Animation_Armature"},
+      {x:-100, y:0, z:-80, speed:20, animation:"Animation_Armature"},
+    */
 //camera transition animation
 function fadeOut() {
   aframe.classList.remove("aframeTransition");
@@ -239,8 +233,8 @@ function movePath (id, path) {
   move(id, path, path[0], counter);
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
-setTimeout(function(){
-  movePath(lion1, [
+//setTimeout(function(){
+  /*movePath(lion1, [
     {x:40, y:0, z:40, speed:20, animation:"Animation_Armature"},
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
     {x:40, y:0, z:-20, speed:20, animation:"Animation_Armature"},
@@ -249,8 +243,8 @@ setTimeout(function(){
   movePath(lion3, [
     {x:0, y:0, z:0, speed:0, duration:1000, animation:"Animation_Armature"},
     {x:0, y:0, z:0, speed:0, duration:1000, animation:"Animation_Armature"},
-  ]);
-}, 3000)
+  ]);*/
+//}, 3000)
 
 function move(element, path, property, counter, initalCoord) {
   initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z];
@@ -291,7 +285,6 @@ function move(element, path, property, counter, initalCoord) {
   } else if ((valueX<0) && (valueZ>0)) {
     //quadrant 2
     angle = 180 - trigAng;
-    console.log(`quad 2`);
   } else if ((valueX<0) && (valueZ<0)) {
     //quadrant 3
     angle = 180 + trigAng;
@@ -299,29 +292,36 @@ function move(element, path, property, counter, initalCoord) {
     //quadrant 4
     angle = (360 - trigAng);
   } else if (valueZ == 0) {
-      if (valueX < 0)
+      if (valueX < 0) {
       //directly left
         angle = 180;
-      else
+        console.log("trigger3")
+      } else {
       //directly right
         angle = 0;
+        console.log("trigger4")
+      }
   } else if (valueX == 0) {
-      if (valueZ < 0)
+      if (valueZ < 0) {
       //directly down
+      console.log("trigger1")
         angle = 270;
-      else
+      } else {
       //directly up
         angle = 90;
+        console.log("trigger2")
+      }
   } else {
     console.log("rotation calculation error");
   }
+
   angle = (90-angle);
   if (angle < -180) {
     angle = angle + 360;
   }
 
   console.log("angle after: " + (angle)); //element.object3D.rotation.y
-  angle = 'property: rotation; to: 0 ' + (angle) + ' 0; dur: 2500; easing:'+property.ease+'; loop: false;';
+  angle = 'property: rotation; to: 0 ' + (angle) + ' 0; dur: 1500; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   if (isDuration==false) {
@@ -335,7 +335,7 @@ function move(element, path, property, counter, initalCoord) {
         if (counter+1 < path.length+1) {
           move(element, path, path[counter], counter, initalCoord);
         } else {
-          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}, counter, initalCoord);
+          //move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:"loopWalk"}, counter, initalCoord);
         }
         //else function below is when animation is done
       } else {

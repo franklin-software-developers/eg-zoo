@@ -248,7 +248,7 @@ setTimeout(function(){
   ]);
   movePath(lion3, [
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
-    {x:-40, y:0, z:0, speed:20, animation:"Animation_Armature"},
+    {x:0, y:0, z:0, speed:0, duration:3000, animation:"Animation_Armature"},
   ]);
 }, 3000)
 
@@ -259,13 +259,25 @@ function move(element, path, property, counter, initalCoord) {
   property.z = property.z || 0;
   property.animationSpeed = property.animationSpeed || 1;
   property.ease = property.ease || "easeOutCubic";
-  property.speed = property.speed || 20;
+  console.log(property.duration);
+  if (property.duration == undefined || property.duration == 0) {
+    property.speed = property.speed || 20;
+    console.log(true);
+  } else {
+    property.speed = 0;
+  }
+  currentRotation = element.object3D.rotation.y*(180/Math.PI);
   let angle = 0;
   console.log("\n");
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
   console.log("relative: x: "+Math.ceil(property.x) + ", y: " + Math.ceil(property.z));
   console.log("absolute: x: "+Math.ceil(element.object3D.position.x) + ", y: " + Math.ceil(element.object3D.position.z));
-  let moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
+  let moveDuration;
+  if (property.speed == 0) {
+    moveDuration = property.duration;
+  } else {
+    moveDuration = (Math.sqrt(property.x*property.x+property.z*property.z)/property.speed)*1000;
+  }
   //decides whether to subtract or add z position
   let location = "property: position; to: " + (Math.ceil(property.x+element.object3D.position.x)) + " " + Math.ceil(property.y+element.object3D.position.y) + " " + (Math.ceil(property.z+element.object3D.position.z)) + "; dur: " + moveDuration + "; easing: linear; loop: false;";
   let valueX = property.x;
@@ -278,6 +290,7 @@ function move(element, path, property, counter, initalCoord) {
   } else if ((valueX<0) && (valueZ>0)) {
     //quadrant 2
     angle = 180 - trigAng;
+    console.log(`quad 2`);
   } else if ((valueX<0) && (valueZ<0)) {
     //quadrant 3
     angle = 180 + trigAng;
@@ -299,15 +312,15 @@ function move(element, path, property, counter, initalCoord) {
       //directly up
         angle = 90;
   } else {
-    angle = 0;
     console.log("rotation calculation error");
   }
-  let counterAngle = angle-360;
-  if (angle >= 181) {
-    angle = angle-360;
+  angle = (90-angle);
+  if (angle < -180) {
+    angle = angle + 360;
   }
-  console.log("angle: " + (angle)); //element.object3D.rotation.y
-  angle = 'property: rotation; to: 0 ' + (90-angle) + ' 0; dur: 1750; easing:'+property.ease+'; loop: false;';
+
+  console.log("angle after: " + (angle)); //element.object3D.rotation.y
+  angle = 'property: rotation; to: 0 ' + (angle) + ' 0; dur: 2500; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation__2', angle);

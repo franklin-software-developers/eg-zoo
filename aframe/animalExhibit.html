@@ -247,8 +247,8 @@ setTimeout(function(){
     {x:-100, y:0, z:-80, speed:20, animation:"Animation_Armature"},
   ]);
   movePath(lion3, [
-    {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
-    {x:0, y:0, z:0, speed:0, duration:3000, animation:"Animation_Armature"},
+    {x:0, y:0, z:0, speed:0, duration:1000, animation:"Animation_Armature"},
+    {x:0, y:0, z:0, speed:0, duration:1000, animation:"Animation_Armature"},
   ]);
 }, 3000)
 
@@ -259,12 +259,13 @@ function move(element, path, property, counter, initalCoord) {
   property.z = property.z || 0;
   property.animationSpeed = property.animationSpeed || 1;
   property.ease = property.ease || "easeOutCubic";
-  console.log(property.duration);
+  let isDuration;
   if (property.duration == undefined || property.duration == 0) {
     property.speed = property.speed || 20;
-    console.log(true);
+    isDuration = false;
   } else {
     property.speed = 0;
+    isDuration = true;
   }
   currentRotation = element.object3D.rotation.y*(180/Math.PI);
   let angle = 0;
@@ -323,7 +324,9 @@ function move(element, path, property, counter, initalCoord) {
   angle = 'property: rotation; to: 0 ' + (angle) + ' 0; dur: 2500; easing:'+property.ease+'; loop: false;';
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
-  element.setAttribute('animation__2', angle);
+  if (isDuration==false) {
+    element.setAttribute('animation__2', angle);
+  }
   element.setAttribute('animation', location);
     setTimeout(function() {
       //plus one because first is already ran

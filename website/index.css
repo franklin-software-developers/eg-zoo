@@ -1,0 +1,209 @@
+.img-full-width .paragraph--type--two-column {
+  max-width: 1440px;
+  margin: auto
+}
+.ttrClick {
+  background-image: url("images/tutorialClick.png");
+  width: 600px;
+  height: 337px;
+}
+
+.ttrClick:hover {
+  background-image: url("images/tutorialClick.gif");
+}
+
+.ttrPortal {
+  background-image: url("images/tutorialPortal.png");
+  width: 600px;
+  height: 337px;
+}
+
+.ttrPortal:hover {
+  background-image: url("images/tutorialPortal.gif");
+}
+
+.ttrTurn {
+  background-image: url("images/tutorialTurn.png");
+  width: 600px;
+  height: 337px;
+}
+
+.ttrTurn:hover {
+  background-image: url("images/tutorialTurn.gif");
+}
+@media screen and (max-width: 780px), (max-height: 780px) {
+  .firstCharacter {
+    font-size: 1em;
+    height: 10px;
+  }
+}
+
+.firstcharacter {
+  float: left;
+  font-family: 'Lato', Arial, Verdana, sans-serif;
+  font-size: 35px;
+  line-height: 25px;
+  padding-top: 6px;
+  padding-right: 4px;
+}
+.container-boxes {
+  background-color: #f8f8f8;
+  padding: 1%;
+  display: flex;
+}
+.column-boxes {
+  flex: 33.33%;
+  height: 10px;
+  font-size: 20px;
+  font-family: 'Lato', Arial, Verdana, sans-serif;
+  text-align: left;
+  padding-bottom: 10%;
+  margin-bottom: 15%;
+  margin-left: .1%;
+  margin-right: .1%;
+}
+#fullscreen {
+  visibility: hidden;
+  position: relative;
+  float: right;
+  font-family: "Poppins-Bold", Arial, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: #333;
+  padding: .4rem;
+  background-color: #add745;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 780px), (max-height: 780px) {
+  #fullscreen {
+    visibility: visible;
+    display: block;
+  }
+}
+#tutorialTitle {
+  margin-left: 20px;
+}
+.tutorialText {
+  text-align: left;
+  font-size: 1em;
+  height: 20px;
+  padding: 1%;
+}
+
+@media screen and (max-width: 780px), (max-height: 780px) {
+  .tutorialText {
+  font-size: 15px;
+      height: 10px;
+  }
+}
+
+@media screen and (max-width: 400px), (max-height: 400px) {
+  .tutorialText {
+  font-size: 15px;
+      height: 10px;
+  }
+}
+
+h4,
+h3,
+h2,
+h1 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw)
+}
+
+@media (min-width:75rem) {
+  h1 {
+    font-size: 2.5rem
+  }
+}
+
+@media (min-width:75rem) {
+  h2 {
+    font-size: 2rem
+  }
+}
+
+@media (min-width:75rem) {
+  h3 {
+    font-size: 1.75rem
+  }
+}
+
+@media (min-width:75rem) {
+  h4 {
+    font-size: 1.5rem
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem
+}
+
+a:hover {
+  color: var(--bs-link-hover-color);
+  text-decoration: underline
+}
+img,
+svg {
+  vertical-align: middle
+}
+
+@media (min-width:48rem) {
+  .container {
+    max-width: 720px
+  }
+}
+
+@media (min-width:62rem) {
+  .container {
+    max-width: 960px
+  }
+}
+
+@media (min-width:75rem) {
+  .container {
+    max-width: 1140px
+  }
+}
+
+@media (min-width:87.5rem) {
+  .container {
+    max-width: 1320px
+  }
+}
+.container,
+.container-fluid {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x)*0.5);
+  padding-left: calc(var(--bs-gutter-x)*0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+img {
+  max-width: 100%
+}
+
+a {
+  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal
+}

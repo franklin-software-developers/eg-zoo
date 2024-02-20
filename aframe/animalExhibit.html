@@ -208,11 +208,12 @@
         {x:0, y:0, z:-80, speed:30, animation:"Animation_Armature"},
         {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
         {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
+        {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
     //notes here x:80 to z:80
     /*
-            {x:40, y:0, z:40, speed:30, animation:"Animation_Armature"},
+        {x:40, y:0, z:40, speed:30, animation:"Animation_Armature"},
         {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
         {x:40, y:0, z:-20, speed:30, animation:"Animation_Armature"},
         {x:-100, y:0, z:-10, speed:30, animation:"Animation_Armature"},*/
@@ -334,7 +335,7 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
   //angle = angle % 360;
   if (previousAngle-angle>180) {
     console.log("%cTest", "color:blue")
-    angle = -1*(360-angle);
+    angle = (180-angle);
   }
   //angle = angle % 360;
   previousAngle = angle;

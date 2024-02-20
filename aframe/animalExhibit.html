@@ -96,7 +96,7 @@
     <!--ground-->
     <a-cylinder shadow="cast: true;" roughness="1" repeat="20 20" src="assets/lionExhibit/dryGrassTexture.jpg" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
     <!-- lion -->
-    <a-entity id="lion1" shadow="cast: true; receive: false" light="type: hemisphere; color: #BBB" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1"  position="-65.9 -9.589 -60" scale="11 11 11" rotation="-5.5 80 0.97"></a-entity>
+    <a-entity id="lion1" shadow="cast: true; receive: false" light="type: hemisphere; color: #BBB" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1"  position="-65.9 -9.589 -60" scale="11 11 11" rotation="0 0 0"></a-entity>
     <a-entity id="lion2" shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .75" rotation="0 -10 0" position="-17 -0.245 -55.8" scale="9.5 9.5 9.7"></a-entity>
     <a-entity id="lion3" shadow="cast: true; receive: false" gltf-model="#lion" animation-mixer="clip: Animation_Armature; loop: 1; timeScale: .9" rotation="-1 -44.8 -7.3" position="36 -10.33 -45.63" scale="11 11 11"></a-entity>
     <!-- tree -->
@@ -194,17 +194,6 @@
     updateIndex();
     //shift to prev camera
     function navigateLeft() {
-      fadeOut();
-      if (index > 0) {
-        index--;
-        updateIndex();
-      } else {
-        index = animals.length-1;
-        updateIndex();
-      }
-    }
-    //shift to next camera
-    function navigateRight() {
       movePath(lion1, [
         {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
         {x:80, y:0, z:0, speed:30, animation:"Animation_Armature"},
@@ -212,6 +201,16 @@
         {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
+    //shift to next camera
+    function navigateRight() {
+      movePath(lion1, [
+        {x:80, y:0, z:0, speed:30, animation:"Animation_Armature"},
+        {x:0, y:0, z:-80, speed:30, animation:"Animation_Armature"},
+        {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
+        {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
+      ]);
+    }
+    //notes here x:80 to z:80
     /*
             {x:40, y:0, z:40, speed:30, animation:"Animation_Armature"},
         {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
@@ -256,7 +255,7 @@ function movePath (id, path) {
 
 function move(element, path, property, counter, initalCoord, previousAngle, animationSrc) {
   if (counter != 0 || counter != undefined) {
-  initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z];
+  initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z, (element.object3D.rotation.y*(180/Math.PI))];
   property.y = property.y || 0;
   property.previousAngle = property.previousAngle || -90;
   animationSrc = animationSrc;
@@ -276,6 +275,12 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
   let animation = "clip:"+property.animation+"; loop: 0; timeScale: "+property.animationSpeed;
   console.log("relative: x: "+Math.ceil(property.x) + ", y: " + Math.ceil(property.z));
   console.log("absolute: x: "+Math.ceil(element.object3D.position.x) + ", y: " + Math.ceil(element.object3D.position.z));
+  console.log(counter);
+  if (counter == 5) {
+    console.log(`inital coord: ${initalCoord}`);
+    console.log(`inital coord: ${initalCoord[0]-element.object3D.position.x}`);
+    //x:(initalCoord[0]-element.object3D.position.x), y:0, z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:property.animation}
+  }
   let moveDuration;
   if (property.speed == 0) {
     moveDuration = property.duration;
@@ -311,30 +316,29 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
       if (valueZ < 0)
       //directly down
         angle = 180;
-      else
-      //directly up
-        angle = 0;
+      else {
+        //directly up
+        if (previousAngle > 180) {
+          angle = 360;
+        } else {
+          angle = 0;
+        }
+        if (counter == 0) {
+          angle = 0;
+        }
+      }
   } else {
     console.log("rotation calculation error");
   }
-  
-  //if (previousAngle != -90) {
-    /*if ((angle) > Math.abs(360-(angle))) {
-      angle = 90+360-angle;
-      console.log("Counter is better");
-    } else {
-      angle = (90-angle);
-      console.log("Clockwise is better");
-    }*/
-  //}
-  if (Math.abs(360+angle)<180) {
+  console.log(`%cIMPORTANT${previousAngle}`, "color:blue")
+  //angle = angle % 360;
+  if (previousAngle-angle>180) {
     console.log("%cTest", "color:blue")
-    angle = 360+angle;
+    angle = -1*(360-angle);
   }
-    console.log(`%cPrevious Angle: ${previousAngle}`, "color:red")
+  //angle = angle % 360;
   previousAngle = angle;
-  //console.log("angle after: " + (angle)); //element.object3D.rotation.y
-  angle = 'property: rotation; to: ' + 0 + ' ' + (angle) + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
+  angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
   console.log(`%c${angle}`, "color:red")
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
@@ -347,19 +351,26 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
 
     setTimeout(function() {
       //plus one because first is already ran
-      if (counter+1 < path.length+2) {
-        counter++;
-        if (counter+1 < path.length+1) {
-          move(element, path, path[counter], counter, initalCoord, property.animation);
-        } else {
-          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:(initalCoord[1]-element.object3D.position.y), z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:property.animation}, counter, initalCoord, property.animation);
-        }
+      if (counter < path.length-1) {
+        //if (counter+1 < path.length+1) {
+          counter++;
+          move(element, path, path[counter], (counter), initalCoord, previousAngle, property.animation);
+          //counter++;
+        //} else {
+          /*if (moveDuration <1000) {
+            moveDuration = 2000;
+          }
+          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:0, z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:property.animation}, counter, initalCoord, property.animation);
+          */
+          //(initalCoord[1]-element.object3D.position.y)
+          console.log(`%c${moveDuration}`, "color:red");
+        //}
         //else function below is when animation is done
       } else {
         counter = 0;
         //repeat animation in infinite loop
-        move(element, path, path[counter], counter, initalCoord);
-        console.log("%cAnimation completed!","color:red;");
+        //move(element, path, path[counter], counter, initalCoord);
+        //console.log("%cAnimation completed!","color:red;");
       }
     }, moveDuration);
     }

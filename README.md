@@ -53,4 +53,3 @@ git checkout -b nuri-feature-minimap
 | wip | work in progress|
 
 [Credits](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/)
-

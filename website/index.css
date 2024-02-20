@@ -207,39 +207,3 @@ a {
   line-height: 1.5;
   letter-spacing: normal
 }
-.container-override {
-  margin: auto;
-  padding: 0;
-  width: 100%
-}
-.h2-title,
-h2 {
-  font-family: "Poppins-Bold", Arial, Verdana, sans-serif;
-  font-size: 2.75rem;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  color: #333;
-  margin-bottom: 1.5rem;
-  text-transform: capitalize
-}
-
-h4 {
-  font-family: "Poppins-Bold", Arial, Verdana, sans-serif;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal
-}
-
-h3 {
-  font-family: "Poppins-Regular", Arial, Verdana, sans-serif;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal
-}

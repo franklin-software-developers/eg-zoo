@@ -14,7 +14,8 @@ function fadeOut() {
     aframe.classList.remove("aframeTransition");
     aframe.style.filter = "brightness(0%)";
   }
-  function fadeIn() {
-    this.classList.add("aframeTransition");
-    this.style.filter = "brightness(100%)";
-  }
+  
+function fadeIn() {
+  this.classList.add("aframeTransition");
+  this.style.filter = "brightness(100%)";
+}

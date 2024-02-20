@@ -53,20 +53,3 @@ git checkout -b nuri-feature-minimap
 | wip | work in progress|
 
 [Credits](https://tilburgsciencehub.com/building-blocks/collaborate-and-share-your-work/use-github/naming-git-branches/)
-
-
-## Contributors
-Those who have contributed to the project so far.
-
-|   |   |
-|---|---|
-| Visualization/AR Lead  | Jaden Chung  |
-| Visualization/AR  | Alex Lal |
-|   | Tony Tong  |
-|   | Matthew Yu Yang  |
-| Programming Lead  | Nuri Kim  |
-| Experienced Coders  | Jaden Chung |
-|   | Oscar Liang  |
-|   | Nina Dong  |
-| Beginner Coders | Tristan Park |
-|   |  |

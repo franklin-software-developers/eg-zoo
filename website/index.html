@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>NZEG 3D Visualization</title>
+  </head>
+
+  <body>
+    <section class="visualizations">
+      <h1>NZEG 3D Visualization</h1>
+      <div class="twinmotion-embed-wrapper">
+        <iframe style="height: 100%; width: 100%; min-height: 720px; min-width: 1080px;"
+          title="Embedded presentation 'Zoo Presentation Demo'" frameborder="0"
+          allow="fullscreen; gyroscope; accelerometer; magnetometer; execution-while-out-of-viewport; execution-while-not-rendered; xr-spatial-tracking;"
+          allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+          src="https://twinmotion.unrealengine.com/presentation/Upt5YKDdnyX_TOgm"
+        ></iframe>
+      </div>
+      <div class="iframe-container" style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
+        <iframe src="aframe/animalExhibit.html" style="position: absolute; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none"></iframe>
+      </div>
+    </section>
+
+    <section class="tutorial">
+      <div style="padding-top:7em">
+        <h1 id="tutorialTitle">Visualization Controls</h1>
+      </div>
+      <div class="container-boxes">
+        <div class="column-boxes">
+          <img class="static" src="images/tutorialClick.png" onmouseover="this.src='images/tutorialClick.gif'"
+            onmouseout="this.src='images/tutorialClick.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">1</span>
+            Tap or click on the ground to traverse the environment.
+          </p>
+        </div>
+        <div class="column-boxes">
+          <img src="images/tutorialTurn.png" onmouseover="this.src='images/tutorialTurn.gif'"
+            onmouseout="this.src='images/tutorialTurn.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">2</span>
+            Drag your finger or cursor to look around the environment
+          </p>
+        </div>
+        <div class="column-boxes">
+          <img src="images/tutorialPortal.png" onmouseover="this.src='images/tutorialPortal.gif'"
+            onmouseout="this.src='images/tutorialPortal.png'">
+          <p class="tutorialText">
+            <span class="firstcharacter">3</span>
+            Tap or click the portal to be taken to the next exhibit, the savannah.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -241,7 +241,7 @@ function movePath (id, path, clockwise) {
   move(id, path, path[0], counter, clockwise);
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
-/*setTimeout(function(){
+setTimeout(function(){
   movePath(lion1, [
     {x:40, y:0, z:40, speed:20, animation:"Animation_Armature"},
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
@@ -252,7 +252,7 @@ function movePath (id, path, clockwise) {
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
     {x:0, y:0, z:0, speed:0, duration:3000, animation:"Animation_Armature"},
   ]);
-}, 3000)*/
+}, 3000)
 
 function move(element, path, property, counter, clockwise, initalCoord, previousAngle, iteration, animationSrc) {
   if (counter != 0 || counter != undefined) {
@@ -296,24 +296,23 @@ function move(element, path, property, counter, clockwise, initalCoord, previous
   let valueX = property.x;
   let valueZ = property.z;
   let trigAng = ((Math.abs(Math.atan((Math.ceil(property.z))/(Math.ceil(property.x)))*(180/Math.PI))));
-  console.log(`%cAngle before${trigAng}`, "color:pink");
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
+    console.log(`%cQuad 1`, "color:pink");
     //quadrant 1
-    angle = 0 + trigAng;
-    console.log(`quad 1`);
+    angle = (0 + trigAng);
   } else if ((valueX<0) && (valueZ>0)) {
     //quadrant 2
-    angle = 180 - trigAng;
-    console.log(`quad 2`);
+    angle = (90 + trigAng);
+    console.log(`%cQuad 2`, "color:pink");
   } else if ((valueX<0) && (valueZ<0)) {
     //quadrant 3
-    console.log(`quad 3`);
-    angle = 270 + trigAng;
+    angle = (270 - trigAng);
+    console.log(`%cQuad 3`, "color:pink");
   } else if ((valueX>0) && (valueZ<0)) {
     //quadrant 4
-    angle = (90 + trigAng);
-    console.log(`quad 4`);
+    angle = 90 + trigAng;
+    console.log(`%cQuad 4`, "color:pink");
   } else if (valueZ == 0) {
       if (valueX < 0)
       //directly left
@@ -341,7 +340,7 @@ function move(element, path, property, counter, clockwise, initalCoord, previous
   }
   console.log(`%cAngle before${angle}`, "color:pink");
   loop = Math.floor(previousAngle/360);
-  if (previousAngle%360 > 180) {
+  /*if (previousAngle%360 > 180) {
     if (previousAngle - angle > 0) {
       loop++;
     } else {
@@ -359,18 +358,14 @@ function move(element, path, property, counter, clockwise, initalCoord, previous
       console.log(`%c${element.object3D.rotation.y*(180/Math.PI)}`, "color:pink")
     }
     //relativeAngle = angle-element.object3D.rotation.y*(180/Math.PI);*/
-    angle = angle + 360 * loop;
+    angle = angle //+ 360 * loop;
   previousAngle = angle;
   angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
   console.log(`%c${angle}`, "color:red")
   //sets all the animation
   element.setAttribute('animation-mixer', animation);
   element.setAttribute('animation', location);
-  if (counter == path.length+1) {
-    console.log(`%cHere: ${animation}`, "color:yellow")
-  } else {
   element.setAttribute('animation__2', angle);
-  }
 
     setTimeout(function() {
       //plus one because first is already ran

@@ -335,15 +335,15 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
   }
   console.log(`%cIMPORTANT${previousAngle}`, "color:yellow")
   //angle = angle % 360;
-  if (angle-previousAngle>=0) {
-    console.log(`%c${previousAngle}`, "color:blue")
-    angle = angle;
-  } else {
-    //((630%90)%4)*360
-    //iteration
-    angle = angle+(360*(iteration-1));
-    console.log(`%c${previousAngle}`, "color:pink")
-  }
+    if (angle-previousAngle>=0) {
+      console.log(`%c${previousAngle}`, "color:blue")
+      angle = angle;
+    } else {
+      //((630%90)%4)*360
+      //iteration
+      angle = angle+(360*(iteration));
+      console.log(`%c${previousAngle}`, "color:pink")
+    }
 
   previousAngle = angle;
   angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';

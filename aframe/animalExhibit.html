@@ -208,7 +208,7 @@
         {x:0, y:0, z:-80, speed:30, animation:"Animation_Armature"},
         {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
         {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
-        {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
+        //{x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
     //notes here x:80 to z:80
@@ -254,12 +254,14 @@ function movePath (id, path) {
   ]);
 }, 3000)*/
 
-function move(element, path, property, counter, initalCoord, previousAngle, animationSrc) {
+function move(element, path, property, counter, initalCoord, previousAngle, iteration, animationSrc) {
   if (counter != 0 || counter != undefined) {
   initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z, (element.object3D.rotation.y*(180/Math.PI))];
   property.y = property.y || 0;
-  property.previousAngle = property.previousAngle || -90;
+  property.previousAngle = property.previousAngle || 0;
   animationSrc = animationSrc;
+  iteration = iteration || 0;
+  previousAngle = previousAngle || 0;
   property.animation = property.animation || animationSrc;
   currentRotation = element.object3D.rotation.y*(180/Math.PI);
   property.x = property.x || 0;
@@ -319,25 +321,30 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
         angle = 180;
       else {
         //directly up
-        if (previousAngle > 180) {
+        //if (previousAngle > 180) {
           angle = 360;
-        } else {
-          angle = 0;
-        }
-        if (counter == 0) {
-          angle = 0;
-        }
+        //} else {
+          //angle = 0;
+        //}
+        //if (counter == 0) {
+          //angle = 0;
+        //}
       }
   } else {
     console.log("rotation calculation error");
   }
-  console.log(`%cIMPORTANT${previousAngle}`, "color:blue")
+  console.log(`%cIMPORTANT${previousAngle}`, "color:yellow")
   //angle = angle % 360;
-  if (previousAngle-angle>180) {
-    console.log("%cTest", "color:blue")
-    angle = (180-angle);
+  if (angle-previousAngle>=0) {
+    console.log(`%c${previousAngle}`, "color:blue")
+    angle = angle;
+  } else {
+    //((630%90)%4)*360
+    //iteration
+    angle = angle+(360*(iteration-1));
+    console.log(`%c${previousAngle}`, "color:pink")
   }
-  //angle = angle % 360;
+
   previousAngle = angle;
   angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
   console.log(`%c${angle}`, "color:red")
@@ -355,7 +362,7 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
       if (counter < path.length-1) {
         //if (counter+1 < path.length+1) {
           counter++;
-          move(element, path, path[counter], (counter), initalCoord, previousAngle, property.animation);
+          move(element, path, path[counter], (counter), initalCoord, previousAngle, iteration, property.animation);
           //counter++;
         //} else {
           /*if (moveDuration <1000) {
@@ -370,7 +377,8 @@ function move(element, path, property, counter, initalCoord, previousAngle, anim
       } else {
         counter = 0;
         //repeat animation in infinite loop
-        //move(element, path, path[counter], counter, initalCoord);
+        iteration++;
+        move(element, path, path[counter], counter, initalCoord, previousAngle, iteration, property.animation);
         //console.log("%cAnimation completed!","color:red;");
       }
     }, moveDuration);

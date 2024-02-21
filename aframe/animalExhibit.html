@@ -322,7 +322,10 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
       else {
         //directly up
         //if (previousAngle > 180) {
-          angle = 360;
+          angle = 0;
+          if (previousAngle>=180) {
+            angle = 360;
+          }
         //} else {
           //angle = 0;
         //}
@@ -333,17 +336,19 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
   } else {
     console.log("rotation calculation error");
   }
+  rotationAngle = angle;
   console.log(`%cIMPORTANT${previousAngle}`, "color:yellow")
   //angle = angle % 360;
-    if (angle-previousAngle>=0) {
-      console.log(`%c${previousAngle}`, "color:blue")
-      angle = angle;
-    } else {
+    /*if (angle-previousAngle>=0) {
+      console.log(`%c${previousAngle}`, "color:blue")*/
+      //angle = angle;
+    /*} else if (angle>=180) {
       //((630%90)%4)*360
       //iteration
-      angle = angle+(360*(iteration));
-      console.log(`%c${previousAngle}`, "color:pink")
+      angle = angle+(360);
+      console.log(`%c${element.object3D.rotation.y*(180/Math.PI)}`, "color:pink")
     }
+    //relativeAngle = angle-element.object3D.rotation.y*(180/Math.PI);*/
 
   previousAngle = angle;
   angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
@@ -378,6 +383,8 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
         counter = 0;
         //repeat animation in infinite loop
         iteration++;
+        element.object3D.rotation.y = 0;
+        //}
         move(element, path, path[counter], counter, initalCoord, previousAngle, iteration, property.animation);
         //console.log("%cAnimation completed!","color:red;");
       }

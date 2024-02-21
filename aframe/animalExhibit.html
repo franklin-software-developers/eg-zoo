@@ -204,10 +204,10 @@
     //shift to next camera
     function navigateRight() {
       movePath(lion1, [
-        {x:80, y:0, z:0, speed:30, animation:"Animation_Armature"},
-        {x:0, y:0, z:-80, speed:30, animation:"Animation_Armature"},
-        {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
-        {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
+        {x:40, y:0, z:40, speed:30, animation:"Animation_Armature"},
+        {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
+        {x:40, y:0, z:-20, speed:30, animation:"Animation_Armature"},
+        {x:-100, y:0, z:-10, speed:30, animation:"Animation_Armature"},
         //{x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
@@ -236,9 +236,9 @@ function fadeIn() {
   }
  */
 
-function movePath (id, path) {
+function movePath (id, path, clockwise) {
   let counter = 0;
-  move(id, path, path[0], counter);
+  move(id, path, path[0], counter, clockwise);
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
 /*setTimeout(function(){
@@ -254,13 +254,14 @@ function movePath (id, path) {
   ]);
 }, 3000)*/
 
-function move(element, path, property, counter, initalCoord, previousAngle, iteration, animationSrc) {
+function move(element, path, property, counter, clockwise, initalCoord, previousAngle, iteration, animationSrc) {
   if (counter != 0 || counter != undefined) {
   initalCoord = initalCoord || [element.object3D.position.x, element.object3D.position.y, element.object3D.position.z, (element.object3D.rotation.y*(180/Math.PI))];
   property.y = property.y || 0;
   property.previousAngle = property.previousAngle || 0;
   animationSrc = animationSrc;
   iteration = iteration || 0;
+  clockwise = clockwise || true;
   previousAngle = previousAngle || 0;
   property.animation = property.animation || animationSrc;
   currentRotation = element.object3D.rotation.y*(180/Math.PI);
@@ -295,19 +296,24 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
   let valueX = property.x;
   let valueZ = property.z;
   let trigAng = ((Math.abs(Math.atan((Math.ceil(property.z))/(Math.ceil(property.x)))*(180/Math.PI))));
+  console.log(`%cAngle before${trigAng}`, "color:pink");
   //decides what quadrant the giraffe is facing
   if (valueX>0 && valueZ>0) {
     //quadrant 1
-    angle = 90 + trigAng;
+    angle = 0 + trigAng;
+    console.log(`quad 1`);
   } else if ((valueX<0) && (valueZ>0)) {
     //quadrant 2
-    angle = 270 - trigAng;
+    angle = 180 - trigAng;
+    console.log(`quad 2`);
   } else if ((valueX<0) && (valueZ<0)) {
     //quadrant 3
+    console.log(`quad 3`);
     angle = 270 + trigAng;
   } else if ((valueX>0) && (valueZ<0)) {
     //quadrant 4
-    angle = (90 - trigAng);
+    angle = (90 + trigAng);
+    console.log(`quad 4`);
   } else if (valueZ == 0) {
       if (valueX < 0)
       //directly left
@@ -322,10 +328,7 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
       else {
         //directly up
         //if (previousAngle > 180) {
-          angle = 0;
-          if (previousAngle>=180) {
-            angle = 360;
-          }
+            angle = 0;
         //} else {
           //angle = 0;
         //}
@@ -336,8 +339,15 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
   } else {
     console.log("rotation calculation error");
   }
-  rotationAngle = angle;
-  console.log(`%cIMPORTANT${previousAngle}`, "color:yellow")
+  console.log(`%cAngle before${angle}`, "color:pink");
+  loop = Math.floor(previousAngle/360);
+  if (previousAngle%360 > 180) {
+    if (previousAngle - angle > 0) {
+      loop++;
+    } else {
+      loop--;
+    }
+  }
   //angle = angle % 360;
     /*if (angle-previousAngle>=0) {
       console.log(`%c${previousAngle}`, "color:blue")*/
@@ -349,7 +359,7 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
       console.log(`%c${element.object3D.rotation.y*(180/Math.PI)}`, "color:pink")
     }
     //relativeAngle = angle-element.object3D.rotation.y*(180/Math.PI);*/
-
+    angle = angle + 360 * loop;
   previousAngle = angle;
   angle = 'property: rotation; to: ' + 0 + ' ' + angle + ' ' + 0 + '; dur: 1500; easing:'+property.ease+'; loop: false;';
   console.log(`%c${angle}`, "color:red")
@@ -367,7 +377,7 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
       if (counter < path.length-1) {
         //if (counter+1 < path.length+1) {
           counter++;
-          move(element, path, path[counter], (counter), initalCoord, previousAngle, iteration, property.animation);
+          move(element, path, path[counter], counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
           //counter++;
         //} else {
           /*if (moveDuration <1000) {
@@ -383,9 +393,9 @@ function move(element, path, property, counter, initalCoord, previousAngle, iter
         counter = 0;
         //repeat animation in infinite loop
         iteration++;
-        element.object3D.rotation.y = 0;
+        //element.object3D.rotation.y = 0;
         //}
-        move(element, path, path[counter], counter, initalCoord, previousAngle, iteration, property.animation);
+        move(element, path, path[counter], counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
         //console.log("%cAnimation completed!","color:red;");
       }
     }, moveDuration);

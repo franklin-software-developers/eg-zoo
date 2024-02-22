@@ -1,6 +1,47 @@
 # eg-zoo
 VR project for the City of Elk Grove.
 
+## Entity Naming Conventions
+While working on the model-moving solution, please use code conventions when naming your variables and models.
+### ID
+* ```{species}-{A || B}-{number}```
+* ```species```: (e.g. 'giraffe', 'rhino')
+* ```A```: adult
+* ```B```: baby
+* ```number```: nth species (total of adult and baby)
+
+### Animation Key
+* ```animation__{number}{letter}```
+* ```number```: nth step
+* ```letter```: nth animation in one step
+
+#### Example
+```animation__3a``` and ```animation__3b```: third sequence, perform two animations a and b
+
+```
+<a-entity
+                id="giraffe-A1"
+                gltf-model="./assets/giraffeAdult.glb"
+                animation__0="
+                    dur: 0;
+                    ...
+                "
+                animation__1a="
+                    startEvents: animationcomplete__0, animationcomplete__3b;
+                "
+                animation__2a="
+                    ...
+                "
+                animation__3a="
+                    ...
+                "
+                animation__3b="
+                    ...
+                "
+            >
+            </a-entity>
+```
+
 ## How To Contribute
 1. Clone this repository to your computer. This enables you to make publishable changes. Run all commands on Git CLI. <br>
 ```git clone https://github.com/franklin-software-developers/eg-zoo/```

@@ -198,7 +198,6 @@
         {x:0, y:0, z:80, speed:30, animation:"Animation_Armature"},
         {x:80, y:0, z:0, speed:30, animation:"Animation_Armature"},
         {x:0, y:0, z:-80, speed:30, animation:"Animation_Armature"},
-        {x:-80, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
     //shift to next camera
@@ -208,6 +207,8 @@
         {x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
         {x:40, y:0, z:-20, speed:30, animation:"Animation_Armature"},
         {x:-100, y:0, z:-10, speed:30, animation:"Animation_Armature"},
+
+        //X:-20.99252104457439 Y:59.925983164340494
         //{x:40, y:0, z:0, speed:30, animation:"Animation_Armature"},
       ]);
     }
@@ -242,17 +243,19 @@ function movePath (id, path, clockwise) {
 }
 //must wait a little for everything to be completely loaded. Else calculation will be off
 setTimeout(function(){
-  movePath(lion1, [
+  /*movePath(lion1, [
     {x:40, y:0, z:40, speed:20, animation:"Animation_Armature"},
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
     {x:40, y:0, z:-20, speed:20, animation:"Animation_Armature"},
     {x:-100, y:0, z:-80, speed:20, animation:"Animation_Armature"},
+    //{x:-20, y:0, z:-20, speed:20, animation:"Anim"},
   ]);
   movePath(lion3, [
     {x:40, y:0, z:0, speed:20, animation:"Animation_Armature"},
     {x:0, y:0, z:0, speed:0, duration:3000, animation:"Animation_Armature"},
-  ]);
+  ]);*/
 }, 3000)
+// //X:-20.99252104457439 Y:-20.99252104457439
 
 function move(element, path, property, counter, clockwise, initalCoord, previousAngle, iteration, animationSrc) {
   if (counter != 0 || counter != undefined) {
@@ -369,29 +372,22 @@ function move(element, path, property, counter, clockwise, initalCoord, previous
 
     setTimeout(function() {
       //plus one because first is already ran
-      if (counter < path.length-1) {
-        //if (counter+1 < path.length+1) {
-          counter++;
+      if (counter < path.length) {
+        counter++;
+        if (counter < path.length) {
           move(element, path, path[counter], counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
           //counter++;
-        //} else {
-          /*if (moveDuration <1000) {
-            moveDuration = 2000;
-          }
-          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:0, z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:property.animation}, counter, initalCoord, property.animation);
-          */
-          //(initalCoord[1]-element.object3D.position.y)
-          console.log(`%c${moveDuration}`, "color:red");
-        //}
+        } else {
+          move(element, path, {x:(initalCoord[0]-element.object3D.position.x), y:0, z:(initalCoord[2]-element.object3D.position.z), speed:20, animation:property.animation}, counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
+          console.log(`%CCounter${counter}`, "color:yellow")
+          console.log(`X:${initalCoord[0]-element.object3D.position.x} Y:${initalCoord[2]-element.object3D.position.z}`)
+        }
         //else function below is when animation is done
       } else {
         counter = 0;
         //repeat animation in infinite loop
         iteration++;
-        //element.object3D.rotation.y = 0;
-        //}
-        move(element, path, path[counter], counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
-        //console.log("%cAnimation completed!","color:red;");
+        //move(element, path, path[counter], counter, clockwise, initalCoord, previousAngle, iteration, property.animation);
       }
     }, moveDuration);
     }

@@ -19,12 +19,12 @@
         // }
     </script>
       <div>
-        <button onclick="navigateLeft()" class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+        <button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
         <div id="navigationIndexDiv">
           <!--inital animal for navigation-->
           <p id="navigationIndex">Lion</p>
         </div>
-        <button onclick="navigateRight()" class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
+        <button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
       </div>
     <a-scene id="aframe">
         <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
@@ -114,9 +114,6 @@
 
         el.addEventListener('animationbegin', animationCorresponder)
     </script>
-        <script src="../scripts/navigateRight.js"></script>
-        <script src="../scripts/navigateLeft.js"></script>
-        <script src="../scripts/fade.js"></script>
-        <script src="../scripts/updateIndex.js"></script>
+        <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>
 </html>

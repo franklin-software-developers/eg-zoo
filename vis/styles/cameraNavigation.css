@@ -12,6 +12,7 @@ body {
     border-radius:5em;
     border: 0em red solid;
     height:10%;
+    top:50%;
   }
   .navigationText {
     font-size: 3em;

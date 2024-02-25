@@ -29,21 +29,21 @@
             <a-entity
                 id="giraffe-A1"
                 gltf-model="./assets/giraffeAdult.glb"
-                position="-29.604 0 1.606"
+                position="-26.998 -0.503 6.733"
                 scale="2 2 2"
                 animation__0="
                     property: position;
-                    from: -29.604 0 1.606;
-                    to: -29.604 0 1.606;
+                    from: -26.998 -0.503 6.733;
+                    to: -26.998 -0.503 6.733;
                     dur: 0;
                 "
                 animation__1a="
                     startEvents: animationcomplete__0, animationcomplete__1f;
                     property: position;
-                    from: -29.604 0 1.606;
-                    to: 36.809 0 -8.008;
+                    from: -26.998 -0.503 6.733;
+                    to: 36.809 -0.251 -8.008;
                     autoplay: true;
-                    dur: 15000;
+                    dur: 25000;
                 "
                 animation__1b="
                     startEvents: animationcomplete__1a;
@@ -51,15 +51,15 @@
                     from: 0 0 0;
                     to: 0 0 0;
                     autoplay: false;
-                    dur: 5000;
+                    dur: 25000;
                 "
                 animation__1c="
                     startEvents: animationcomplete__1b;
                     property: position;
-                    from: 36.809 0 -8.008;
-                    to: -6.379 0 22.632;
+                    from: 36.809 -0.251 -8.008;
+                    to: -6.379 -0.899 22.632;
                     autoplay: false;
-                    dur: 5000;
+                    dur: 16000;
                 "
                 animation__1d="
                     startEvents: animationcomplete__1c;
@@ -67,28 +67,29 @@
                     from: 0 0 0;
                     to: 0 0 0;
                     autoplay: false;
-                    dur: 10000;
+                    dur: 30000;
                 "
                 animation__1e="
                     startEvents: animationcomplete__1d;
                     property: position;
-                    from: 36.809 0 -8.008;
-                    to: -6.379 0 22.632;
+                    from: -6.379 -0.899 22.632;
+                    to: -26.998 0 6.733;
                     autoplay: false;
-                    dur: 10000;
+                    dur: 12500;
                 "
                 animation__1f="
-                    startEvents: animationcomplete__1d;
-                    property: position;
-                    from: -6.379 0 22.632;
-                    to: -29.604 0 1.606;
+                    startEvents: animationcomplete__1e;
+                    property: rotation;
+                    from: 0 0 0;
+                    to: 0 0 0;
                     autoplay: false;
-                    dur: 5000;
+                    dur: 35000;
                 "
             >
             </a-entity>
+            <a-entity camera="" position="-5.32348 2.77253 33.85177" wasd-controls="" rotation="-4.010704565915761 -16.730367617819976 0" 
+            look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
             
-        <a-box position="5 0 5" color="blue"></a-box>
     </a-scene>
 
     <script>
@@ -108,14 +109,16 @@
                     el.setAttribute('animation-mixer', {'clip': 'loopEating'});
                     break;
                 case "animation__1c":
-                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
                     break;
                 case "animation__1d":
                     el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
                     break;
                 case "animation__1e":
-                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
                     break;
+                case "animation__1f":
+                    el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
                 default:
                     break;
             }

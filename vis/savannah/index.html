@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Savannah - NZEG</title>
+    <link rel="stylesheet" href="../styles/cameraNavigation.css">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
 </head>
@@ -17,7 +18,18 @@
         //     return (`0 ${theta} 0`);
         // }
     </script>
-    <a-scene>
+      <div>
+        <button onclick="navigateLeft()" class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+        <div id="navigationIndexDiv">
+          <!--inital animal for navigation-->
+          <p id="navigationIndex">Lion</p>
+        </div>
+        <button onclick="navigateRight()" class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
+      </div>
+    <a-scene id="aframe">
+        <a-entity id="cameraRig" character-controller cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable,.navmesh-hole">
+            <a-camera id="head" rotation="0 0 0" position="0 5 0" camera wasd-controls="enabled:true" look-controls="reverseMouseDrag: true" fov="43.8">
+        </a-entity>
         <a-assets>
         </a-assets>
             <a-entity
@@ -66,6 +78,7 @@
             </a-entity>
             
         <a-box position="5 0 5" color="blue"></a-box>
+        <a-cylinder shadow="cast: true;" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
     </a-scene>
 
     <script>
@@ -101,5 +114,9 @@
 
         el.addEventListener('animationbegin', animationCorresponder)
     </script>
+        <script src="../scripts/navigateRight.js"></script>
+        <script src="../scripts/navigateLeft.js"></script>
+        <script src="../scripts/fade.js"></script>
+        <script src="../scripts/updateIndex.js"></script>
 </body>
 </html>

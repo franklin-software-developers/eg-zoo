@@ -32,53 +32,76 @@
         </a-entity>
         <a-assets>
         </a-assets>
+            <!-- x -13.25 z -->
+            <a-entity
+                id="savannah"
+                gltf-model="./assets/savannah.glb"
+                position="-280 -13.25 475" 
+            ></a-entity>
             <a-entity
                 id="giraffe-A1"
-                gltf-model="./assets/scene.glb"
-                position="5 0 0"
+                gltf-model="./assets/giraffeAdult.glb"
+                position="-26.998 -0.503 6.733"
+                scale="1.75 1.75 1.75"
                 animation__0="
                     property: position;
-                    from: 0 0 0;
-                    to: 0 0 0;
+                    from: -26.998 -0.503 6.733;
+                    to: -26.998 -0.503 6.733;
                     dur: 0;
                 "
                 animation__1a="
-                    startEvents: animationcomplete__0, animationcomplete__1d;
+                    startEvents: animationcomplete__0, animationcomplete__1f;
                     property: position;
-                    from: 0 0 0;
-                    to: 10 0 5;
+                    from: -26.998 -0.503 6.733;
+                    to: 36.809 -0.251 -8.008;
                     autoplay: true;
-                    dur: 5000;
+                    dur: 25000;
                 "
                 animation__1b="
                     startEvents: animationcomplete__1a;
                     property: rotation;
                     from: 0 0 0;
-                    to: 0 80 0;
+                    to: 0 0 0;
                     autoplay: false;
-                    dur: 2000
+                    dur: 25000;
                 "
                 animation__1c="
                     startEvents: animationcomplete__1b;
                     property: position;
-                    from: 10 0 5;
-                    to: 0 0 0;
+                    from: 36.809 -0.251 -8.008;
+                    to: -6.379 -0.899 22.632;
                     autoplay: false;
-                    dur: 2000
+                    dur: 16000;
                 "
                 animation__1d="
-                    startEvents: animationcomplete__1b;
+                    startEvents: animationcomplete__1c;
                     property: rotation;
-                    from: 0 90 0;
+                    from: 0 0 0;
                     to: 0 0 0;
                     autoplay: false;
-                    dur: 2000
+                    dur: 30000;
+                "
+                animation__1e="
+                    startEvents: animationcomplete__1d;
+                    property: position;
+                    from: -6.379 -0.899 22.632;
+                    to: -26.998 0 6.733;
+                    autoplay: false;
+                    dur: 12500;
+                "
+                animation__1f="
+                    startEvents: animationcomplete__1e;
+                    property: rotation;
+                    from: 0 0 0;
+                    to: 0 0 0;
+                    autoplay: false;
+                    dur: 35000;
                 "
             >
             </a-entity>
+            <a-entity camera="" position="-5.32348 2.77253 33.85177" wasd-controls="" rotation="-4.010704565915761 -16.730367617819976 0" 
+            look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
             
-        <a-box position="5 0 5" color="blue"></a-box>
-        <a-cylinder shadow="cast: true;" color="#FFFACD" position="0 -11.5 0" height="3" radius="500"></a-cylinder>
     </a-scene>
 
     <script>
@@ -92,17 +115,22 @@
         function animationCorresponder(event) {
             switch(event.detail.name) {
                 case "animation__1a":
-                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
                     break;
-                case "animation__1b":
-                    el.setAttribute('animation-mixer', {'clip': 'EndDrinking'});
+                case "animation__1b":    
+                    el.setAttribute('animation-mixer', {'clip': 'loopEating'});
                     break;
                 case "animation__1c":
-                    el.setAttribute('animation-mixer', {'clip': 'loopRun'});
+                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
                     break;
                 case "animation__1d":
-                    el.setAttribute('animation-mixer', {'clip': 'EndDrinking'});
+                    el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
                     break;
+                case "animation__1e":
+                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
+                    break;
+                case "animation__1f":
+                    el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
                 default:
                     break;
             }

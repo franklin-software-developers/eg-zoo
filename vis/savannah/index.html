@@ -17,6 +17,14 @@
         //     return (`0 ${theta} 0`);
         // }
     </script>
+          <div>
+            <button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+            <div id="navigationIndexDiv">
+              <!--inital animal for navigation-->
+              <p id="navigationIndex">Lion</p>
+            </div>
+            <button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
+          </div>
     <a-scene>
         <a-assets>
         </a-assets>
@@ -130,5 +138,6 @@
 
         el.addEventListener('animationbegin', animationCorresponder)
     </script>
+    <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>
 </html>

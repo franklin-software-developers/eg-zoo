@@ -11,11 +11,13 @@
  */
 
 function fadeOut() {
-    aframe.classList.remove("aframeTransition");
-    aframe.style.filter = "brightness(0%)";
-  }
-  
-function fadeIn() {
-  this.classList.add("aframeTransition");
-  this.style.filter = "brightness(100%)";
+  aframe.style.transition="all 0.5s ease-in-out";
+  aframe.style.filter = "brightness(0%)";
 }
+
+function fadeIn() {
+  aframe.style.transition="all 1s ease-in-out";
+  aframe.style.filter = "brightness(100%)";
+}
+
+export { fadeOut, fadeIn }

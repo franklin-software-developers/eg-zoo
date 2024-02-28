@@ -8,7 +8,6 @@ let camera = document.getElementById("camera");
 let animalIndexName = document.getElementById("navigationIndex");
 let index = 0;
 
-
 let leftNavigationButton = document.getElementById("leftNavigationButton");
 let rightNavigationButton = document.getElementById("rightNavigationButton");
 leftNavigationButton.addEventListener("click", navigateLeft);
@@ -22,6 +21,8 @@ function updateIndex () {
 }
 //moves camera to the next coordinate listed. After last coordinate, camera loops to the first coordinate making it an infinite carousel loop.
 function navigateRight() {
+  camera.setAttribute("rotation", "180, 180, 180")
+  console.log(camera.object3D.rotation.y)
   fadeOut()
   if (index < animals.length-1) {
     index++;

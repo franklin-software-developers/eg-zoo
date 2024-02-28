@@ -1,7 +1,6 @@
 import { fadeOut, fadeIn } from  "./fade.js";
 import { animals } from "../../vis/data/cameraData.js";
 
-
 let aframe = document.getElementById("aframe");
 aframe.addEventListener("transitionend", fadeIn);
 let camera = document.getElementById("camera");
@@ -13,16 +12,16 @@ let rightNavigationButton = document.getElementById("rightNavigationButton");
 leftNavigationButton.addEventListener("click", navigateLeft);
 rightNavigationButton.addEventListener("click", navigateRight);
 
-
 //shows camera name based on current index
 function updateIndex () {
   animalIndexName.innerHTML = animals[index].name;
-  camera.object3D.position.set(animals[index].cameraX, animals[index].cameraY, animals[index].cameraZ);
+  //camera.components['look-controls'].pitchObject.rotation.x=animals[index].rotation[0],
+  //camera.components['look-controls'].yawObject.rotation.y=animals[index].rotation[1];
+  camera.components['look-controls'].pitchObject.rotation.set(degToPi(animals[index].rotation[0]),degToPi(animals[index].rotation[1]),degToPi(animals[index].rotation[2]));
+  camera.object3D.position.set(animals[index].position[0], animals[index].position[1], animals[index].position[2]);
 }
 //moves camera to the next coordinate listed. After last coordinate, camera loops to the first coordinate making it an infinite carousel loop.
 function navigateRight() {
-  camera.setAttribute("rotation", "180, 180, 180")
-  console.log(camera.object3D.rotation.y)
   fadeOut()
   if (index < animals.length-1) {
     index++;
@@ -44,3 +43,6 @@ function navigateLeft() {
   }
 }
 
+function degToPi(degree) {
+  return degree*(Math.PI/180);
+}

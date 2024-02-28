@@ -2,26 +2,23 @@
     /*ADD ANIMALS HERE:
       just create an object with the template below and your camera will be automatically added
         {"name": "AnimalNameGoesHere",
-        "cameraX": 0,
-        "cameraY": 0,
-        "cameraZ": 0
+        "position": [x, y, z],
+        "rotation": [x, y, z],
         },
+    only change rotation for x and y. Z makes camera slanted
     */
 
 export let animals =[
     {"name": "Lion",
-     "cameraX": 0,
-     "cameraY": 3,
-     "cameraZ": 0
+     "position": [0, 3, 0],
+     "rotation": [50, 50, 0]
     },
     {"name": "Camera 2",
-     "cameraX": -90,
-     "cameraY": 3,
-     "cameraZ": 0,
+     "position": [0, 3, 50],
+     "rotation": [-15, 90, 0]
     },
     {"name": "Camera 3",
-     "cameraX": 80,
-     "cameraY": 3,
-     "cameraZ": 0,
+      "position": [60, 3, 0],
+      "rotation": [10, 120, 0]
     },
 ]

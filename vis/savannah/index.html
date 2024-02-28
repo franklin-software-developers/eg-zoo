@@ -30,10 +30,11 @@
         <a-assets>
         </a-assets>
             <!-- x -13.25 z -->
+            <!-- -280 -13.25 475 -->
             <a-entity
                 id="savannah"
                 gltf-model="./assets/savannah.glb"
-                position="-280 -13.25 475" 
+                position="0 -13.25 0"
             ></a-entity>
             <a-entity
                 id="giraffe-A1"
@@ -102,7 +103,7 @@
     </a-scene>
 
     <script>
-        var el = document.querySelector('#giraffe-A1')
+        var giraffeA1 = document.querySelector('#giraffe-A1')
 
         // object
         let giraffeAnimation = {
@@ -112,32 +113,32 @@
         function animationCorresponder(event) {
             switch(event.detail.name) {
                 case "animation__1a":
-                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
                     break;
                 case "animation__1b":    
-                    el.setAttribute('animation-mixer', {'clip': 'loopEating'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Eat'});
                     break;
                 case "animation__1c":
-                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
                     break;
                 case "animation__1d":
-                    el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Idle'});
                     break;
                 case "animation__1e":
-                    el.setAttribute('animation-mixer', {'clip': 'loopWalk'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
                     break;
                 case "animation__1f":
-                    el.setAttribute('animation-mixer', {'clip': 'loopIdle01'});
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Idle'});
                 default:
                     break;
             }
         }
 
-        el.addEventListener('animationbegin', function (e) {
+        giraffeA1.addEventListener('animationbegin', function (e) {
             console.log(e.detail.name);
         })
 
-        el.addEventListener('animationbegin', animationCorresponder)
+        giraffeA1.addEventListener('animationbegin', animationCorresponder)
     </script>
     <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>

@@ -5,13 +5,13 @@
         "position": [x, y, z],
         "rotation": [x, y, z],
         },
-    only change rotation for x and y. Z makes camera slanted
+    only changes rotation for x and y. Z makes camera slanted
     */
 
 export let animals =[
     {"name": "Savannah - Entrance",
      "position": [0, 3, 0],
-     "rotation": [50, 50, 0]
+     "rotation": [20, 50, 0]
     },
     {"name": "Savannah - Event Lawn",
      "position": [70, 3, -30],

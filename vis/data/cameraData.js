@@ -9,17 +9,17 @@
     */
 
 export let animals =[
-    {"name": "Lion",
+    {"name": "Savannah - Entrance",
      "cameraX": 0,
      "cameraY": 3,
      "cameraZ": 0
     },
-    {"name": "Camera 2",
+    {"name": "Savannah - Event Lawn",
      "cameraX": -90,
      "cameraY": 3,
      "cameraZ": 0,
     },
-    {"name": "Camera 3",
+    {"name": "Savannah - Giraffe Feeding",
      "cameraX": 80,
      "cameraY": 3,
      "cameraZ": 0,

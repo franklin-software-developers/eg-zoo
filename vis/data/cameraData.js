@@ -15,13 +15,13 @@ export let animals =[
      "cameraZ": 0
     },
     {"name": "Savannah - Event Lawn",
-     "cameraX": -90,
+     "cameraX": -50,
      "cameraY": 3,
-     "cameraZ": 0,
+     "cameraZ": -30,
     },
     {"name": "Savannah - Giraffe Feeding",
-     "cameraX": 80,
-     "cameraY": 3,
-     "cameraZ": 0,
+     "cameraX": 70,
+     "cameraY": 4,
+     "cameraZ": -60,
     },
 ]

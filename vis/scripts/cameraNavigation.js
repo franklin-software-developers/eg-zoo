@@ -61,8 +61,9 @@ AFRAME.registerComponent('camera-listener', {
     cameraSnap()
   }
 });
+
 //how far the camera can move before begin snapped back
-let limit = 25;
+let limit = 30;
 function cameraSnap() {
   //keeps track of x and y current rotation
   let final = [piToDeg(camera.components['look-controls'].pitchObject.rotation.x), piToDeg(camera.components['look-controls'].yawObject.rotation.y)];

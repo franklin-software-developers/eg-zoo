@@ -4,7 +4,10 @@
         {"name": "AnimalNameGoesHere",
         "position": [x, y, z],
         "rotation": [x, y, z],
+        "position": [x, y, z],
+        "rotation": [x, y, z],
         },
+    only changes rotation for x and y. Z makes camera slanted
     only changes rotation for x and y. Z makes camera slanted
     */
    

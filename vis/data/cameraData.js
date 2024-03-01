@@ -15,10 +15,10 @@ export let animals =[
     },
     {"name": "Camera 2",
      "position": [0, 3, 50],
-     "rotation": [15, 90, 0]
+     "rotation": [20, 180, 0]
     },
     {"name": "Camera 3",
       "position": [60, 3, 0],
-      "rotation": [-15, 90, 0]
+      "rotation": [20, 270, 0]
     },
 ]

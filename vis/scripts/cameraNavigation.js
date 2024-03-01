@@ -15,13 +15,10 @@ rightNavigationButton.addEventListener("click", navigateRight);
 //shows camera name based on current index
 function updateIndex () {
   animalIndexName.innerHTML = animals[index].name;
-  //yaw is x; rotates left/right
-  //camera.components["look-controls"].yawObject.rotation.x = degToPi(animals[index].rotation[0]);
-  //pitch is y; rotates top/down
+  //notifies tick cameraSnap function that the position has indeed moved. Rotation cannot be directly changed here because cameraSnap will instantly overwrite it, making it absolete
   cameraMoved = true;
-  //camera.components['look-controls'].pitchObject.rotation.y = degToPi(animals[index].rotation[1]);
-  //moves to position
-  //camera.object3D.position.set(animals[index].position[0], animals[index].position[1], animals[index].position[2]);
+  //updates to new camera position
+  camera.object3D.position.set(animals[index].position[0], animals[index].position[1], animals[index].position[2]);
 }
 //moves camera to the next coordinate listed. After last coordinate, camera loops to the first coordinate making it an infinite carousel loop.
 function navigateRight() {
@@ -53,48 +50,46 @@ function degToPi(degree) {
 function piToDeg(radian) {
   return radian*(180/Math.PI);
 }
-//camera.components['look-controls'].pitchObject.rotation.set(degToPi(animals[index].rotation[0]),degToPi(animals[index].rotation[1]),degToPi(animals[index].rotation[2]));
-let prevRot = {"x":animals[index].position[0], "y":animals[index].position[1], "z":animals[index].position[2]};
-let rotation;
 
 AFRAME.registerComponent('camera-listener', {
   tick: function () {
+    //constant checking of boundaries and adjust camera as need be
     cameraSnap()
   }
 });
+//camera change hasn't happened by default
 let cameraMoved = false;
-//how far the camera can move before begin snapped back
+//how far the camera can move before being snapped back
 let limit = 5;
 function cameraSnap() {
   //keeps track of x and y current rotation
   let final = [piToDeg(camera.components['look-controls'].pitchObject.rotation.x), piToDeg(camera.components['look-controls'].yawObject.rotation.y)];
-  //original camera location
+  //original camera location from cameraData.js
   let inital = {"x":animals[index].rotation[0], "y":animals[index].rotation[1], "z":animals[index].rotation[2]};
   //how far to move camera from edge when redirecting after reaching a limit
   let gravitationalPull = 0;
   //too far left
   if (final[0] > inital.x+limit) {
-    console.log(`%cy:${Math.abs((final[1])-(inital.y))}`, "color:blue");
     camera.components['look-controls'].pitchObject.rotation.x = degToPi(inital.x+limit-gravitationalPull);
   }
   //too far right
   if (final[0] < inital.x-limit) {
-    console.log(`%cy:${Math.abs((final[1])-(inital.y))}`, "color:blue");
     camera.components['look-controls'].pitchObject.rotation.x = degToPi(inital.x-limit+gravitationalPull);
   }
   //too far top
   if (final[1] > inital.y+limit) {
-    console.log(`%cy:${Math.abs((final[1])-(inital.y))}`, "color:blue");
     camera.components['look-controls'].yawObject.rotation.y = degToPi(inital.y+limit-gravitationalPull);
   }
   //too far down
   if (final[1] < inital.y-limit) {
-    console.log(`%cy:${Math.abs((final[1])-(inital.y))}`, "color:blue");
     camera.components['look-controls'].yawObject.rotation.y = degToPi(inital.y-limit+gravitationalPull);
   }
+  //if this is a different camera position
   if (cameraMoved == true) {
-    camera.components['look-controls'].pitchObject.rotation.x = degToPi(inital.x)
-    camera.components['look-controls'].yawObject.rotation.y = degToPi(inital.y)
+    //snaps to inital rotation stated by cameraData.js
+    camera.components['look-controls'].pitchObject.rotation.x = degToPi(inital.x);
+    camera.components['look-controls'].yawObject.rotation.y = degToPi(inital.y);
+    //updates false so it only redirect once
     cameraMoved = false;
   }
 }

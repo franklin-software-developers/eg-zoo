@@ -7,18 +7,19 @@
         },
     only changes rotation for x and y. Z makes camera slanted
     */
-
+   
+//avoid y values > 180 or < -180. That will rotate camera too far and result in upside down cameras. 
 export let animals =[
     {"name": "Savannah - Entrance",
      "position": [0, 3, 0],
-     "rotation": [20, 50, 0]
+     "rotation": [0, 0, 0]
     },
-    {"name": "Camera 2",
-     "position": [0, 3, 50],
-     "rotation": [20, 180, 0]
+    {"name": "Savannah - Event Lawn",
+     "position": [-50, 3, -30],
+     "rotation": [180, 0, 0]
     },
-    {"name": "Camera 3",
-      "position": [60, 3, 0],
-      "rotation": [20, 270, 0]
+    {"name": "Savannah - Giraffe Feeding",
+      "position": [70, 4, -60],
+      "rotation": [80, 0, 0]
     },
 ]

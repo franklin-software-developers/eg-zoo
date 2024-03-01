@@ -65,7 +65,7 @@ function cameraSnap() {
   //keeps track of x and y current rotation
   let final = [piToDeg(camera.components['look-controls'].pitchObject.rotation.x), piToDeg(camera.components['look-controls'].yawObject.rotation.y)];
   //original camera location from cameraData.js
-  let inital = {"x":animals[index].rotation[0], "y":animals[index].rotation[1], "z":animals[index].rotation[2]};
+  let inital = {"x":animals[index].rotation[1], "y":animals[index].rotation[0], "z":animals[index].rotation[2]};
   //how far to move camera from edge when redirecting after reaching a limit
   let gravitationalPull = 0;
   //too far left

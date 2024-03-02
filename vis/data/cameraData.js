@@ -2,26 +2,27 @@
     /*ADD ANIMALS HERE:
       just create an object with the template below and your camera will be automatically added
         {"name": "AnimalNameGoesHere",
-        "cameraX": 0,
-        "cameraY": 0,
-        "cameraZ": 0
+        "position": [x, y, z],
+        "rotation": [x, y, z],
+        "position": [x, y, z],
+        "rotation": [x, y, z],
         },
+    only changes rotation for x and y. Z makes camera slanted
+    only changes rotation for x and y. Z makes camera slanted
     */
-
+   
+//avoid y values > 180 or < -180. That will rotate camera too far and result in upside down cameras. 
 export let animals =[
     {"name": "Savannah - Entrance",
-     "cameraX": 0,
-     "cameraY": 3,
-     "cameraZ": 0
+     "position": [0, 3, 0],
+     "rotation": [0, 0, 0]
     },
     {"name": "Savannah - Event Lawn",
-     "cameraX": -50,
-     "cameraY": 3,
-     "cameraZ": -30,
+     "position": [-50, 3, -30],
+     "rotation": [180, 0, 0]
     },
     {"name": "Savannah - Giraffe Feeding",
-     "cameraX": 70,
-     "cameraY": 4,
-     "cameraZ": -60,
+      "position": [70, 4, -60],
+      "rotation": [80, 0, 0]
     },
 ]

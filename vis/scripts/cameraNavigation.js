@@ -55,6 +55,9 @@ AFRAME.registerComponent('camera-listener', {
   tick: function () {
     //constant checking of boundaries and adjust camera as need be
     cameraSnap()
+  },
+  init: function () {
+    camera.object3D.position.y += 1
   }
 });
 //camera change hasn't happened by default

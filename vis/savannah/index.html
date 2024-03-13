@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Savannah - NZEG</title>
+    <link rel="stylesheet" href="../styles/nav.css">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
     <link rel="stylesheet" href="../styles/nav.css">
@@ -30,6 +31,7 @@
                 gltf-model="./assets/savannah.glb"
                 position="0 -13.25 0"
             ></a-entity>
+<<<<<<< HEAD
             <a-entity id="giraffe-A1" animation-mixer="clip: Eat" gltf-model="./assets/adultGiraffeTextured.glb" position="2.014 -0.50387 -40.589" rotation="0 -148.777 0" scale="1.2 1.2 1.1">
             </a-entity>
             </a-entity>
@@ -42,6 +44,347 @@
             <a-entity id="giraffe-B1" start-delay gltf-model="./assets/adultGiraffeTextured.glb" position="5.80996 -0.29051 -45.7111" rotation="0 -106.32492395801712 0" scale="">
             </a-entity>
             </a-entity>
+=======
+            <a-entity
+            id="giraffe-A1"
+            gltf-model="./assets/adultGiraffeTextured.glb"
+            position="4.221 0 -45.291"
+            rotation="0 -129.742 0" 
+            scale="1.5 1.25 1.5"
+            animation__1a="
+                easing: easeOutSine;
+                property: position;
+                from: 4.221 0 -45.291;
+                to: 4.221 0 -45.291;
+                dur: 0;
+            "
+            animation__1b="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1i;
+                property: rotation;
+                from: 0 -129.742 0;
+                to: 0 106.259 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1c="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1i;
+                property: position;
+                from: 4.221 0 -45.291;
+                to: 50.187 0 -47.408;
+                autoplay: true;
+                dur: 25000;
+            "
+            animation__1d="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1c;
+                property: position;
+                from: 50.187 0 -47.408;
+                to: 50.187 0 -47.408;
+                autoplay: true;
+                dur: 10000;
+            "
+            animation__1e="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: rotation;
+                from: 0 106.259 0;
+                to: 0 -44.068 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1f="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: position;
+                from: 50.187 0 -47.408;
+                to: 32.945 0 -26.985;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1g="
+                easing: easeOutSine;    
+                startEvents: animationcomplete__1f;
+                property: rotation;
+                from: 0 -44.068 0;
+                to: 0 -129.742 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1h="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1f;
+                property: position;
+                from: 32.945 0 -26.985;
+                to: 4.221 0 -45.291;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1i="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1h;
+                property: position;
+                from: 4.221 0 -45.291;
+                to: 4.221 0 -45.291;
+                autoplay: false;
+                dur: 10000;
+            "
+        >
+        </a-entity>
+        <a-entity
+            id="giraffe-A2"
+            gltf-model="./assets/adultGiraffeTextured.glb"
+            position="0.269 0 -54.759"
+            rotation="0 -65.566 0" 
+            scale="1.5 1.25 1.5"
+            animation__1a="
+                easing: easeOutSine;
+                property: position;
+                from: 0.269 0 -54.759;
+                to: 0.269 0 -54.759;
+                dur: 0;
+            "
+            animation__1b="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1g;
+                property: rotation;
+                from: 0 -65.566 0;
+                to: 0 122.504 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1c="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1g;
+                property: position;
+                from: 0.269 0 -54.759;
+                to: 32.732 0 -67.457;
+                autoplay: true;
+                dur: 17000;
+            "
+            animation__1d="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1c;
+                property: position;
+                from: 32.732 0 -67.457;
+                to: 32.732 0 -67.457;
+                autoplay: true;
+                dur: 10000;
+            "
+            animation__1e="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: rotation;
+                from: 0 122.504 0;
+                to: 0 -65.566 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1f="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: position;
+                from: 32.732 0 -67.457;
+                to: 0.269 0 -54.759;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1g="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1f;
+                property: position;
+                from: 0.269 0 -54.759;
+                to: 0.269 0 -54.759;
+                autoplay: true;
+                dur: 10000;
+            "
+        >
+        </a-entity>
+        <a-entity
+            id="giraffe-A3"
+            gltf-model="./assets/adultGiraffeTextured.glb"
+            position="43.004 0.595 -72.209"
+            rotation="0 45.913 0" 
+            scale="1.5 1.25 1.5"
+            animation__1a="
+                easing: easeOutSine;
+                property: position;
+                from: 43.004 0.595 -72.209;
+                to: 43.004 0.595 -72.209;
+                dur: 0;
+            "
+            animation__1b="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1j;
+                property: rotation;
+                from: 0 45.913 0;
+                to: 0 140.858 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1c="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1j;
+                property: position;
+                from: 43.004 0.595 -72.209;
+                to: 51.569 0.595 -82.376;
+                autoplay: true;
+                dur: 17000;
+            "
+            animation__1d="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1c;
+                property: rotation;
+                from: 0 140.858 0;
+                to: 0 166.146 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1e="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1c;
+                property: position;
+                from: 51.569 0.595 -82.376;
+                to: 56.486 0.595 -102.989;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1f="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1e;
+                property: rotation;
+                from: 0 166.146 0;
+                to: 0 -48.565 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1g="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1e;
+                property: position;
+                from: 56.486 0.595 -102.989;
+                to: 34.104 0.595 -85.530;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1h="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1g;
+                property: rotation;
+                from: 0 -48.565 0;
+                to: 0 45.913 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1i="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1g;
+                property: position;
+                from: 34.104 0.595 -85.530;
+                to: 43.004 0.595 -72.209;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1j="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1i;
+                property: position;
+                from: 43.004 0.595 -72.209;
+                to: 43.004 0.595 -72.209;
+                autoplay: false;
+                dur: 17000;
+            "
+        >
+        </a-entity>
+        <a-entity
+            id="giraffe-B1"
+            gltf-model="./assets/adultGiraffeTextured.glb"
+            position="1.002 0 -52.958"
+            rotation="0 -129.742 0" 
+            scale="1 1 1"
+            animation__1a="
+                easing: easeOutSine;
+                property: position;
+                from: 1.002 0 -52.958;
+                to: 1.002 0 -52.958;
+                dur: 0;
+            "
+            animation__1b="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1i;
+                property: rotation;
+                from: 0 -129.742 0;
+                to: 0 106.259 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1c="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1a, animationcomplete__1i;
+                property: position;
+                from: 1.002 0 -52.958;
+                to: 56.823 0 -51.657;
+                autoplay: true;
+                dur: 25000;
+            "
+            animation__1d="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1c;
+                property: position;
+                from: 56.823 0 -51.657;
+                to: 56.823 0 -51.657;
+                autoplay: true;
+                dur: 10000;
+            "
+            animation__1e="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: rotation;
+                from: 0 106.259 0;
+                to: 0 -44.068 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1f="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1d;
+                property: position;
+                from: 56.823 0 -51.657;
+                to: 33.148 0 -31.680;
+                autoplay: false;
+                dur: 17000;
+            "
+            animation__1g="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1f;
+                property: rotation;
+                from: 0 -44.068 0;
+                to: 0 -129.742 0;
+                autoplay: false;
+                dur: 2500;
+            "
+            animation__1h="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1f;
+                property: position;
+                from: 33.148 0 -31.680;
+                to: 1.002 0 -52.958;
+                autoplay: false;
+                dur: 18000;
+            "
+            animation__1i="
+                easing: easeOutSine;
+                startEvents: animationcomplete__1h;
+                property: position;
+                from: 1.002 0 -52.958;
+                to: 1.002 0 -52.958;
+                autoplay: false;
+                dur: 10000;
+            "
+        >
+        </a-entity>
+>>>>>>> 91d7fba7ee5cc6c926820a704e31bf705f9804d0
             <a-entity
                 id="giraffe-B2"
                 gltf-model="./assets/adultGiraffeTextured.glb"
@@ -55,8 +398,8 @@
             <a-entity id="camera" camera-listener camera="" position="16.12747 2.43533 2.56949" wasd-controls="" rotation="-1.948 -21.429 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
             
     </a-scene>
-
     <script>
+<<<<<<< HEAD
         AFRAME.registerComponent('start-delay', {
           init: function () {
             var el = this.el;
@@ -65,6 +408,12 @@
             }, 12000); // Adjust the delay time as needed
           }
         });
+=======
+        var giraffeA1 = document.querySelector('#giraffe-A1')
+        var giraffeA2 = document.querySelector('#giraffe-A2')
+        var giraffeA3 = document.querySelector('#giraffe-A3')
+        var giraffeB1 = document.querySelector('#giraffe-B1')
+>>>>>>> 91d7fba7ee5cc6c926820a704e31bf705f9804d0
 
         </script>
         <script>
@@ -77,8 +426,112 @@
               }
             });
 
+<<<<<<< HEAD
         </script>
 
+=======
+        function giraffeA1_animCorr(event) {
+            switch(event.detail.name) {
+                case "animation__1c":
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1d":
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                case "animation__1f":
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1h":
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1i":
+                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                default:
+                    break;
+            }
+        }
+        function giraffeA2_animCorr(event) {
+            switch(event.detail.name) {
+                case "animation__1c":
+                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1d":
+                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                case "animation__1f":
+                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1g":
+                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                default:
+                    break;
+            }
+        }
+        function giraffeA3_animCorr(event) {
+            switch(event.detail.name) {
+                case "animation__1c":
+                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1e":
+                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1g":
+                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1i":
+                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1j":
+                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                default:
+                    break;
+            }
+        }
+        function giraffeB1_animCorr(event) {
+            switch(event.detail.name) {
+                case "animation__1c":
+                    giraffeB1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1d":
+                    giraffeB1.setAttribute('animation-mixer', {'clip': 'Eat'});
+                    break;
+                case "animation__1f":
+                    giraffeB1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1h":
+                    giraffeB1.setAttribute('animation-mixer', {'clip': 'Walk'});
+                    break;
+                case "animation__1i":
+                    giraffeB1.setAttribute('animation-mixer', {'clip': 'Rest'});
+                    break;
+                default:
+                    break;
+            }
+        }
+        giraffeA1.addEventListener('animationbegin', function (e) {
+            console.log(e.detail.name);
+        })
+        giraffeA1.addEventListener('animationbegin', giraffeA1_animCorr)
+
+        giraffeA2.addEventListener('animationbegin', function (e) {
+            console.log(e.detail.name);
+        })
+        giraffeA2.addEventListener('animationbegin', giraffeA2_animCorr)
+
+        giraffeA3.addEventListener('animationbegin', function (e) {
+            console.log(e.detail.name);
+        })
+        giraffeA3.addEventListener('animationbegin', giraffeA3_animCorr)
+
+        giraffeB1.addEventListener('animationbegin', function (e) {
+            console.log(e.detail.name);
+        })
+        giraffeB1.addEventListener('animationbegin', giraffeB1_animCorr)
+    </script>
+>>>>>>> 91d7fba7ee5cc6c926820a704e31bf705f9804d0
     <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>
 </html>

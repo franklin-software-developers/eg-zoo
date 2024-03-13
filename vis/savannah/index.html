@@ -7,28 +7,22 @@
     <link rel="stylesheet" href="../styles/nav.css">
 </head>
 <body>
-    <script>
-        // function calcAngle(from, to) {
-        //     let a = to[0] - from[0];
-        //     let b = to[2] - from[2];
+    <div>
+    <button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
+    <div id="navigationIndexDiv">
+        <!--inital animal for navigation-->
+        <p id="navigationIndex">Savannah - Entrance</p>
+    </div>
+    <button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
+    </div>
 
-        //     let theta = Math.tan(a / b);
-        //     console.log(theta)
-            
-        //     return (`0 ${theta} 0`);
-        // }
-    </script>
-          <div>
-            <button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button>
-            <div id="navigationIndexDiv">
-              <!--inital animal for navigation-->
-              <p id="navigationIndex">Savannah - Entrance</p>
-            </div>
-            <button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button>
-          </div>
+
+
     <a-scene id="aframe">
         <a-assets>
+            <img id="sky" src="./assets/sky.jpg">
         </a-assets>
+            <a-sky src="#sky"></a-sky>
             <!-- x -13.25 z -->
             <!-- -280 -13.25 475 -->
             <a-entity
@@ -36,260 +30,24 @@
                 gltf-model="./assets/savannah.glb"
                 position="0 -13.25 0"
             ></a-entity>
-            <a-entity
-                id="giraffe-A1"
-                gltf-model="./assets/adultGiraffeTextured.glb"
-                position="4.190 0 -47.637"
-                rotation="0 -129.742 0" 
-                scale="1.75 1.75 1.75"
-                animation__1_0="
-                    property: position;
-                    from: 4.190 0 -47.637;
-                    to: 4.190 0 -47.637;
-                    dur: 0;
-                "
-                animation__1a="
-                    startEvents: animationcomplete__1_0, animationcomplete__1f;
-                    property: rotation;
-                    from: 0 -129.742 0;
-                    to: 0 106.259 0;
-                    autoplay: false;
-                    dur: 10000;
-                "
-                animation__1b="
-                    startEvents: animationcomplete__1_0, animationcomplete__1f;
-                    property: position;
-                    from: 4.190 0 -47.637;
-                    to: 53.926 0 -53.353;
-                    autoplay: true;
-                    dur: 25000;
-                "
-                animation__1c="
-                    startEvents: animationcomplete__1b;
-                    property: rotation;
-                    from: 0 106.259 0;
-                    to: 0 -44.068 0;
-                    autoplay: false;
-                    dur: 8000;
-                "
-                animation__1d="
-                    startEvents: animationcomplete__1b;
-                    property: position;
-                    from: 53.926 0 -53.353;
-                    to: 32.945 0 -26.985;
-                    autoplay: false;
-                    dur: 17000;
-                "
-                animation__1e="
-                    startEvents: animationcomplete__1d;
-                    property: rotation;
-                    from: 0 -44.068 0;
-                    to: 0 -129.742 0;
-                    autoplay: false;
-                    dur: 8000;
-                "
-                animation__1f="
-                    startEvents: animationcomplete__1d;
-                    property: position;
-                    from: 32.945 0 -26.985;
-                    to: 4.190 0 -47.637;
-                    autoplay: false;
-                    dur: 18000;
-                "
-            >
+            <a-entity id="giraffe-A1" animation-mixer="clip: Eat" gltf-model="./assets/adultGiraffeTextured.glb" position="2.014 -0.50387 -40.589" rotation="0 -148.777 0" scale="1.2 1.2 1.1">
             </a-entity>
-            <a-entity
-                id="giraffe-A2"
-                gltf-model="./assets/adultGiraffeTextured.glb"
-                position="3.840 0 -56.659"
-                rotation="0 -65.566 0" 
-                scale="1.75 1.75 1.75"
-                animation__2_0="
-                    property: position;
-                    from: 3.840 0 -56.659;
-                    to: 3.840 0 -56.659;
-                    dur: 0;
-                "
-                animation__2a="
-                    startEvents: animationcomplete__2_0, animationcomplete__2d;
-                    property: rotation;
-                    from: 0 -65.566 0;
-                    to: 0 122.504 0;
-                    autoplay: false;
-                    dur: 8000;
-                "
-                animation__2b="
-                    startEvents: animationcomplete__2_0, animationcomplete__2d;
-                    property: position;
-                    from: 3.840 0 -56.659;
-                    to: 35 0 -68;
-                    autoplay: true;
-                    dur: 17000;
-                "
-                animation__2c="
-                    startEvents: animationcomplete__2b;
-                    property: rotation;
-                    from: 0 122.504 0;
-                    to: 0 -65.566 0;
-                    autoplay: false;
-                    dur: 8000;
-                "
-                animation__2d="
-                    startEvents: animationcomplete__2b;
-                    property: position;
-                    from: 35 0 -68;
-                    to: 3.840 0 -56.659;
-                    autoplay: false;
-                    dur: 17000;
-                "
-            >
             </a-entity>
-            <a-entity
-                id="giraffe-A3"
-                gltf-model="./assets/adultGiraffeTextured.glb"
-                position="44.334 0 -73.176"
-                rotation="0 65.405 0" 
-                scale="1.75 1.75 1.75"
-                animation__3_0="
-                    property: position;
-                    from: 44.334 0 -73.176;
-                    to: 44.334 0 -73.176;
-                    dur: 0;
-                "
-                animation__3a="
-                    startEvents: animationcomplete__3_0, animationcomplete__3h;
-                    property: rotation;
-                    from: 0 65.405 0;
-                    to: 0 140.858 0;
-                    autoplay: false;
-                    dur: 8700;
-                "
-                animation__3b="
-                    startEvents: animationcomplete__3_0, animationcomplete__3h;
-                    property: position;
-                    from: 44.334 0 -73.176;
-                    to: 51.569 0 -82.376;
-                    autoplay: true;
-                    dur: 17000;
-                "
-                animation__3c="
-                    startEvents: animationcomplete__3b;
-                    property: rotation;
-                    from: 0 140.858 0;
-                    to: 0 166.146 0;
-                    autoplay: false;
-                    dur: 8500;
-                "
-                animation__3d="
-                    startEvents: animationcomplete__3b;
-                    property: position;
-                    from: 51.569 0 -82.376;
-                    to: 56.486 0 -102.989;
-                    autoplay: false;
-                    dur: 17000;
-                "
-                animation__3e="
-                    startEvents: animationcomplete__3d;
-                    property: rotation;
-                    from: 0 166.146 0;
-                    to: 0 -48.565 0;
-                    autoplay: false;
-                    dur: 7500;
-                "
-                animation__3f="
-                    startEvents: animationcomplete__3d;
-                    property: position;
-                    from: 56.486 0 -102.989;
-                    to: 34.104 0 -85.530;
-                    autoplay: false;
-                    dur: 17000;
-                "
-                animation__3g="
-                    startEvents: animationcomplete__3f;
-                    property: rotation;
-                    from: 0 -48.565 0;
-                    to: 0 65.405 0;
-                    autoplay: false;
-                    dur: 7500;
-                "
-                animation__3h="
-                    startEvents: animationcomplete__3f;
-                    property: position;
-                    from: 34.104 0 -85.530;
-                    to: 44.334 0 -73.176;
-                    autoplay: false;
-                    dur: 17000;
-                "
-            >
+            <a-entity id="giraffe-A2" animation-mixer="clip: Rest" gltf-model="./assets/adultGiraffeTextured.glb" position="2.72686 -0.13103 -49.7024" rotation="0 -54.157689669150805 0" scale="1.1 1.1 1.1">
             </a-entity>
-            <a-entity
-                id="giraffe-B1"
-                gltf-model="./assets/adultGiraffeTextured.glb"
-                position="-1.190 0 -52.637"
-                rotation="0 -129.742 0" 
-                scale="1 1 1"
-                animation__4_0="
-                    property: position;
-                    from: -1.190 0 -52.637;
-                    to: -1.190 0 -52.637;
-                    dur: 0;
-                "
-                animation__4a="
-                    startEvents: animationcomplete__4_0, animationcomplete__4f;
-                    property: rotation;
-                    from: 0 -129.742 0;
-                    to: 0 106.259 0;
-                    autoplay: false;
-                    dur: 5000;
-                "
-                animation__4b="
-                    startEvents: animationcomplete__4_0, animationcomplete__4f;
-                    property: position;
-                    from: -1.190 0 -52.637;
-                    to: 48.926 0 -58.353;
-                    autoplay: true;
-                    dur: 25000;
-                "
-                animation__4c="
-                    startEvents: animationcomplete__4b;
-                    property: rotation;
-                    from: 0 106.259 0;
-                    to: 0 -44.068 0;
-                    autoplay: false;
-                    dur: 5000;
-                "
-                animation__4d="
-                    startEvents: animationcomplete__4b;
-                    property: position;
-                    from: 48.926 0 -58.353;
-                    to: 37.945 0 -31.985;
-                    autoplay: false;
-                    dur: 17000;
-                "
-                animation__4e="
-                    startEvents: animationcomplete__4d;
-                    property: rotation;
-                    from: 0 -44.068 0;
-                    to: 0 -129.742 0;
-                    autoplay: false;
-                    dur: 5000;
-                "
-                animation__4f="
-                    startEvents: animationcomplete__4d;
-                    property: position;
-                    from: 37.945 0 -31.985;
-                    to: -1.190 0 -52.637;
-                    autoplay: false;
-                    dur: 18000;
-                "
-            >
+            </a-entity>
+            <a-entity id="giraffe-A3" delay gltf-model="./assets/adultGiraffeTextured.glb" position="38.46976 0.34836 -64.4792" rotation="0 121.85265316385755 0" scale="1.1 1.1 1.1">
+            </a-entity>
+            </a-entity>
+            <a-entity id="giraffe-B1" start-delay gltf-model="./assets/adultGiraffeTextured.glb" position="5.80996 -0.29051 -45.7111" rotation="0 -106.32492395801712 0" scale="">
+            </a-entity>
             </a-entity>
             <a-entity
                 id="giraffe-B2"
                 gltf-model="./assets/adultGiraffeTextured.glb"
                 position="38.374 0.75 -69.5876"
                 rotation="0 -68.245 0"
-                scale=""
+                scale=".75 .75 .75"
                 animation-mixer="clip: Rest">
             </a-entity>
             </a-entity>
@@ -299,79 +57,28 @@
     </a-scene>
 
     <script>
-        var giraffeA1 = document.querySelector('#giraffe-A1')
-        var giraffeA2 = document.querySelector('#giraffe-A2')
-        var giraffeA3 = document.querySelector('#giraffe-A3')
-        var giraffeA4 = document.querySelector('#giraffe-B1')
+        AFRAME.registerComponent('start-delay', {
+          init: function () {
+            var el = this.el;
+            setTimeout(function () {
+              el.setAttribute('animation-mixer', 'clip: Rest');
+            }, 12000); // Adjust the delay time as needed
+          }
+        });
 
-        // object
-        let giraffeAnimation = {
-            endDrinking: 'EndDrinking'
-        }
+        </script>
+        <script>
+            AFRAME.registerComponent('delay', {
+              init: function () {
+                var el = this.el;
+                setTimeout(function () {
+                  el.setAttribute('animation-mixer', 'clip: Eat');
+                }, 12000); // Adjust the delay time as needed
+              }
+            });
 
-        function animationCorresponder(event) {
-            switch(event.detail.name) {
-                case "animation__1b":
-                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__1d":
-                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__1f":
-                    giraffeA1.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__2b":
-                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__2d":
-                    giraffeA2.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__3b":
-                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__3d":
-                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__3f":
-                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__3h":
-                    giraffeA3.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__4b":
-                    giraffeA4.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__4d":
-                    giraffeA4.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                case "animation__4f":
-                    giraffeA4.setAttribute('animation-mixer', {'clip': 'Walk'});
-                    break;
-                default:
-                    break;
-            }
-        }
+        </script>
 
-        giraffeA1.addEventListener('animationbegin', function (e) {
-            console.log(e.detail.name);
-        })
-        giraffeA1.addEventListener('animationbegin', animationCorresponder)
-
-        giraffeA2.addEventListener('animationbegin', function (e) {
-            console.log(e.detail.name);
-        })
-        giraffeA2.addEventListener('animationbegin', animationCorresponder)
-
-        giraffeA3.addEventListener('animationbegin', function (e) {
-            console.log(e.detail.name);
-        })
-        giraffeA3.addEventListener('animationbegin', animationCorresponder)
-
-        giraffeA4.addEventListener('animationbegin', function (e) {
-            console.log(e.detail.name);
-        })
-        giraffeA4.addEventListener('animationbegin', animationCorresponder)
-    </script>
     <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>
 </html>

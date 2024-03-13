@@ -14,15 +14,15 @@
 //avoid y values > 180 or < -180. That will rotate camera too far and result in upside down cameras. 
 export let animals =[
     {"name": "Savannah - Entrance",
-     "position": [0, 3, 0],
+     "position": [20, 3, -11],
      "rotation": [0, 0, 0]
     },
     {"name": "Savannah - Event Lawn",
      "position": [-50, 3, -30],
-     "rotation": [180, 0, 0]
+     "rotation": [280, 0, 0]
     },
     {"name": "Savannah - Giraffe Feeding",
-      "position": [70, 4, -60],
-      "rotation": [80, 0, 0]
+      "position": [60, 4, -50],
+      "rotation": [82, 0, 0]
     },
 ]

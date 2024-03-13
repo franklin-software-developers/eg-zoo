@@ -28,18 +28,22 @@
                 gltf-model="./assets/savannah.glb"
                 position="0 -13.25 0"
             ></a-entity>
-            <a-entity id="giraffe-A1" animation-mixer="clip: Eat" gltf-model="./assets/adultGiraffeTextured.glb" position="2.014 -0.50387 -40.589" rotation="0 -148.777 0" scale="1.2 1.2 1.1">
+            <a-entity id="giraffe-A1" delay8000 gltf-model="./assets/adultGiraffeTextured.glb" position="2.014 -0.50387 -40.589" rotation="0 -148.777 0" scale="1.2 1.2 1.1">
             </a-entity>
             </a-entity>
             <a-entity id="giraffe-A2" animation-mixer="clip: Rest" gltf-model="./assets/adultGiraffeTextured.glb" position="2.72686 -0.13103 -49.7024" rotation="0 -54.157689669150805 0" scale="1.1 1.1 1.1">
             </a-entity>
             </a-entity>
-            <a-entity id="giraffe-A3" delay gltf-model="./assets/adultGiraffeTextured.glb" position="38.46976 0.34836 -64.4792" rotation="0 121.85265316385755 0" scale="1.1 1.1 1.1">
+            <a-entity id="giraffe-A3" delay7500 gltf-model="./assets/adultGiraffeTextured.glb" position="38.46976 0.34836 -64.4792" rotation="0 121.85265316385755 0" scale="1.1 1.1 1.1">
             </a-entity>
             </a-entity>
             <a-entity id="giraffe-B1" start-delay gltf-model="./assets/adultGiraffeTextured.glb" position="5.80996 -0.29051 -45.7111" rotation="0 -106.32492395801712 0" scale="">
             </a-entity>
             </a-entity>
+
+            <a-entity id="giraffe-A4" animation-mixer="clip: Eat" gltf-model="./assets/adultGiraffeTextured.glb" scale="1.2 1.2 1.2" position="22.41223 -0.64344 -32.71333"></a-entity>
+            
+            <a-entity id="giraffe-B3" animation-mixer="clip: Idle" gltf-model="./assets/adultGiraffeTextured.glb" scale="0.8 0.8 0.8" position="25.90715 -0.643 -32.14" rotation="0 -22.287 0"></a-entity>            
             <a-entity
                 id="giraffe-B2"
                 gltf-model="./assets/adultGiraffeTextured.glb"
@@ -66,16 +70,25 @@
 
         </script>
         <script>
-            AFRAME.registerComponent('delay', {
+            AFRAME.registerComponent('delay8000', {
               init: function () {
                 var el = this.el;
                 setTimeout(function () {
                   el.setAttribute('animation-mixer', 'clip: Eat');
-                }, 6000);
+                }, 8000);
               }
             });
-
         </script>
+        <script>
+          AFRAME.registerComponent('delay7500', {
+            init: function () {
+              var el = this.el;
+              setTimeout(function () {
+                el.setAttribute('animation-mixer', 'clip: Eat');
+              }, 7500);
+            }
+          });
+      </script>
 
     <script type="module" src="../scripts/cameraNavigation.js"></script>
 </body>

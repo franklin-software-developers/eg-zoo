@@ -4,7 +4,7 @@ export let animals =[
    {"name": "Savannah - Entrance", //text that's displayed on screen at the bottom
     "position": [16, 3, 2], //position of camera
     "rotation": [0, 19, 0], //starting angle of camera
-    "limit":3 //how far the camera can move before being snapped back. 5 is default is unspecified
+    "limit":4 //how far the camera can move before being snapped back. 5 is default is unspecified
    },
    {"name": "Savannah - Event Lawn",
     "position": [-50, 2.5, -30],

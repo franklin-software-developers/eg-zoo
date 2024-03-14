@@ -1,5 +1,5 @@
 import { fadeOut, fadeIn } from  "./fade.js";
-import { animals } from "../../vis/data/cameraData.js";
+import { animals } from "./cameraData.js";
 
 let aframe = document.getElementById("aframe");
 aframe.addEventListener("transitionend", fadeIn);

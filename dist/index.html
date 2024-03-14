@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><title>Savannah - NZEG</title><script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script><script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script><link rel="stylesheet" href="../styles/nav.css"><script defer="defer" src="dist/bundle.js"></script><link href="dist/main.css" rel="stylesheet"></head><body><div><button class="navigationButton navigationText" id="leftNavigationButton"><p class="center">&lt</p></button><div id="navigationIndexDiv"><p id="navigationIndex">Savannah - Entrance</p></div><button class="navigationButton navigationText" id="rightNavigationButton"><p class="center">&gt</p></button></div><a-scene id="aframe"><a-assets><img id="sky" src="./assets/sky.jpg"></a-assets><a-sky src="#sky"></a-sky><a-entity id="savannah" gltf-model="./assets/savannah.glb" position="0 -13.25 0"></a-entity><a-entity id="giraffe-A1" delay8000 gltf-model="./assets/adultGiraffeTextured.glb" position="2.014 -0.50387 -40.589" rotation="0 -148.777 0" scale="1.2 1.2 1.1"></a-entity><a-entity id="giraffe-A2" animation-mixer="clip: Rest" gltf-model="./assets/adultGiraffeTextured.glb" position="2.72686 -0.13103 -49.7024" rotation="0 -54.157689669150805 0" scale="1.1 1.1 1.1"></a-entity><a-entity id="giraffe-A3" delay7500 gltf-model="./assets/adultGiraffeTextured.glb" position="38.46976 0.34836 -64.4792" rotation="0 121.85265316385755 0" scale="1.1 1.1 1.1"></a-entity><a-entity id="giraffe-B1" start-delay gltf-model="./assets/adultGiraffeTextured.glb" position="5.80996 -0.29051 -45.7111" rotation="0 -106.32492395801712 0" scale=""></a-entity><a-entity id="giraffe-A4" animation-mixer="clip: Eat" gltf-model="./assets/adultGiraffeTextured.glb" scale="1.2 1.2 1.2" position="22.41223 -0.64344 -32.71333"></a-entity><a-entity id="giraffe-B3" animation-mixer="clip: Idle" gltf-model="./assets/adultGiraffeTextured.glb" scale="0.8 0.8 0.8" position="25.90715 -0.643 -32.14" rotation="0 -22.287 0"></a-entity><a-entity id="giraffe-B2" gltf-model="./assets/adultGiraffeTextured.glb" position="38.374 0.75 -69.5876" rotation="0 -68.245 0" scale=".75 .75 .75" animation-mixer="clip: Rest"></a-entity><a-entity id="camera" camera-listener camera="" position="16.12747 2.43533 2.56949" wasd-controls="" rotation="-1.948 -21.429 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity></a-scene><script>AFRAME.registerComponent('start-delay', {
+          init: function () {
+            var el = this.el;
+            setTimeout(function () {
+              el.setAttribute('animation-mixer', 'clip: Rest');
+            }, 6000);
+          }
+        });</script><script>AFRAME.registerComponent('delay8000', {
+              init: function () {
+                var el = this.el;
+                setTimeout(function () {
+                  el.setAttribute('animation-mixer', 'clip: Eat');
+                }, 8000);
+              }
+            });</script><script>AFRAME.registerComponent('delay7500', {
+            init: function () {
+              var el = this.el;
+              setTimeout(function () {
+                el.setAttribute('animation-mixer', 'clip: Eat');
+              }, 7500);
+            }
+          });</script><script type="module" src="/vis/cameraNavigation.js"></script><script src="../../dist/bundle.js"></script></body></html>

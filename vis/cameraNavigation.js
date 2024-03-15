@@ -1,5 +1,5 @@
 import { fadeOut, fadeIn } from  "./fade.js";
-import { animals } from "../../vis/data/cameraData.js";
+import { animals } from "./cameraData.js";
 
 let aframe = document.getElementById("aframe");
 aframe.addEventListener("transitionend", fadeIn);
@@ -55,6 +55,9 @@ AFRAME.registerComponent('camera-listener', {
   tick: function () {
     //constant checking of boundaries and adjust camera as need be
     cameraSnap()
+  },
+  init: function () {
+    camera.object3D.position.y += 1
   }
 });
 //camera change hasn't happened by default
@@ -68,6 +71,12 @@ function cameraSnap() {
   let inital = {"x":animals[index].rotation[1], "y":animals[index].rotation[0], "z":animals[index].rotation[2]};
   //how far to move camera from edge when redirecting after reaching a limit
   let gravitationalPull = 0;
+  let limit;
+  if (animals[index].limit == undefined) {
+    limit = 5;
+  } else {
+    limit = animals[index].limit;
+  }
   //too far left
   if (final[0] > inital.x+limit) {
     camera.components['look-controls'].pitchObject.rotation.x = degToPi(inital.x+limit-gravitationalPull);
